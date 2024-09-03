@@ -7,18 +7,16 @@ interface AnimationProps {}
 const Animation = ({}: AnimationProps) => {
 	const { scrollY } = useScroll();
 
-	// Use a short scroll range to achieve instant movement effect
-	const scrollRange = [0, 100]; // Adjust the end value to control the sensitivity
+	const scrollRange = [119, 120];
 
-	// Transform the positions quickly with minimal scroll
-	const leaf1X = useTransform(scrollY, scrollRange, [0, -180]);
-	const leaf1Y = useTransform(scrollY, scrollRange, [0, -180]);
-	const leaf2X = useTransform(scrollY, scrollRange, [0, 180]);
-	const leaf2Y = useTransform(scrollY, scrollRange, [0, -180]);
-	const leaf3X = useTransform(scrollY, scrollRange, [0, -180]);
-	const leaf3Y = useTransform(scrollY, scrollRange, [0, 180]);
-	const leaf4X = useTransform(scrollY, scrollRange, [0, 180]);
-	const leaf4Y = useTransform(scrollY, scrollRange, [0, 180]);
+	const leaf1X = useTransform(scrollY, scrollRange, [0, -240]);
+	const leaf1Y = useTransform(scrollY, scrollRange, [0, -240]);
+	const leaf2X = useTransform(scrollY, scrollRange, [0, 240]);
+	const leaf2Y = useTransform(scrollY, scrollRange, [0, -240]);
+	const leaf3X = useTransform(scrollY, scrollRange, [0, -240]);
+	const leaf3Y = useTransform(scrollY, scrollRange, [0, 240]);
+	const leaf4X = useTransform(scrollY, scrollRange, [0, 240]);
+	const leaf4Y = useTransform(scrollY, scrollRange, [0, 240]);
 	return (
 		<div>
 			<motion.div
