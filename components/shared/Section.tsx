@@ -6,10 +6,10 @@ interface SectionProps {}
 
 const Section = ({}: SectionProps) => {
 	return (
-		<div className="w-full bg-[#e3e1d2]">
+		<div className="w-full bg-[white]">
 			<div className="mx-auto  grid w-full lg:grid-cols-2 grid-cols-1 lg:h-screen">
 				{/* Right Image Section */}
-				<div className="h-full flex items-center justify-center p-4 lg:pr-40 order-1 lg:order-2 bg-[#eeece2]">
+				<div className="h-full flex items-center justify-center p-4 lg:pr-40 order-1 lg:order-2 bg-[#ffb9bf]">
 					<div className="relative size-[600px] flex items-center justify-center">
 						<Image
 							src="/assets/padseva-gallery/gif.gif"
@@ -22,10 +22,10 @@ const Section = ({}: SectionProps) => {
 
 				{/* Left Text Section */}
 				<div className="flex flex-col justify-center items-start p-10 order-2 lg:order-1 lg:pl-40">
-					<h1 className="title-font text-3xl lg:text-5xl mb-4 font-semibold text-[#314030]">
+					<h1 className="title-font text-3xl lg:text-5xl mb-4 font-semibold text-[#000000]">
 						About PadSeva
 					</h1>
-					<p className="mb-8 leading-relaxed text-[#6a6a6a]">
+					<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e]">
 						At PadSeva, we are dedicated to eradicating period poverty and
 						promoting menstrual hygiene in rural communities across southern
 						India. Founded with a mission to provide access to affordable,
