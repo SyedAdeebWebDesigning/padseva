@@ -22,12 +22,12 @@ const Mission = ({}: MissionProps) => {
 					<br />
 				</p>
 			</div>
-			<div className="absolute hidden lg:flex right-0 -top-[200px] ">
+			<div className="absolute hidden xl:flex right-0 -top-[200px] ">
 				<picture className="relative mb-4">
 					<img
 						src={"/assets/food_04.jpg"}
 						alt=""
-						className="w-[800px] h-[600px]"
+						className="w-[600px] h-[300px] xl:w-[600px] xl:h-[400px] 2xl:w-[700px] 2xl:h-[500px] object-cover"
 					/>
 				</picture>
 			</div>
