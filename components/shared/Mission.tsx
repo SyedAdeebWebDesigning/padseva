@@ -12,7 +12,7 @@ const Mission = ({}: MissionProps) => {
 				</picture>
 
 				{/* Mission Text */}
-				<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman w-[50%]">
+				<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman lg:w-[50%]">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 					recusandae molestias quibusdam, atque impedit nulla. Ratione,
 					perferendis ullam sunt odio, unde eos voluptatem sapiente rem soluta
@@ -22,7 +22,7 @@ const Mission = ({}: MissionProps) => {
 					<br />
 				</p>
 			</div>
-			<div className="absolute right-0 -top-[200px] ">
+			<div className="absolute hidden lg:flex right-0 -top-[200px] ">
 				<picture className="relative mb-4">
 					<img
 						src={"/assets/food_04.jpg"}
@@ -31,15 +31,14 @@ const Mission = ({}: MissionProps) => {
 					/>
 				</picture>
 			</div>
-			<div className="sticky bg-white  w-[50%] z-[999] top-10 py-4">
-				<nav className="flex items-center justify-end">
-					<ul></ul>
-					<ul className="flex justify-around items-center w-[50%]">
+			<div className="sticky bg-white lg:w-[50%] w-full z-[999] top-10 py-4">
+				<nav className="flex flex-wrap items-center justify-end w-full">
+					<ul className="hidden lg:flex"></ul>
+					<ul className="flex justify-around items-center lg:w-[50%] w-full">
 						<li className="cursor-pointer">Link 1</li>
 						<li className="cursor-pointer">Link 2</li>
 						<li className="cursor-pointer">Link 3</li>
 						<li className="cursor-pointer">Link 4</li>
-						<li className="cursor-pointer">Link 5</li>
 					</ul>
 				</nav>
 			</div>
