@@ -9,7 +9,7 @@ const Section = ({}: SectionProps) => {
 		<div className="w-full bg-[white]">
 			<div className="mx-auto  grid w-full lg:grid-cols-2 grid-cols-1 lg:h-screen">
 				{/* Right Image Section */}
-				<div className="h-full flex items-center justify-center p-4 lg:pr-40 order-1 lg:order-2 bg-[#ffb9bf]">
+				<div className="h-full flex items-center justify-center p-4 lg:pr-40 order-1 lg:order-2 bg-gradient-to-br from-[#ffb9bf] to-[#e7717b]">
 					<div className="relative size-[600px] flex items-center justify-center">
 						<Image
 							src="/assets/padseva-gallery/gif.gif"
@@ -47,7 +47,7 @@ const Section = ({}: SectionProps) => {
 					<Link
 						href="https://www.instagram.com/pad.seva?igsh=MXQxbWVkbXFvMzYwdQ=="
 						target="_blank"
-						className="inline-flex text-white bg-[#ff8b9d] border-0 py-3 px-6 rounded-full focus:outline-none hover:bg-[#FFB6C1] text-lg">
+						className="inline-flex hover:text-white hover:bg-[#ff8b9d] rounded transition-all duration-150 py-3 px-6  focus:outline-none bg-transparent border-[#ff8b9d] border-2 text-black text-lg">
 						<div className="flex items-center space-x-2 justify-center">
 							<FaInstagram />
 							<span>pad.seva</span>
