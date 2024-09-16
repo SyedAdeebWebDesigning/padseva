@@ -28,7 +28,7 @@ export default function Home() {
 				</section>
 
 				{/* Section 2 */}
-				<section className="relative">
+				<section className="relative z-0">
 					<Mission />
 				</section>
 			</div>

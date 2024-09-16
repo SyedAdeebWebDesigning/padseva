@@ -10,7 +10,7 @@ const PlaceHolderImage = ({
 	const placeholderUrl = url || `https://via.placeholder.com/`;
 
 	return (
-		<div className="relative h-[50vh]">
+		<div className="relative h-[30vh] sm:h-[40vh] lg:h-[50vh]">
 			<img
 				src={placeholderUrl}
 				alt={alt}
