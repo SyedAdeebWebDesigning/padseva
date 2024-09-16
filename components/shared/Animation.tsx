@@ -28,7 +28,7 @@ const Animation = ({}: AnimationProps) => {
 	const leaf4Y = useTransform(scrollY, scrollRange, [0, animationDistance]);
 
 	return (
-		<div className="z-50">
+		<div className="z-30">
 			<motion.div
 				initial={{ x: isSmallScreen ? -100 : -150 }}
 				animate={{ x: 0 }}

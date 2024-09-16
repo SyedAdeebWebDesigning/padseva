@@ -4,7 +4,7 @@ interface MissionProps {}
 
 const Mission = ({}: MissionProps) => {
 	return (
-		<div className="w-full bg-[#ffcece] relative h-[400vh] z-0">
+		<div className="w-full bg-[#ffcece] relative h-[400vh]">
 			{/* Left Section */}
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]">
 				{/* Heading Section */}
