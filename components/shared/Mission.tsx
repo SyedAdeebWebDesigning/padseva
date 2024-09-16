@@ -8,7 +8,7 @@ const Mission = ({}: MissionProps) => {
 			<div className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-40 z-10">
 				{/* Heading Section */}
 				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
-					<Image src={"/assets/Mission.png"} fill alt="Mission PadSeva" />
+					<Image src={"/assets/Mission.png"} fill alt="" />
 				</picture>
 
 				{/* Mission Text */}
