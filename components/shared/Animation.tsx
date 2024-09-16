@@ -28,7 +28,7 @@ const Animation = ({}: AnimationProps) => {
 	const leaf4Y = useTransform(scrollY, scrollRange, [0, animationDistance]);
 
 	return (
-		<div>
+		<div className="z-50">
 			<motion.div
 				initial={{ x: isSmallScreen ? -100 : -150 }}
 				animate={{ x: 0 }}
@@ -38,7 +38,7 @@ const Animation = ({}: AnimationProps) => {
 					x: leaf1X,
 					y: leaf1Y,
 					display: "block",
-					zIndex: 0,
+					zIndex: 40,
 				}}
 			/>
 			<motion.div
@@ -50,7 +50,7 @@ const Animation = ({}: AnimationProps) => {
 					x: leaf2X,
 					y: leaf2Y,
 					display: "block",
-					zIndex: 0,
+					zIndex: 40,
 				}}
 			/>
 			<motion.div
@@ -62,7 +62,7 @@ const Animation = ({}: AnimationProps) => {
 					x: leaf3X,
 					y: leaf3Y,
 					display: "block",
-					zIndex: 0,
+					zIndex: 40,
 				}}
 			/>
 			<motion.div
@@ -74,7 +74,7 @@ const Animation = ({}: AnimationProps) => {
 					x: leaf4X,
 					y: leaf4Y,
 					display: "block",
-					zIndex: 0,
+					zIndex: 40,
 				}}
 			/>
 		</div>

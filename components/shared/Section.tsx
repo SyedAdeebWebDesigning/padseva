@@ -7,7 +7,7 @@ interface SectionProps {}
 const Section = ({}: SectionProps) => {
 	return (
 		<div className="w-full bg-[white]">
-			<div className="mx-auto  grid w-full lg:grid-cols-2 grid-cols-1 lg:h-screen">
+			<div className="mx-auto  grid w-full lg:grid-cols-2 grid-cols-1 ">
 				{/* Right Image Section */}
 				<div className="h-full flex items-center justify-center p-4  order-1 lg:order-2 bg-gradient-to-br from-[#ffb9bf] to-[#e7717b]">
 					<div className="relative size-[600px] flex items-center justify-center">
@@ -22,7 +22,7 @@ const Section = ({}: SectionProps) => {
 
 				{/* Left Text Section */}
 				<div className="flex flex-col justify-center items-start p-10 order-2 lg:order-1 lg:pl-40">
-					<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] h-20 mb-4 font-semibold">
+					<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
 						<Image src={"/assets/AboutPadSeva.png"} fill alt="" />
 					</picture>
 					<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman">

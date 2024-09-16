@@ -1,0 +1,50 @@
+import Image from "next/image";
+
+interface MissionProps {}
+
+const Mission = ({}: MissionProps) => {
+	return (
+		<div className="w-full bg-[#ffcece] relative h-[400vh]">
+			<div className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-40 z-10">
+				{/* Heading Section */}
+				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
+					<Image src={"/assets/Mission.png"} fill alt="Mission PadSeva" />
+				</picture>
+
+				{/* Mission Text */}
+				<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman w-[50%]">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+					recusandae molestias quibusdam, atque impedit nulla. Ratione,
+					perferendis ullam sunt odio, unde eos voluptatem sapiente rem soluta
+					adipisci itaque porro pariatur mollitia quo esse corporis tempore!
+					Iusto nulla, cumque eos magni a molestias aliquid eaque odio. Iste
+					quae alias laboriosam perspiciatis?
+					<br />
+				</p>
+			</div>
+			<div className="absolute right-0 -top-[200px] ">
+				<picture className="relative mb-4">
+					<img
+						src={"/assets/food_04.jpg"}
+						alt=""
+						className="w-[800px] h-[600px]"
+					/>
+				</picture>
+			</div>
+			<div className="sticky bg-white  w-[50%] z-[999] top-10 py-4">
+				<nav className="flex items-center justify-end">
+					<ul></ul>
+					<ul className="flex justify-around items-center w-[50%]">
+						<li className="cursor-pointer">Link 1</li>
+						<li className="cursor-pointer">Link 2</li>
+						<li className="cursor-pointer">Link 3</li>
+						<li className="cursor-pointer">Link 4</li>
+						<li className="cursor-pointer">Link 5</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	);
+};
+
+export default Mission;
