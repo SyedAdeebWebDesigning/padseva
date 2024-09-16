@@ -125,4 +125,8 @@
 		z-index: 1000;
 		pointer-events: none;
 	}
+
+	.times-new-roman {
+		font-family: "Times New Roman", serif;
+	}
 }
