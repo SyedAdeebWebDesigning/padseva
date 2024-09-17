@@ -62,6 +62,10 @@
 	* {
 		@apply border-border;
 	}
+
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -129,6 +133,4 @@
 	.times-new-roman {
 		font-family: "Times New Roman", serif;
 	}
-
-	
 }

@@ -1,6 +1,6 @@
 import Animation from "@/components/shared/Animation";
 import HeroSection from "@/components/shared/HeroSection";
-import Mission from "@/components/shared/Mission";
+import MajorSections from "@/components/shared/MajorSections";
 import PlaceHolderImage from "@/components/shared/PlaceHolderImage";
 import Section from "@/components/shared/Section";
 
@@ -29,7 +29,7 @@ export default function Home() {
 
 				{/* Section 2 */}
 				<section className="relative">
-					<Mission />
+					<MajorSections />
 				</section>
 			</div>
 		</main>
