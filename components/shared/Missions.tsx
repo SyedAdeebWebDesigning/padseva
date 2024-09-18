@@ -7,7 +7,12 @@ const Missions = ({}: MissionsProps) => {
 		<div>
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]">
 				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold z-10 backdrop-blur-sm">
-					<Image src={"/assets/mission.png"} fill alt="Mission" />
+					<Image
+						src={"/assets/mission.png"}
+						fill
+						alt="Mission"
+						objectFit="contain"
+					/>
 				</picture>
 
 				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10">

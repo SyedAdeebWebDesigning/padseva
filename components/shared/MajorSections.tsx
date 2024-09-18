@@ -18,10 +18,12 @@ const MajorSections = ({}: MajorSectionsProps) => {
 						<Link
 							href={"#founder"}
 							className={buttonVariants({ variant: "link" })}>
-							Our Founder
+							Founder
 						</Link>
-						<Link href={"#"} className={buttonVariants({ variant: "link" })}>
-							Link 2
+						<Link
+							href={"#team"}
+							className={buttonVariants({ variant: "link" })}>
+							Team
 						</Link>
 						<Link href={"#"} className={buttonVariants({ variant: "link" })}>
 							Link 3

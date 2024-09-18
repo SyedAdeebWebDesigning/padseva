@@ -9,17 +9,22 @@ const OurFounder = ({}: OurFounderProps) => {
 			className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]"
 			id="founder">
 			<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
-				<Image src={"/assets/OurFounder.png"} fill alt="founder" />
+				<Image
+					src={"/assets/OurFounder.png"}
+					fill
+					alt="founder"
+					objectFit="contain"
+				/>
 			</picture>
 
 			<section className="founder-section py-12">
 				<div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
-					<div className="relative w-[300px] h-[300px] mb-6 md:mb-0">
+					<div className="relative size-[250px] md:size-[300px] mb-6 md:mb-0">
 						<Image
 							src={"/padseva.jpeg"}
 							alt="Founder"
 							fill
-							className="object-cover rounded-lg"
+							className="object-contain rounded-full md:rounded-none"
 						/>
 					</div>
 					<div className="md:ml-8">
