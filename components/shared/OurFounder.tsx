@@ -46,7 +46,7 @@ const OurFounder = ({}: OurFounderProps) => {
 						<div className="mt-8">
 							<Link
 								href=""
-								className="inline-block bg-pink-500 text-white px-6 py-3 rounded font-semibold hover:bg-pink-700 transition">
+								className="inline-block bg-[#91373E] text-white px-6 py-3 rounded font-semibold hover:bg-[#6c292f] transition">
 								Get Involved
 							</Link>
 						</div>
