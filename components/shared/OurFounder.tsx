@@ -12,6 +12,7 @@ const OurFounder = ({}: OurFounderProps) => {
 				<Image
 					src={"/assets/OurFounder.png"}
 					fill
+					className=""
 					alt="founder"
 					objectFit="contain"
 				/>

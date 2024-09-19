@@ -20,7 +20,7 @@ const Volunteers = ({}: VolunteersProps) => {
 				<Image
 					src={"/assets/team.png"}
 					fill
-					className="lg:ml-[300px]"
+					className="lg:ml-[300px] object-left"
 					alt="founder"
 					objectFit="contain"
 				/>

@@ -14,6 +14,7 @@ const Section = ({}: SectionProps) => {
 						<Image
 							src="/assets/padseva-gallery/gif.gif"
 							alt="PadSeva Image"
+							unoptimized
 							fill
 							className="object-cover object-center rounded-lg"
 						/>

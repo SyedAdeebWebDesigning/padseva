@@ -109,7 +109,7 @@ const Journey = ({}: JourneyProps) => {
 					fill
 					alt="founder"
 					objectFit="contain"
-					className="lg:ml-[300px]"
+					className="lg:ml-[300px] object-left"
 				/>
 			</picture>
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 text-white w-full py-10 container mx-auto">

@@ -11,11 +11,12 @@ const Missions = ({}: MissionsProps) => {
 						src={"/assets/mission.png"}
 						fill
 						alt="Mission"
+						className="object-left"
 						objectFit="contain"
 					/>
 				</picture>
 
-				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10">
+				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10 ">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 					recusandae molestias quibusdam, atque impedit nulla. Ratione,
 					<br />
