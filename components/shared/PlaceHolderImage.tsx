@@ -5,7 +5,7 @@ interface PlaceHolderImageProps {
 
 const PlaceHolderImage = ({
 	alt = "Placeholder Image",
-	url = "/assets/ambiance-8.jpg",
+	url = "/assets/img-1.png",
 }: PlaceHolderImageProps) => {
 	const placeholderUrl = url || `https://via.placeholder.com/`;
 
@@ -14,7 +14,7 @@ const PlaceHolderImage = ({
 			<img
 				src={placeholderUrl}
 				alt={alt}
-				className="fixed top-0 left-0 w-full h-full object-cover "
+				className="fixed top-0 left-0 w-full h-full object-cover"
 			/>
 		</div>
 	);
