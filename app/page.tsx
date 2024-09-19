@@ -96,13 +96,9 @@ export default function Home() {
 									&copy; 2024 PadSeva - All rights reserved.
 								</p>
 							</div>
-							<div className="flex items-center justify-center text-lg">
-								<Link href={"https://www.instagram.com/pad.seva"}>
-									<FaInstagram />
-								</Link>
-							</div>
-							<div className="flex items-center justify-center">
-								<p className="text-sm">
+
+							<div className="flex items-center justify-center text-gray-300">
+								<p className="text-xs">
 									Designed by
 									<Link
 										href="https://syedadeeb.vercel.app/"
@@ -110,7 +106,7 @@ export default function Home() {
 										rel="noreferrer"
 										className={cn(
 											buttonVariants({ variant: "link" }),
-											"text-white"
+											"text-gray-300 text-sm -ml-3"
 										)}>
 										Syed Adeeb
 									</Link>
