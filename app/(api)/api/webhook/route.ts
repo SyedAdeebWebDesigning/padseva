@@ -1,11 +1,11 @@
 import {
-	createUserProps,
+	CreateUserProps,
 	updateUser,
+	createUser,
 } from "../../../../lib/actions/User.action";
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent, clerkClient } from "@clerk/nextjs/server";
-import { createUser } from "../../../../lib/actions/User.action";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -43,6 +43,7 @@ export async function POST(req: Request) {
 		return new Response("Error occurred", { status: 400 });
 	}
 
+	// Handle the user.created event
 	if (evt.type === "user.created") {
 		const {
 			id,
@@ -53,29 +54,46 @@ export async function POST(req: Request) {
 			phone_numbers,
 		} = evt.data;
 
-		const user: createUserProps = {
+		if (!email_addresses || email_addresses.length === 0) {
+			return new Response("Missing email address", { status: 400 });
+		}
+
+		if (!phone_numbers || phone_numbers.length === 0) {
+			return new Response("Missing phone number", { status: 400 });
+		}
+
+		const user: CreateUserProps = {
 			clerkId: id,
 			email: email_addresses[0].email_address,
 			phone: phone_numbers[0].phone_number,
 			firstName: first_name ?? "",
 			lastName: last_name ?? "",
-			photo: image_url,
+			photo: image_url || "",
 			hasProfileCompleted: false,
-			role: "Volunteer",
+			role: "Volunteer", // Default role can be changed if needed
 		};
 
-		const newUser = await createUser(user);
-		if (newUser) {
-			await clerkClient.users.updateUserMetadata(id, {
-				publicMetadata: {
-					userId: newUser._id,
-				},
+		try {
+			const newUser = await createUser(user);
+
+			// After user creation, update the Clerk metadata
+			if (newUser) {
+				await clerkClient.users.updateUserMetadata(id, {
+					publicMetadata: {
+						userId: newUser._id,
+					},
+				});
+			}
+
+			return NextResponse.json({ message: "User created", user: newUser });
+		} catch (error) {
+			return new Response(`Error creating user: ${error.message}`, {
+				status: 500,
 			});
 		}
-
-		return NextResponse.json({ message: "OK", user: newUser });
 	}
 
+	// Handle the user.updated event
 	if (evt.type === "user.updated") {
 		const {
 			id,
@@ -86,26 +104,32 @@ export async function POST(req: Request) {
 			phone_numbers,
 		} = evt.data;
 
+		if (!email_addresses || email_addresses.length === 0) {
+			return new Response("Missing email address", { status: 400 });
+		}
+
+		if (!phone_numbers || phone_numbers.length === 0) {
+			return new Response("Missing phone number", { status: 400 });
+		}
+
 		const updateProps = {
 			email: email_addresses[0].email_address,
 			phone: phone_numbers[0].phone_number,
 			firstName: first_name ?? "",
 			lastName: last_name ?? "",
-			photo: image_url,
+			photo: image_url || "",
 		};
 
-		const updatedUser = await updateUser(id, updateProps);
-
-		return NextResponse.json({ message: "User updated", user: updatedUser });
+		try {
+			const updatedUser = await updateUser(id, updateProps);
+			return NextResponse.json({ message: "User updated", user: updatedUser });
+		} catch (error) {
+			return new Response(`Error updating user: ${error.message}`, {
+				status: 500,
+			});
+		}
 	}
 
-	// if (evt.type === "user.deleted") {
-	// 	const { id } = evt.data;
-	// 	const clerkId = id ?? "null";
-	// 	const deletedUser = await deleteUser(clerkId);
-
-	// 	return NextResponse.json({ message: "User deleted", user: deletedUser });
-	// }
-
-	return new Response("", { status: 200 });
+	// Return a default response for unknown event types
+	return new Response("Event type not handled", { status: 200 });
 }

@@ -3,67 +3,52 @@
 import User from "../database/model/User.model";
 import { connectToDatabase } from "../database";
 
-export interface createUserProps {
+export interface CreateUserProps {
 	clerkId: string;
 	email: string;
 	phone: string;
 	firstName?: string;
 	lastName?: string;
 	photo: string;
-	hasProfileCompleted: boolean; // User Defined
-	role: "Admin" | "Volunteer"; // User Defined
+	hasProfileCompleted: boolean;
+	role: "Admin" | "Volunteer";
 }
 
-export interface UpdateUserProps {
-	email?: string;
-	phone?: string;
-	firstName?: string;
-	lastName?: string;
-	photo?: string;
-}
-
-export const createUser = async (user: createUserProps) => {
+export const createUser = async (user: CreateUserProps) => {
+	await connectToDatabase();
 	try {
-		await connectToDatabase();
 		const newUser = await User.create(user);
-		return JSON.parse(JSON.stringify(newUser));
+		return newUser.toObject(); // Using Mongoose's method to convert to plain object
 	} catch (error: any) {
-		throw new Error(`Error creating user: ${error.message}`);
+		console.error(`Error creating user: ${error.message}`);
+		throw error; // Rethrow to handle it up the chain
 	}
 };
 
 export const getUserById = async (clerkId: string) => {
-	try {
-		await connectToDatabase();
-
-		const user = await User.findOne({ clerkId });
-		if (!user) {
-			return {};
-		}
-		return JSON.parse(JSON.stringify(user));
-	} catch (error: any) {
-		throw new Error(`Error fetching user: ${error.message}`);
+	await connectToDatabase();
+	const user = await User.findOne({ clerkId }).lean(); // Using lean for performance
+	if (!user) {
+		return null;
 	}
+	return user;
 };
 
 export const updateUser = async (
 	clerkId: string,
-	updateProps: UpdateUserProps
+	updateProps: Partial<CreateUserProps> // Using Partial for updates
 ) => {
+	await connectToDatabase();
 	try {
-		await connectToDatabase();
-
 		const updatedUser = await User.findOneAndUpdate({ clerkId }, updateProps, {
 			new: true,
-			runValidators: true,
-		});
-
+		}).lean();
 		if (!updatedUser) {
 			throw new Error("User not found");
 		}
-
-		return JSON.parse(JSON.stringify(updatedUser));
+		return updatedUser;
 	} catch (error: any) {
-		throw new Error(`Error updating user: ${error.message}`);
+		console.error(`Error updating user: ${error.message}`);
+		throw error;
 	}
 };
