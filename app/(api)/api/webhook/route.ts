@@ -9,7 +9,7 @@ import { createUser } from "../../../../lib/actions/User.action";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-	const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
+	const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
 
 	if (!WEBHOOK_SECRET) {
 		throw new Error(
@@ -44,8 +44,14 @@ export async function POST(req: Request) {
 	}
 
 	if (evt.type === "user.created") {
-		const { id, email_addresses, image_url, first_name, last_name, phone_numbers } =
-			evt.data;
+		const {
+			id,
+			email_addresses,
+			image_url,
+			first_name,
+			last_name,
+			phone_numbers,
+		} = evt.data;
 
 		const user: createUserProps = {
 			clerkId: id,
@@ -55,7 +61,7 @@ export async function POST(req: Request) {
 			lastName: last_name ?? "",
 			photo: image_url,
 			hasProfileCompleted: false,
-			role: "Volunteer"
+			role: "Volunteer",
 		};
 
 		const newUser = await createUser(user);
@@ -71,8 +77,14 @@ export async function POST(req: Request) {
 	}
 
 	if (evt.type === "user.updated") {
-		const { id, email_addresses, image_url, first_name, last_name, phone_numbers } =
-			evt.data;
+		const {
+			id,
+			email_addresses,
+			image_url,
+			first_name,
+			last_name,
+			phone_numbers,
+		} = evt.data;
 
 		const updateProps = {
 			email: email_addresses[0].email_address,
