@@ -86,7 +86,7 @@ export async function POST(req: Request) {
 			}
 
 			return NextResponse.json({ message: "User created", user: newUser });
-		} catch (error) {
+		} catch (error: any) {
 			return new Response(`Error creating user: ${error.message}`, {
 				status: 500,
 			});
@@ -123,7 +123,7 @@ export async function POST(req: Request) {
 		try {
 			const updatedUser = await updateUser(id, updateProps);
 			return NextResponse.json({ message: "User updated", user: updatedUser });
-		} catch (error) {
+		} catch (error: any) {
 			return new Response(`Error updating user: ${error.message}`, {
 				status: 500,
 			});
