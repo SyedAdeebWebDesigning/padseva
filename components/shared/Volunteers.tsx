@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
 	Carousel,
@@ -8,13 +7,15 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
 
 interface VolunteersProps {}
 
 const Volunteers = ({}: VolunteersProps) => {
 	return (
 		<div
-			className="mx-auto flex w-full flex-col justify-center items-start p-14 "
+			className="mx-auto flex w-full flex-col justify-center items-start p-14"
 			id="team">
 			<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
 				<Image
@@ -46,6 +47,16 @@ const Volunteers = ({}: VolunteersProps) => {
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>
+			<SignedOut>
+				<div className="flex flex-col justify-center items-center  w-full">
+					<h3 className="text-2xl text-center w-full">Want to join us?</h3>
+					<Link
+						href="/sign-in"
+						className="py-2 px-6 my-2 border-[#91373E] border-2 rounded hover:bg-[#91373E] hover:text-white">
+						Sign In
+					</Link>
+				</div>
+			</SignedOut>
 		</div>
 	);
 };
