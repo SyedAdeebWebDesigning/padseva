@@ -2,7 +2,7 @@ import {
 	CreateUserProps,
 	updateUser,
 	createUser,
-} from "../../../../lib/actions/User.action";
+} from "../../../lib/actions/User.action";
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent, clerkClient } from "@clerk/nextjs/server";
