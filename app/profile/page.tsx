@@ -15,8 +15,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
-interface pageProps {}
+import { useSearchParams } from "next/navigation"; // Import this to get query params
+import { completeUserProfile } from "@/lib/actions/User.action";
+import { toast } from "react-toastify";
 
 const formSchema = z.object({
 	description: z
@@ -35,7 +36,7 @@ const formSchema = z.object({
 		.url(),
 });
 
-const page = ({}: pageProps) => {
+const Page = () => {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -44,12 +45,32 @@ const page = ({}: pageProps) => {
 		},
 	});
 
+	// Get the search parameters
+	const searchParams = useSearchParams();
+	const clerkId = searchParams.get("clerkId"); // Extract clerkId from URL
+
 	// 2. Define a submit handler.
-	function onSubmit(values: z.infer<typeof formSchema>) {
+	async function onSubmit(values: z.infer<typeof formSchema>) {
 		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
-		console.log(values);
+		const description = values.description;
+		const instagramUrl = values.instagramProfile;
+
+		// 3. Make a POST request to your API.
+		try {
+			const data = await completeUserProfile({
+				description,
+				instagramUrl,
+				userClerkId: clerkId as string,
+			});
+			toast.success("Profile updated successfully");
+			console.log(data);
+		} catch (error) {
+			toast.error("Failed to update profile");
+		} finally {
+			form.reset();
+		}
 	}
+
 	return (
 		<div className="bg-[#ffe8e8]">
 			<div className="min-h-screen flex flex-col items-center justify-center px-2 w-full">
@@ -87,7 +108,6 @@ const page = ({}: pageProps) => {
 											{...field}
 										/>
 									</FormControl>
-
 									<FormMessage />
 								</FormItem>
 							)}
@@ -115,4 +135,4 @@ const page = ({}: pageProps) => {
 	);
 };
 
-export default page;
+export default Page;

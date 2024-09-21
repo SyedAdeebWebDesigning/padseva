@@ -80,7 +80,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 							Your profile is not completed
 						</h3>
 						<Link
-							href="/profile"
+							href={`/profile?clerkId=${user?.id || ""}`}
 							className="py-2 px-6 my-2 border-[#91373E] border-2 rounded hover:bg-[#91373E] hover:text-white">
 							Complete Profile
 						</Link>
