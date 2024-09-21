@@ -71,6 +71,8 @@ export async function POST(req: Request) {
 			photo: image_url || "",
 			hasProfileCompleted: false,
 			role: "Volunteer", // Default role can be changed if needed
+			description: "",
+			instagramUrl: "",
 		};
 
 		try {

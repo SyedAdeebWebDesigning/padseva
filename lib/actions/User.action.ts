@@ -9,6 +9,8 @@ export interface CreateUserProps {
 	phone: string;
 	firstName?: string;
 	lastName?: string;
+	instagramUrl?: string;
+	description?: string;
 	photo: string;
 	hasProfileCompleted: boolean;
 	role: "Admin" | "Volunteer";
