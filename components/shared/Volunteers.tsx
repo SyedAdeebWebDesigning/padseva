@@ -63,18 +63,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 				</div>
 			</SignedOut>
 			<SignedIn>
-				{mongoUser?.hasCompletedProfile ? (
-					<div className="flex flex-col justify-center items-center  w-full">
-						<h3 className="text-2xl text-center w-full">
-							{mongoUser?.firstName} {mongoUser?.lastName}
-						</h3>
-						<Link
-							href="/sign-in"
-							className="py-2 px-6 my-2 border-[#91373E] border-2 rounded hover:bg-[#91373E] hover:text-white">
-							Sign In
-						</Link>
-					</div>
-				) : (
+				{!mongoUser?.hasCompletedProfile && (
 					<div className="flex flex-col justify-center items-center  w-full">
 						<h3 className="text-2xl text-center w-full">
 							Your profile is not completed
