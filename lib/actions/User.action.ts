@@ -12,7 +12,7 @@ export interface CreateUserProps {
 	instagramUrl?: string;
 	description?: string;
 	photo: string;
-	hasProfileCompleted: boolean;
+	hasCompletedProfile: boolean;
 	role: "Admin" | "Volunteer";
 }
 
@@ -72,7 +72,7 @@ export const completeUserProfile = async ({
 		const updated = await updateUser(userClerkId, {
 			description,
 			instagramUrl,
-			hasProfileCompleted: true, // Mark profile as complete
+			hasCompletedProfile: true, // Mark profile as complete
 		});
 
 		// Return the updated user details on success
