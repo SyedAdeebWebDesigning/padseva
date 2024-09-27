@@ -12,6 +12,7 @@ import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import { getUserById } from "@/lib/actions/User.action";
 import User from "@/lib/database/model/User.model";
+import Volunteer from "./Volunteer";
 
 interface VolunteersProps {}
 
@@ -26,7 +27,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 				<Image
 					src={"/assets/team.png"}
 					fill
-					className="lg:ml-[300px] object-left"
+					className="lg:ml-[300px] object-left drop-shadow-pink"
 					alt="founder"
 					objectFit="contain"
 				/>
@@ -38,15 +39,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 				className="w-full max-w-7xl mx-auto my-10">
 				<CarouselContent>
 					{Array.from({ length: 5 }).map((_, index) => (
-						<CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-							<div className="p-1">
-								<Card>
-									<CardContent className="flex aspect-square items-center justify-center p-6">
-										<span className="text-3xl font-semibold">{index + 1}</span>
-									</CardContent>
-								</Card>
-							</div>
-						</CarouselItem>
+						<Volunteer index={index} />
 					))}
 				</CarouselContent>
 				<CarouselPrevious />

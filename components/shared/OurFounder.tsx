@@ -12,7 +12,7 @@ const OurFounder = ({}: OurFounderProps) => {
 				<Image
 					src={"/assets/OurFounder.png"}
 					fill
-					className=""
+					className="object-left drop-shadow-pink"
 					alt="founder"
 					objectFit="contain"
 				/>
@@ -29,17 +29,19 @@ const OurFounder = ({}: OurFounderProps) => {
 						/>
 					</div>
 					<div className="md:ml-8">
-						<h3 className="text-xl font-medium mb-2">[Founder Name]</h3>
+						<h3 className="text-xl font-medium mb-2">Anwitha Srivatsa</h3>
 						<p className="text-gray-600 mb-8">Founder and CEO, PadSeva</p>
 
 						<div className="max-w-3xl">
 							<p className="text-lg text-gray-700 mb-4">
-								[Insert personal story about the founder’s motivation for
-								starting the initiative, challenges, and their journey.]
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+								voluptate deleniti exercitationem accusantium fuga natus tempore
+								iure, veniam nulla quasi?
 							</p>
 							<p className="text-lg text-gray-700">
-								[Insert the founder's vision, values, and goals for the future
-								of the organization.]
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae,
+								ad nostrum soluta dolores asperiores at officia fugiat suscipit?
+								Quisquam deserunt ipsam, quas distinctio excepturi sapiente.
 							</p>
 						</div>
 

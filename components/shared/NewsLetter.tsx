@@ -10,7 +10,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 					<Image
 						src={"/assets/newsletter.png"}
 						fill
-						className="lg:mx-[300px] object-left"
+						className="lg:mx-[300px] object-left drop-shadow-pink"
 						alt="founder"
 						objectFit="contain"
 					/>

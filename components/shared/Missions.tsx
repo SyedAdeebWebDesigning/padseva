@@ -11,14 +11,17 @@ const Missions = ({}: MissionsProps) => {
 						src={"/assets/mission.png"}
 						fill
 						alt="Mission"
-						className="object-left"
+						className="object-left drop-shadow-pink"
 						objectFit="contain"
 					/>
 				</picture>
 
 				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10 ">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-					recusandae molestias quibusdam, atque impedit nulla. Ratione,
+					To eradicate period poverty and promote menstrual hygiene in rural
+					southern India by providing access to affordable, biodegradable bamboo
+					sanitary pads. Through education, community engagement, and
+					sustainable innovation, we empower individuals to manage their periods
+					with dignity and advocate for gender equality.
 					<br />
 				</p>
 			</section>

@@ -133,4 +133,8 @@
 	.times-new-roman {
 		font-family: "Times New Roman", serif;
 	}
+
+	.drop-shadow-pink {
+		filter: drop-shadow(2px 2px 10px #f68e98);
+	}
 }

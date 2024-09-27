@@ -24,7 +24,12 @@ const Section = ({}: SectionProps) => {
 				{/* Left Text Section */}
 				<div className="flex flex-col justify-center items-start p-10 order-2 lg:order-1 lg:pl-40">
 					<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
-						<Image src={"/assets/AboutPadSeva.png"} fill alt="" />
+						<Image
+							src={"/assets/AboutPadSeva.png"}
+							className="drop-shadow-pink"
+							fill
+							alt=""
+						/>
 					</picture>
 					<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman">
 						At PadSeva, we are dedicated to eradicating period poverty and

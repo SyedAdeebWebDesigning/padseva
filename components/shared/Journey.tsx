@@ -15,28 +15,23 @@ const Journey = ({}: JourneyProps) => {
 
 	const JourneyItems = [
 		{
-			title: "Children helped",
-			value: 400,
+			title: "Bamboo Pads Synthesized",
+			value: 7500,
 			isMore: false,
 		},
 		{
-			title: "Women in rural areas",
-			value: 250,
-			isMore: true,
-		},
-		{
-			title: "Branches",
-			value: 6,
-			isMore: false,
-		},
-		{
-			title: "Successful events",
-			value: 20,
+			title: "Women Met",
+			value: 9000,
 			isMore: false,
 		},
 		{
 			title: "Volunteers",
-			value: 80,
+			value: 30,
+			isMore: true,
+		},
+		{
+			title: "Dollars Raised",
+			value: 6000,
 			isMore: true,
 		},
 	];
@@ -112,7 +107,7 @@ const Journey = ({}: JourneyProps) => {
 					className="lg:ml-[300px] object-left"
 				/>
 			</picture>
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 text-white w-full py-10 container mx-auto">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  text-white w-full py-10 container mx-auto">
 				{JourneyItems.map((item, index) => (
 					<div
 						key={index}
