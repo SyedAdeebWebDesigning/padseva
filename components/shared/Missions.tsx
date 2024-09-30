@@ -16,7 +16,7 @@ const Missions = ({}: MissionsProps) => {
 					/>
 				</picture>
 
-				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10 ">
+				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10 text-justify">
 					To eradicate period poverty and promote menstrual hygiene in rural
 					southern India by providing access to affordable, biodegradable bamboo
 					sanitary pads. Through education, community engagement, and

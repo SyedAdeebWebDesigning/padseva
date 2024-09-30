@@ -31,7 +31,7 @@ const Section = ({}: SectionProps) => {
 							alt=""
 						/>
 					</picture>
-					<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman">
+					<p className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman text-justify">
 						At PadSeva, we are dedicated to eradicating period poverty and
 						promoting menstrual hygiene in rural communities across southern
 						India. Founded with a mission to provide access to affordable,

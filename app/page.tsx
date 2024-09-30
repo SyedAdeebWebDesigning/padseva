@@ -10,17 +10,7 @@ import Section from "@/components/shared/Section";
 import Volunteers from "@/components/shared/Volunteers";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { SignedOut, UserButton } from "@clerk/nextjs";
-import { User2 } from "lucide-react";
 import Link from "next/link";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Home() {
 	return (
@@ -78,9 +68,6 @@ export default function Home() {
 								)}>
 								Contact Us
 							</Link>
-							<div className="mt-1">
-								<UserButton />
-							</div>
 						</ul>
 					</nav>
 				</section>

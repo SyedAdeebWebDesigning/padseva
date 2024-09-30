@@ -33,12 +33,12 @@ const OurFounder = ({}: OurFounderProps) => {
 						<p className="text-gray-600 mb-8">Founder and CEO, PadSeva</p>
 
 						<div className="max-w-3xl">
-							<p className="text-lg text-gray-700 mb-4">
+							<p className="text-lg text-gray-700 mb-4 text-justify">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
 								voluptate deleniti exercitationem accusantium fuga natus tempore
 								iure, veniam nulla quasi?
 							</p>
-							<p className="text-lg text-gray-700">
+							<p className="text-lg text-gray-700 text-justify">
 								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae,
 								ad nostrum soluta dolores asperiores at officia fugiat suscipit?
 								Quisquam deserunt ipsam, quas distinctio excepturi sapiente.

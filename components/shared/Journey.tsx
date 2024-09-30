@@ -22,12 +22,12 @@ const Journey = ({}: JourneyProps) => {
 		{
 			title: "Women Met",
 			value: 9000,
-			isMore: false,
+			isMore: true,
 		},
 		{
 			title: "Volunteers",
 			value: 30,
-			isMore: true,
+			isMore: false,
 		},
 		{
 			title: "Dollars Raised",
