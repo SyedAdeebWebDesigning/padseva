@@ -29,7 +29,7 @@ const OurFounder = ({}: OurFounderProps) => {
 						/>
 					</div>
 					<div className="md:ml-8">
-						<h3 className="text-xl font-medium mb-2">Anwitha Srivatsa</h3>
+						<h3 className="text-3xl font-medium">Anwitha Srivatsa</h3>
 						<p className="text-gray-600 mb-8">Founder of PadSeva</p>
 
 						<div className="max-w-3xl">

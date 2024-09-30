@@ -13,6 +13,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { getUserById } from "@/lib/actions/User.action";
 import User from "@/lib/database/model/User.model";
 import Volunteer from "./Volunteer";
+import { buttonVariants } from "../ui/button";
 
 interface VolunteersProps {}
 
@@ -43,6 +44,18 @@ const Volunteers = async ({}: VolunteersProps) => {
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>
+			<div className="flex items-center flex-col mx-auto">
+				<h3 className="text-3xl">Want to become a volunteer?</h3>
+				<Link
+					href={
+						"https://docs.google.com/forms/d/1zIZVMRkoxEilSwDCoBdWnwsWeehlv__DI3UpPSEDRpg/edit"
+					}
+					className={
+						"px-4 py-2 border-2 bg-transparent border-[#91373e] rounded transition-all duration-150 ease-in-out my-2 hover:bg-[#91373e] hover:text-white"
+					}>
+					Fill out the form
+				</Link>
+			</div>
 		</div>
 	);
 };
