@@ -22,15 +22,15 @@ const OurFounder = ({}: OurFounderProps) => {
 				<div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
 					<div className="relative size-[250px] md:size-[300px] mb-6 md:mb-0">
 						<Image
-							src={"/padseva.jpeg"}
+							src={"/assets/founder.jpeg"}
 							alt="Founder"
 							fill
-							className="object-contain rounded-full md:rounded-none"
+							className="object-cover rounded-full md:rounded-none"
 						/>
 					</div>
 					<div className="md:ml-8">
 						<h3 className="text-xl font-medium mb-2">Anwitha Srivatsa</h3>
-						<p className="text-gray-600 mb-8">Founder and CEO, PadSeva</p>
+						<p className="text-gray-600 mb-8">Founder of PadSeva</p>
 
 						<div className="max-w-3xl">
 							<p className="text-lg text-gray-700 mb-4 text-justify">

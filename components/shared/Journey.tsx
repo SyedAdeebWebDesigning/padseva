@@ -20,7 +20,7 @@ const Journey = ({}: JourneyProps) => {
 			isMore: false,
 		},
 		{
-			title: "Women Met",
+			title: "Womans Met",
 			value: 9000,
 			isMore: true,
 		},
