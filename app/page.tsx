@@ -1,6 +1,7 @@
 import Animation from "@/components/shared/Animation";
 import Contact from "@/components/shared/Contact";
 import HeroSection from "@/components/shared/HeroSection";
+import InstagramFeeds from "@/components/shared/InstagramFeeds";
 import Journey from "@/components/shared/Journey";
 import Missions from "@/components/shared/Missions";
 import NewsLetter from "@/components/shared/NewsLetter";
@@ -14,7 +15,7 @@ import Link from "next/link";
 
 export default function Home() {
 	return (
-		<main>
+		<main className="">
 			<Animation />
 
 			<div className="relative z-20">
@@ -85,9 +86,12 @@ export default function Home() {
 					<NewsLetter />
 				</section>
 				<section className="bg-[#ffe8e8] relative">
+					<InstagramFeeds />
+				</section>
+				<section className="bg-[#ffe8e8] relative">
 					<Contact />
 				</section>
-				<footer className="relative ">
+				<footer className="relative">
 					<div className="bg-[#43191d] text-white">
 						<div className="container mx-auto flex flex-col md:flex-row items-center justify-around p-4">
 							<div className="flex items-center justify-center">

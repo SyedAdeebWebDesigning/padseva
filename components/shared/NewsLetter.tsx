@@ -22,13 +22,13 @@ const issues = [
 const NewsLetter = ({}: NewsLetterProps) => {
 	return (
 		<div id="newsletter">
-			<section className="mx-auto flex w-full flex-col justify-center items-center p-6 md:p-10">
+			<section className="mx-auto flex w-full flex-col justify-center p-6 md:p-10">
 				{/* Header image */}
-				<picture className="relative w-[200px] h-[50px] sm:w-[250px] sm:h-[60px] md:w-[300px] lg:w-[450px] lg:h-20 font-semibold z-10 backdrop-blur-sm mt-20 md:mt-32">
+				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
 					<Image
 						src={"/assets/newsletter.png"}
 						fill
-						className="object-left drop-shadow-pink"
+						className="lg:ml-[300px] object-left drop-shadow-pink"
 						alt="founder"
 						style={{ objectFit: "contain" }}
 					/>
@@ -44,6 +44,15 @@ const NewsLetter = ({}: NewsLetterProps) => {
 						</Link>
 					))}
 				</div>
+				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
+					<Image
+						src={"/assets/foundation.png"}
+						fill
+						className="lg:ml-[300px] object-left drop-shadow-pink"
+						alt="founder"
+						style={{ objectFit: "contain" }}
+					/>
+				</picture>
 			</section>
 		</div>
 	);

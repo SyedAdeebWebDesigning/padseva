@@ -6,7 +6,7 @@ const Missions = ({}: MissionsProps) => {
 	return (
 		<div>
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]">
-				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold z-10 backdrop-blur-sm">
+				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold z-10">
 					<Image
 						src={"/assets/mission.png"}
 						fill
@@ -17,11 +17,10 @@ const Missions = ({}: MissionsProps) => {
 				</picture>
 
 				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10 text-justify">
-					To eradicate period poverty and promote menstrual hygiene in rural
-					southern India by providing access to affordable, biodegradable bamboo
-					sanitary pads. Through education, community engagement, and
-					sustainable innovation, we empower individuals to manage their periods
-					with dignity and advocate for gender equality.
+					Empowering communities, one pad at a time. We believe in dignity,
+					equality, and the basic right to menstrual hygiene. Join us in our
+					mission to eradicate period poverty and uplift undeserved communities
+					in southern India. Together, we can create a more equitable society.
 					<br />
 				</p>
 			</section>
