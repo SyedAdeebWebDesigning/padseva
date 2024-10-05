@@ -69,7 +69,6 @@ export async function POST(req: Request) {
 			firstName: first_name ?? "",
 			lastName: last_name ?? "",
 			photo: image_url || "",
-			hasCompletedProfile: false,
 			role: "Volunteer", // Default role can be changed if needed
 		};
 

@@ -10,7 +10,6 @@ export interface CreateUserProps {
 	firstName?: string;
 	lastName?: string;
 	photo: string;
-	hasCompletedProfile: boolean;
 	role: "Admin" | "Volunteer";
 }
 
