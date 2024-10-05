@@ -10,12 +10,62 @@ import PlaceHolderImage from "@/components/shared/PlaceHolderImage";
 import Section from "@/components/shared/Section";
 import Volunteers from "@/components/shared/Volunteers";
 import { buttonVariants } from "@/components/ui/button";
+import { getUserById } from "@/lib/actions/User.action";
+import User from "@/lib/database/model/User.model";
 import { cn } from "@/lib/utils";
+import { currentUser } from "@clerk/nextjs/server";
+import { LayoutDashboard, MoreVertical, User2 } from "lucide-react";
 import Link from "next/link";
 
-export default function Home() {
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import LogOutButton from "@/components/shared/LogOutButton";
+import { SignedIn } from "@clerk/nextjs";
+
+export default async function Home() {
+	const clerkUser = await currentUser();
+	const clerkUserId = clerkUser?.id || "";
+	const user = (await getUserById(clerkUserId)) as User;
+	const isAdmin = user.role === "Admin";
 	return (
 		<main className="">
+			<SignedIn>
+				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full">
+					<DropdownMenu>
+						<DropdownMenuTrigger>
+							<div className="flex items-center size-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
+								<MoreVertical className="" />
+							</div>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent className="sm:w-auto">
+							<div className="flex">
+								{isAdmin && (
+									<Link
+										href={"/dashboard"}
+										className={buttonVariants({ variant: "link" })}>
+										<p className="flex items-center">
+											<LayoutDashboard className="mr-2" />
+											<span className="hidden sm:flex">Dashboard</span>
+										</p>
+									</Link>
+								)}
+								<Link
+									href={"/user-profile"}
+									className={buttonVariants({ variant: "link" })}>
+									<p className="flex items-center">
+										<User2 className="mr-2" />
+										<span className="hidden sm:flex">Your Profile</span>
+									</p>
+								</Link>
+								<LogOutButton />
+							</div>
+						</DropdownMenuContent>
+					</DropdownMenu>
+				</section>
+			</SignedIn>
 			<Animation />
 
 			<div className="relative z-20">
