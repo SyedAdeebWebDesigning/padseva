@@ -9,12 +9,12 @@ import OurFounder from "@/components/shared/OurFounder";
 import PlaceHolderImage from "@/components/shared/PlaceHolderImage";
 import Section from "@/components/shared/Section";
 import Volunteers from "@/components/shared/Volunteers";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { getUserById } from "@/lib/actions/User.action";
 import User from "@/lib/database/model/User.model";
 import { cn } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
-import { LayoutDashboard, MoreVertical, User2 } from "lucide-react";
+import { LayoutDashboard, LogInIcon, MoreVertical, User2 } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -23,13 +23,13 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import LogOutButton from "@/components/shared/LogOutButton";
-import { SignedIn } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
 	const clerkUserId = clerkUser?.id || "";
 	const user = (await getUserById(clerkUserId)) as User;
-	const isAdmin = user.role === "Admin";
+	const isAdmin = user?.role === "Admin";
 	return (
 		<main className="">
 			<SignedIn>
@@ -66,6 +66,27 @@ export default async function Home() {
 					</DropdownMenu>
 				</section>
 			</SignedIn>
+			<SignedOut>
+				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full outline-none">
+					<DropdownMenu>
+						<DropdownMenuTrigger className="outline-none">
+							<div className="flex items-center size-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
+								<MoreVertical className="" />
+							</div>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent className="sm:w-auto z-[9999] relative">
+							<div className="flex">
+								<Button
+									variant={"link"}
+									className="flex items-center justify-center">
+									<LogInIcon className="mr-2" />
+									<SignInButton />
+								</Button>
+							</div>
+						</DropdownMenuContent>
+					</DropdownMenu>
+				</section>
+			</SignedOut>
 			<Animation />
 
 			<div className="relative z-20">
