@@ -9,8 +9,6 @@ interface User extends Document {
 	hasCompletedProfile: boolean;
 	photo: string;
 	role: "Admin" | "Volunteer";
-	instagramUrl: string;
-	description: string;
 	createdAt?: Date;
 	updatedAt?: Date;
 }
@@ -22,8 +20,6 @@ const UserSchema = new Schema<User>(
 		phone: { type: String, required: true, unique: true },
 		firstName: { type: String },
 		lastName: { type: String },
-		description: { type: String },
-		instagramUrl: { type: String },
 		hasCompletedProfile: { type: Boolean, default: false },
 		role: { type: String, required: true, enum: ["Admin", "Volunteer"] },
 		photo: { type: String, required: true },

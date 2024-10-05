@@ -9,8 +9,6 @@ export interface CreateUserProps {
 	phone: string;
 	firstName?: string;
 	lastName?: string;
-	instagramUrl?: string;
-	description?: string;
 	photo: string;
 	hasCompletedProfile: boolean;
 	role: "Admin" | "Volunteer";
@@ -52,39 +50,5 @@ export const updateUser = async (
 	} catch (error: any) {
 		console.error(`Error updating user: ${error.message}`);
 		throw error;
-	}
-};
-
-export const completeUserProfile = async ({
-	description,
-	instagramUrl,
-	userClerkId,
-}: {
-	description: string;
-	instagramUrl: string;
-	userClerkId: string;
-}) => {
-	// Connect to the database
-	await connectToDatabase();
-
-	try {
-		// Update the user profile
-		const updated = await updateUser(userClerkId, {
-			description,
-			instagramUrl,
-			hasCompletedProfile: true, // Mark profile as complete
-		});
-
-		// Return the updated user details on success
-		return { success: true, data: updated };
-	} catch (error: any) {
-		// Log the error details for debugging purposes
-		console.error(`Error completing user profile: ${error.message}`);
-
-		// Return the error message to the caller
-		return {
-			success: false,
-			error: "Failed to Complete User Profile",
-		};
 	}
 };
