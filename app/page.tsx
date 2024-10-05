@@ -33,14 +33,14 @@ export default async function Home() {
 	return (
 		<main className="">
 			<SignedIn>
-				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full">
+				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full outline-none">
 					<DropdownMenu>
-						<DropdownMenuTrigger>
+						<DropdownMenuTrigger className="outline-none">
 							<div className="flex items-center size-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
 								<MoreVertical className="" />
 							</div>
 						</DropdownMenuTrigger>
-						<DropdownMenuContent className="sm:w-auto">
+						<DropdownMenuContent className="sm:w-auto z-[9999] relative">
 							<div className="flex">
 								{isAdmin && (
 									<Link
