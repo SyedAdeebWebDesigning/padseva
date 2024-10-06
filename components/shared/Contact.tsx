@@ -120,7 +120,7 @@ const Contact = ({}: ContactProps) => {
 								render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Textarea placeholder="Enter you message" {...field} />
+											<Textarea placeholder="Enter your message" {...field} />
 										</FormControl>
 										<FormMessage />
 									</FormItem>
