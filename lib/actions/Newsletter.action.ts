@@ -32,6 +32,10 @@ export const getAllNewsLetters = async () => {
 	await connectToDatabase();
 	const newsletters = await SchemaNewsLetter.find().lean();
 	return newsletters;
+
+	if (!newsletters) {
+		return [];
+	}
 };
 
 export const updateNewsLetter = async (

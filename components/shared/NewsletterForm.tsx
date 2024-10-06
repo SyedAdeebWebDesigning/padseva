@@ -3,16 +3,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import {
-	Form,
-	FormField,
-	FormItem,
-	FormControl,
-	FormMessage,
-} from "@/components/ui/form"; // Adjust import paths as needed
+import { Form, FormItem, FormControl, FormMessage } from "@/components/ui/form"; // Adjust import paths as needed
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import { createNewsLetter } from "@/lib/actions/Newsletter.action";
+import { useRouter } from "next/navigation";
 
 // Define schema using Zod for form validation
 const formSchema = z.object({
@@ -27,6 +24,7 @@ const formSchema = z.object({
 const NewsletterForm = () => {
 	const [imagePreview, setImagePreview] = useState<string | null>(null);
 	const [pdfPreview, setPdfPreview] = useState<string | null>(null);
+	const router = useRouter();
 
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -41,9 +39,22 @@ const NewsletterForm = () => {
 	});
 
 	// Handle form submission
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log("Form Submitted", values);
-		form.reset();
+	async function onSubmit(values: z.infer<typeof formSchema>) {
+		const coverPhotoUrl = values.coverPhoto;
+		const pdfUrl = values.pdf;
+		try {
+			const newsletter = {
+				issueCoverPhoto: coverPhotoUrl.url,
+				issuePDF: pdfUrl.url,
+			};
+			await createNewsLetter(newsletter);
+			toast.success("Newsletter created successfully");
+			setTimeout(() => {
+				router.push("/issues");
+			}, 1500);
+		} catch (error) {
+			toast.error("Error creating newsletter");
+		}
 	}
 
 	// Handle image upload
