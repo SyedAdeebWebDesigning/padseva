@@ -47,12 +47,10 @@ const NewsletterForm = () => {
 				issueCoverPhoto: coverPhotoUrl.url,
 				issuePDF: pdfUrl.url,
 			};
-			console.log(newsletter);
-
 			await createNewsLetter(newsletter);
 			toast.success("Newsletter created successfully");
 			setTimeout(() => {
-				router.push("/issues");
+				router.refresh();
 			}, 1500);
 			form.reset(); // Reset form after submission
 			setImagePreview(null); // Reset image preview
@@ -62,32 +60,30 @@ const NewsletterForm = () => {
 		}
 	}
 
-	// Handle file change for images and PDFs
+	// Handle file change for images
 	const handleFileChange = (
 		e: React.ChangeEvent<HTMLInputElement>,
 		type: "image" | "pdf"
 	) => {
 		const files = e.target.files;
 		if (files) {
-			const file = files[0];
-			const reader = new FileReader();
+			if (type === "image") {
+				const file = files[0];
+				const reader = new FileReader();
 
-			reader.onload = (event) => {
-				if (event.target && typeof event.target.result === "string") {
-					if (type === "image") {
+				reader.onload = (event) => {
+					if (event.target && typeof event.target.result === "string") {
 						setImagePreview(event.target.result);
 						form.setValue("coverPhoto.url", event.target.result);
-					} else if (type === "pdf") {
-						setPdfPreview(event.target.result); // Use Data URL for PDF preview
-						form.setValue("pdf.url", event.target.result);
 					}
-				}
-			};
+				};
 
-			if (type === "image") {
-				reader.readAsDataURL(file); // Read image as Data URL
+				reader.readAsDataURL(file);
 			} else if (type === "pdf") {
-				reader.readAsDataURL(file); // Read PDF as Data URL
+				const file = files[0];
+				const url = URL.createObjectURL(file);
+				setPdfPreview(url);
+				form.setValue("pdf.url", url);
 			}
 		}
 	};
