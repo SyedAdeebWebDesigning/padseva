@@ -14,10 +14,10 @@ import { useRouter } from "next/navigation";
 // Define schema using Zod for form validation
 const formSchema = z.object({
 	coverPhoto: z.object({
-		url: z.string().min(1, "Please upload a valid image file."),
+		url: z.string().nonempty("Please upload a valid image file."),
 	}),
 	pdf: z.object({
-		url: z.string().min(1, "Please upload a valid PDF file."),
+		url: z.string().nonempty("Please upload a valid PDF file."),
 	}),
 });
 
@@ -47,37 +47,48 @@ const NewsletterForm = () => {
 				issueCoverPhoto: coverPhotoUrl.url,
 				issuePDF: pdfUrl.url,
 			};
+			console.log(newsletter);
+
 			await createNewsLetter(newsletter);
 			toast.success("Newsletter created successfully");
 			setTimeout(() => {
 				router.push("/issues");
 			}, 1500);
+			form.reset(); // Reset form after submission
+			setImagePreview(null); // Reset image preview
+			setPdfPreview(null); // Reset PDF preview
 		} catch (error) {
 			toast.error("Error creating newsletter");
 		}
 	}
 
-	// Handle image upload
-	const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const file = e.target.files?.[0];
-		if (file && file.type.startsWith("image")) {
-			const url = URL.createObjectURL(file);
-			setImagePreview(url);
-			form.setValue("coverPhoto.url", url);
-		} else {
-			alert("Please upload a valid image file.");
-		}
-	};
+	// Handle file change for images and PDFs
+	const handleFileChange = (
+		e: React.ChangeEvent<HTMLInputElement>,
+		type: "image" | "pdf"
+	) => {
+		const files = e.target.files;
+		if (files) {
+			const file = files[0];
+			const reader = new FileReader();
 
-	// Handle PDF upload
-	const handlePDFUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const file = e.target.files?.[0];
-		if (file && file.type === "application/pdf") {
-			const url = URL.createObjectURL(file);
-			setPdfPreview(url);
-			form.setValue("pdf.url", url);
-		} else {
-			alert("Please upload a valid PDF file.");
+			reader.onload = (event) => {
+				if (event.target && typeof event.target.result === "string") {
+					if (type === "image") {
+						setImagePreview(event.target.result);
+						form.setValue("coverPhoto.url", event.target.result);
+					} else if (type === "pdf") {
+						setPdfPreview(event.target.result); // Use Data URL for PDF preview
+						form.setValue("pdf.url", event.target.result);
+					}
+				}
+			};
+
+			if (type === "image") {
+				reader.readAsDataURL(file); // Read image as Data URL
+			} else if (type === "pdf") {
+				reader.readAsDataURL(file); // Read PDF as Data URL
+			}
 		}
 	};
 
@@ -97,7 +108,7 @@ const NewsletterForm = () => {
 								id="coverPhoto"
 								type="file"
 								accept="image/*"
-								onChange={handleImageUpload}
+								onChange={(e) => handleFileChange(e, "image")}
 								className="mt-2"
 							/>
 						</FormControl>
@@ -121,7 +132,7 @@ const NewsletterForm = () => {
 								id="pdf"
 								type="file"
 								accept="application/pdf"
-								onChange={handlePDFUpload}
+								onChange={(e) => handleFileChange(e, "pdf")}
 								className="mt-2"
 							/>
 						</FormControl>

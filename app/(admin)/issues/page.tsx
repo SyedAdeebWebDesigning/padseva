@@ -37,13 +37,13 @@ const page = async ({}: pageProps) => {
 									fill
 								/>
 							</div>
-							<Link
+							<a
 								href={newsletter.issuePDF}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-blue-500">
 								View PDF
-							</Link>
+							</a>
 						</div>
 					))}
 				</div>
