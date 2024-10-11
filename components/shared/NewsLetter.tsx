@@ -21,10 +21,20 @@ const issues = [
 
 const NewsLetter = ({}: NewsLetterProps) => {
 	return (
-		<div id="newsletter">
+		<div
+			id="newsletter"
+			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-50 -mt-2">
+			<div className="absolute inset-x-0 top-0 z-0">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+					<path
+						fill="#ffbaba"
+						fill-opacity="1"
+						d="M0,64L120,80C240,96,480,128,720,128C960,128,1200,96,1320,80L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+				</svg>
+			</div>
 			<section className="mx-auto flex w-full flex-col justify-center p-6 md:p-10">
 				{/* Header image */}
-				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
+				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10  mt-32">
 					<Image
 						src={"/assets/newsletter.png"}
 						fill
@@ -44,15 +54,6 @@ const NewsLetter = ({}: NewsLetterProps) => {
 						</Link>
 					))}
 				</div>
-				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
-					<Image
-						src={"/assets/foundation.png"}
-						fill
-						className="lg:ml-[300px] object-left drop-shadow-pink"
-						alt="founder"
-						style={{ objectFit: "contain" }}
-					/>
-				</picture>
 			</section>
 		</div>
 	);

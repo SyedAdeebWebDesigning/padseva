@@ -14,8 +14,17 @@ const InstagramFeeds = ({}: InstagramFeedsProps) => {
 	}, []);
 
 	return (
-		<div className="container relative mx-auto z-20">
+		<div className="container relative mx-auto z-20 py-10">
 			{/* Instagram Feeds Section */}
+			<div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto h-20">
+				<Image
+					src={"/assets/foundation.png"}
+					fill
+					className="object-left drop-shadow-pink"
+					alt="founder"
+					style={{ objectFit: "contain" }}
+				/>
+			</div>
 			<div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto">
 				{isClient && (
 					<>

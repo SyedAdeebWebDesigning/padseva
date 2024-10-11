@@ -56,9 +56,14 @@ const Contact = ({}: ContactProps) => {
 		form.reset();
 	}
 	return (
-		<div id="contact">
+		<div id="contact" className="relative">
+			<div className="absolute top-10 right-0 2xl:right-52 ">
+				<div className="relative size-[400px] opacity-45">
+					<Image src={"/Flower-1.png"} alt="" fill />
+				</div>
+			</div>
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10">
-				<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 backdrop-blur-sm mt-32">
+				<picture className="relative z-20 w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold  mt-32">
 					<Image
 						src={"/assets/contact.png"}
 						fill
@@ -67,7 +72,7 @@ const Contact = ({}: ContactProps) => {
 						objectFit="contain"
 					/>
 				</picture>
-				<div className="flex items-center justify-center w-full mx-auto my-10">
+				<div className="flex items-center justify-center w-full mx-auto my-10 relative z-20">
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
