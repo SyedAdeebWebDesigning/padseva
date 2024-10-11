@@ -23,7 +23,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 	return (
 		<div
 			id="newsletter"
-			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-50 -mt-2">
+			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-10 -mt-2">
 			<div className="absolute inset-x-0 top-0 z-0">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 					<path

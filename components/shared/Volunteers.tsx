@@ -20,7 +20,7 @@ interface VolunteersProps {}
 const Volunteers = async ({}: VolunteersProps) => {
 	return (
 		<div
-			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-50"
+			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-10"
 			id="team"
 			style={{ overflow: "hidden" }}>
 			{/* Wave background */}
