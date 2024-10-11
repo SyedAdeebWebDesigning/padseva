@@ -17,7 +17,7 @@ const OurFounder = ({}: OurFounderProps) => {
 				</svg>
 			</div>
 			<div className="absolute top-44 right-52 ">
-				<div className="relative size-[350px] z-10 opacity-45">
+				<div className="relative size-[350px] z-10 opacity-70">
 					<Image src={"/Flower-2.png"} alt="" fill />
 				</div>
 			</div>
