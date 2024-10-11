@@ -61,7 +61,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 
 			{/* Call to action */}
 			<div className="flex items-center flex-col mx-auto z-10">
-				<h3 className="text-3xl">Want to become a volunteer?</h3>
+				<h3 className="text-3xl">Ready to make an impact?</h3>
 				<Link
 					href={
 						"https://docs.google.com/forms/d/1zIZVMRkoxEilSwDCoBdWnwsWeehlv__DI3UpPSEDRpg/edit"
