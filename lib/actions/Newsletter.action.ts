@@ -34,11 +34,11 @@ export const getNewsLetterById = async (id: string) => {
 export const getAllNewsLetters = async () => {
 	await connectToDatabase();
 	const newsletters = await SchemaNewsLetter.find().lean();
-	return newsletters;
-
 	if (!newsletters) {
 		return [];
 	}
+	return newsletters;
+
 };
 
 export const updateNewsLetter = async (

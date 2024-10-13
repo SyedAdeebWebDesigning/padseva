@@ -25,11 +25,11 @@ const formSchema = z.object({
 const NewsletterForm = ({
 	userClerkId,
 	type,
-	data
+	data,
 }: {
 	userClerkId: string;
 	type: "Create" | "Update";
-	data?: INewsLetter
+	data?: INewsLetter;
 }) => {
 	const [imagePreview, setImagePreview] = useState<string | null>(null);
 	const [pdfPreview, setPdfPreview] = useState<string | null>(null);
@@ -55,9 +55,10 @@ const NewsletterForm = ({
 			const newsletter = {
 				issueCoverPhoto: coverPhotoUrl.url,
 				issuePDF: pdfUrl.url,
-				userClerkId: userClerkId
+				userClerkId: userClerkId,
 			};
 			await createNewsLetter(newsletter);
+
 			toast.success("Newsletter created successfully");
 			setTimeout(() => {
 				router.refresh();
