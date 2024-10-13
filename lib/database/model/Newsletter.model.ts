@@ -4,6 +4,7 @@ export interface INewsLetter extends Document {
 	_id?: string;
 	issueCoverPhoto: string;
 	issuePDF: string;
+	userClerkId: string;
 	createdAt?: Date;
 	updatedAt?: Date;
 }
@@ -20,6 +21,7 @@ const NewsLetterSchema = new Schema<INewsLetter>(
 			description: "The PDF file URL of the newsletter issue",
 			required: true,
 		},
+		userClerkId: { type: String, required: true },
 	},
 	{ timestamps: true }
 );

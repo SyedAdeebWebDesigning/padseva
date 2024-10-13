@@ -6,6 +6,7 @@ import SchemaNewsLetter from "../database/model/Newsletter.model";
 export interface CreateNewsLetterProps {
 	issueCoverPhoto: string;
 	issuePDF: string;
+	userClerkId: string;
 }
 
 export const createNewsLetter = async (newsletter: CreateNewsLetterProps) => {
@@ -21,11 +22,13 @@ export const createNewsLetter = async (newsletter: CreateNewsLetterProps) => {
 
 export const getNewsLetterById = async (id: string) => {
 	await connectToDatabase();
-	const newsletter = await SchemaNewsLetter.findById(id).lean();
-	if (!newsletter) {
-		return null;
-	}
-	return newsletter;
+	try {
+		const newsletter = await SchemaNewsLetter.findById(id).lean();
+		if (!newsletter) {
+			return {};
+		}
+		return newsletter;
+	} catch (error) {}
 };
 
 export const getAllNewsLetters = async () => {

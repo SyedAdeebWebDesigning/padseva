@@ -10,6 +10,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { createNewsLetter } from "@/lib/actions/Newsletter.action";
 import { useRouter } from "next/navigation";
+import { INewsLetter } from "@/lib/database/model/Newsletter.model";
 
 // Define schema using Zod for form validation
 const formSchema = z.object({
@@ -21,7 +22,15 @@ const formSchema = z.object({
 	}),
 });
 
-const NewsletterForm = () => {
+const NewsletterForm = ({
+	userClerkId,
+	type,
+	data
+}: {
+	userClerkId: string;
+	type: "Create" | "Update";
+	data?: INewsLetter
+}) => {
 	const [imagePreview, setImagePreview] = useState<string | null>(null);
 	const [pdfPreview, setPdfPreview] = useState<string | null>(null);
 	const router = useRouter();
@@ -46,6 +55,7 @@ const NewsletterForm = () => {
 			const newsletter = {
 				issueCoverPhoto: coverPhotoUrl.url,
 				issuePDF: pdfUrl.url,
+				userClerkId: userClerkId
 			};
 			await createNewsLetter(newsletter);
 			toast.success("Newsletter created successfully");
