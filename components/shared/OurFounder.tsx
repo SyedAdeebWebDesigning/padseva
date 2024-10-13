@@ -25,7 +25,7 @@ const OurFounder = ({}: OurFounderProps) => {
 				<Image
 					src={"/assets/OurFounder.png"}
 					fill
-					className="object-left drop-shadow-pink"
+					className="object-left drop-shadow-white"
 					alt="founder"
 					objectFit="contain"
 				/>

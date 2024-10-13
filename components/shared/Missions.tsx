@@ -19,7 +19,7 @@ const Missions = ({}: MissionsProps) => {
 						src={"/assets/mission.png"}
 						fill
 						alt="Mission"
-						className="object-left drop-shadow-pink"
+						className="object-left drop-shadow-white"
 						objectFit="contain"
 					/>
 				</picture>

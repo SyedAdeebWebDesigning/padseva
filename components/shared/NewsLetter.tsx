@@ -23,7 +23,16 @@ const NewsLetter = ({}: NewsLetterProps) => {
 	return (
 		<div
 			id="newsletter"
-			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-10 -mt-2">
+			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-10 -mt-2 -mb-11">
+			<div className="absolute inset-x-0 bottom-0 -z-10">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+					<path
+						fill="#ffbaba"
+						fill-opacity="1"
+						d="M0,64L80,90.7C160,117,320,171,480,176C640,181,800,139,960,128C1120,117,1280,139,1360,149.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+				</svg>
+			</div>
+
 			<div className="absolute inset-x-0 top-0 z-0">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 					<path
@@ -38,7 +47,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 					<Image
 						src={"/assets/newsletter.png"}
 						fill
-						className="lg:ml-[300px] object-left drop-shadow-pink"
+						className="lg:ml-[300px] object-left drop-shadow-white"
 						alt="founder"
 						style={{ objectFit: "contain" }}
 					/>

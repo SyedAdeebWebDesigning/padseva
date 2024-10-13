@@ -26,7 +26,7 @@ const Section = ({}: SectionProps) => {
 					<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
 						<Image
 							src={"/assets/AboutPadSeva.png"}
-							className="drop-shadow-pink"
+							className="drop-shadow-white"
 							fill
 							alt=""
 						/>

@@ -134,7 +134,10 @@
 		font-family: "Times New Roman", serif;
 	}
 
+	.drop-shadow-white {
+		filter: drop-shadow(3px 3px 0px #ffffff);
+	}
 	.drop-shadow-pink {
-		filter: drop-shadow(4px 4px 4px #ff939e);
+		filter: drop-shadow(3px 3px 0px #ff9e9e);
 	}
 }

@@ -57,8 +57,9 @@ const Contact = ({}: ContactProps) => {
 	}
 	return (
 		<div id="contact" className="relative">
+			<div className="absolute inset-x-0 bottom-0 z-0"></div>
 			<div className="absolute top-10 right-0 2xl:right-52 ">
-				<div className="relative size-[400px] opacity-45">
+				<div className="relative size-[400px] opacity-85">
 					<Image src={"/Flower-1.png"} alt="" fill />
 				</div>
 			</div>
@@ -67,7 +68,7 @@ const Contact = ({}: ContactProps) => {
 					<Image
 						src={"/assets/contact.png"}
 						fill
-						className="lg:mx-[300px] object-left drop-shadow-pink"
+						className="lg:mx-[300px] object-left drop-shadow-white"
 						alt="founder"
 						objectFit="contain"
 					/>

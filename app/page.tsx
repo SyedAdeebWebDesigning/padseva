@@ -102,7 +102,7 @@ export default async function Home() {
 					<PlaceHolderImage />
 				</section>
 
-				<section className="w-full bg-[#ffe8e8] relative ">
+				<section className="w-full bg-[#ffbaba] relative ">
 					<Missions />
 				</section>
 				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
@@ -153,13 +153,13 @@ export default async function Home() {
 				<section className="bg-[#ffe8e8] relative">
 					<Volunteers />
 				</section>
-				<section className="bg-[#ffe8e8] relative">
+				<section className="bg-[#ffbaba] relative">
 					<NewsLetter />
 				</section>
 				<section className="bg-[#ffe8e8] relative">
 					<InstagramFeeds />
 				</section>
-				<section className="bg-[#ffe8e8] relative">
+				<section className="bg-[#ffbaba] relative">
 					<Contact />
 				</section>
 				<footer className="relative">
