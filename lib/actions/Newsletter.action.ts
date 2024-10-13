@@ -24,6 +24,7 @@ export const getNewsLetterById = async (id: string) => {
 	await connectToDatabase();
 	try {
 		const newsletter = await SchemaNewsLetter.findById(id).lean();
+
 		if (!newsletter) {
 			return {};
 		}
@@ -33,12 +34,13 @@ export const getNewsLetterById = async (id: string) => {
 
 export const getAllNewsLetters = async () => {
 	await connectToDatabase();
-	const newsletters = await SchemaNewsLetter.find().lean();
+	const newsletters = await SchemaNewsLetter.find()
+		.lean()
+		.sort({ createdAt: -1 });
 	if (!newsletters) {
 		return [];
 	}
 	return newsletters;
-
 };
 
 export const updateNewsLetter = async (

@@ -32,11 +32,6 @@ const page = async ({}: pageProps) => {
 							key={newsletter._id}
 							className="bg-white shadow-lg rounded-md relative p-4">
 							<div className="relative">
-								<p
-									className="absolute text-blue-500 top-2 left-2 z-10 text-xl"
-									style={{ textShadow: "1px 1px white" }}>
-									issue id: {newsletter._id}
-								</p>
 								<div className="relative flex w-full h-[500px] items-center justify-center">
 									<Image
 										src={newsletter.issueCoverPhoto}
@@ -62,6 +57,13 @@ const page = async ({}: pageProps) => {
 								<div className="mx-2 border-l-2 border-gray-200 h-6" />
 								<DeleteIssueButton issueId={newsletter._id ?? ""} />
 							</div>
+							<p className="text-gray-400  z-10 text-lg uppercase">
+								issue id:{" "}
+								<span className="font-semibold">
+									{newsletter._id &&
+										newsletter._id.replace(/(.{4})(?=.)/g, "$1-")}
+								</span>
+							</p>
 						</div>
 					))}
 				</div>
