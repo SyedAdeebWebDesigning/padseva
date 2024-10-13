@@ -1,5 +1,7 @@
+import DeleteIssueButton from "@/components/shared/DeleteIssueButton";
 import { buttonVariants } from "@/components/ui/button";
 import { getAllNewsLetters } from "@/lib/actions/Newsletter.action";
+import { INewsLetter } from "@/lib/database/model/Newsletter.model";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +27,7 @@ const page = async ({}: pageProps) => {
 				</div>
 			) : (
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-					{newsletters.map((newsletter: any, index: number) => (
+					{newsletters.map((newsletter: INewsLetter) => (
 						<div
 							key={newsletter._id}
 							className="bg-white shadow-lg rounded-md relative p-4">
@@ -44,21 +46,21 @@ const page = async ({}: pageProps) => {
 									/>
 								</div>
 							</div>
-							<div className="flex">
+							<div className="flex items-center justify-start">
 								<Link
 									href={newsletter.issuePDF}
 									target="_blank"
-									rel="noopener noreferrer"
-									className="text-blue-500">
+									className="text-blue-500 hover:underline underline-offset-[3px]">
 									View PDF
 								</Link>
-								<div className="mx-2 border-l-2 border-gray-200" />
+								<div className="mx-2 border-l-2 border-gray-200 h-6" />
 								<Link
 									href={`/issues/${newsletter._id}`}
-									rel="noopener noreferrer"
-									className="text-blue-500 ">
+									className="text-blue-500 hover:underline underline-offset-[3px]">
 									Edit Issue
 								</Link>
+								<div className="mx-2 border-l-2 border-gray-200 h-6" />
+								<DeleteIssueButton issueId={newsletter._id ?? ""} />
 							</div>
 						</div>
 					))}
