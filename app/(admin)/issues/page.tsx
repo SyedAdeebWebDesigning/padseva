@@ -28,22 +28,38 @@ const page = async ({}: pageProps) => {
 					{newsletters.map((newsletter: any, index: number) => (
 						<div
 							key={newsletter._id}
-							className="bg-white shadow-lg p-4 rounded-md">
-							<div className="relative size-[500px]">
-								<Image
-									src={newsletter.issueCoverPhoto}
-									alt="Cover Photo"
-									className="w-full"
-									fill
-								/>
+							className="bg-white shadow-lg rounded-md relative p-4">
+							<div className="relative">
+								<p
+									className="absolute text-blue-500 top-2 left-2 z-10 text-xl"
+									style={{ textShadow: "1px 1px white" }}>
+									issue id: {newsletter._id}
+								</p>
+								<div className="relative flex w-full h-[500px] items-center justify-center">
+									<Image
+										src={newsletter.issueCoverPhoto}
+										alt="Cover Photo"
+										className="object-cover rounded-t-md"
+										fill
+									/>
+								</div>
 							</div>
-							<a
-								href={newsletter.issuePDF}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-blue-500">
-								View PDF
-							</a>
+							<div className="flex">
+								<Link
+									href={newsletter.issuePDF}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue-500">
+									View PDF
+								</Link>
+								<div className="mx-2 border-l-2 border-gray-200" />
+								<Link
+									href={`/issues/${newsletter._id}`}
+									rel="noopener noreferrer"
+									className="text-blue-500 ">
+									Edit Issue
+								</Link>
+							</div>
 						</div>
 					))}
 				</div>

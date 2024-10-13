@@ -3,16 +3,18 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form, FormItem, FormControl, FormMessage } from "@/components/ui/form"; // Adjust import paths as needed
+import { Form, FormItem, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { createNewsLetter } from "@/lib/actions/Newsletter.action";
+import {
+	createNewsLetter,
+	updateNewsLetter,
+} from "@/lib/actions/Newsletter.action";
 import { useRouter } from "next/navigation";
 import { INewsLetter } from "@/lib/database/model/Newsletter.model";
 
-// Define schema using Zod for form validation
 const formSchema = z.object({
 	coverPhoto: z.object({
 		url: z.string().nonempty("Please upload a valid image file."),
@@ -31,71 +33,72 @@ const NewsletterForm = ({
 	type: "Create" | "Update";
 	data?: INewsLetter;
 }) => {
-	const [imagePreview, setImagePreview] = useState<string | null>(null);
-	const [pdfPreview, setPdfPreview] = useState<string | null>(null);
+	const [imagePreview, setImagePreview] = useState<string | any>(
+		data?.issueCoverPhoto
+	);
+	const [pdfPreview, setPdfPreview] = useState<string | any>(data?.issuePDF);
 	const router = useRouter();
 
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
-			coverPhoto: {
-				url: "",
-			},
-			pdf: {
-				url: "",
-			},
+			coverPhoto: { url: data?.issueCoverPhoto || "" },
+			pdf: { url: data?.issuePDF || "" },
 		},
 	});
 
-	// Handle form submission
 	async function onSubmit(values: z.infer<typeof formSchema>) {
-		const coverPhotoUrl = values.coverPhoto;
-		const pdfUrl = values.pdf;
-		try {
-			const newsletter = {
-				issueCoverPhoto: coverPhotoUrl.url,
-				issuePDF: pdfUrl.url,
-				userClerkId: userClerkId,
-			};
-			await createNewsLetter(newsletter);
+		const newsletter = {
+			issueCoverPhoto: values.coverPhoto.url,
+			issuePDF: values.pdf.url,
+			userClerkId,
+		};
 
-			toast.success("Newsletter created successfully");
+		try {
+			if (type === "Create") {
+				await createNewsLetter({
+					...newsletter,
+				});
+				toast.success("Newsletter created successfully");
+			} else if (type === "Update" && data?._id) {
+				await updateNewsLetter(data._id, newsletter);
+				toast.success("Newsletter updated successfully");
+			}
+
 			setTimeout(() => {
-				router.refresh();
+				router.push("/issues");
+				form.reset();
+				setImagePreview(null);
+				setPdfPreview(null);
 			}, 1500);
-			form.reset(); // Reset form after submission
-			setImagePreview(null); // Reset image preview
-			setPdfPreview(null); // Reset PDF preview
 		} catch (error) {
-			toast.error("Error creating newsletter");
+			toast.error("Error submitting newsletter");
 		}
 	}
 
-	// Handle file change for images
 	const handleFileChange = (
 		e: React.ChangeEvent<HTMLInputElement>,
 		type: "image" | "pdf"
 	) => {
 		const files = e.target.files;
 		if (files) {
-			if (type === "image") {
-				const file = files[0];
-				const reader = new FileReader();
+			const file = files[0];
+			const reader = new FileReader();
 
-				reader.onload = (event) => {
-					if (event.target && typeof event.target.result === "string") {
+			reader.onload = (event) => {
+				if (event.target && typeof event.target.result === "string") {
+					if (type === "image") {
 						setImagePreview(event.target.result);
 						form.setValue("coverPhoto.url", event.target.result);
+					} else {
+						const pdfUrl = URL.createObjectURL(file);
+						setPdfPreview(pdfUrl);
+						form.setValue("pdf.url", pdfUrl);
 					}
-				};
+				}
+			};
 
-				reader.readAsDataURL(file);
-			} else if (type === "pdf") {
-				const file = files[0];
-				const url = URL.createObjectURL(file);
-				setPdfPreview(url);
-				form.setValue("pdf.url", url);
-			}
+			reader.readAsDataURL(file);
 		}
 	};
 
@@ -105,7 +108,6 @@ const NewsletterForm = ({
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
 					className="space-y-4 md:w-1/3 w-full bg-white shadow-lg p-6 rounded-md">
-					{/* Cover Photo Upload */}
 					<FormItem>
 						<label htmlFor="coverPhoto" className="block text-gray-700">
 							Cover Photo Upload
@@ -129,7 +131,6 @@ const NewsletterForm = ({
 						<FormMessage />
 					</FormItem>
 
-					{/* PDF Upload */}
 					<FormItem>
 						<label htmlFor="pdf" className="block text-gray-700">
 							PDF Upload
@@ -155,12 +156,11 @@ const NewsletterForm = ({
 						<FormMessage />
 					</FormItem>
 
-					{/* Submit Button */}
 					<Button
 						type="submit"
 						className="w-full bg-[#91373E]"
 						disabled={!imagePreview || !pdfPreview}>
-						Submit
+						{type === "Create" ? "Create" : "Update"}
 					</Button>
 				</form>
 			</Form>

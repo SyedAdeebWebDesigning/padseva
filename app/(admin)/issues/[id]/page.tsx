@@ -18,7 +18,7 @@ const page = async ({ params }: pageProps) => {
 
 	return (
 		<div>
-			<NewsletterForm type="Create" userClerkId={userId} data={newsLetter} />
+			<NewsletterForm type="Update" userClerkId={userId} data={newsLetter} />
 		</div>
 	);
 };
