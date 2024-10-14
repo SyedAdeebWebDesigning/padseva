@@ -112,7 +112,7 @@ export default async function Home() {
 								href={"#founder"}
 								className={cn(
 									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-base"
+									"text-xs sm:text-sm lg:text-lg times-new-roman"
 								)}>
 								Founder
 							</Link>
@@ -120,7 +120,7 @@ export default async function Home() {
 								href={"#team"}
 								className={cn(
 									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-base"
+									"text-xs sm:text-sm lg:text-lg times-new-roman"
 								)}>
 								Team
 							</Link>
@@ -128,7 +128,7 @@ export default async function Home() {
 								href={"#newsletter"}
 								className={cn(
 									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-base"
+									"text-xs sm:text-sm lg:text-lg times-new-roman"
 								)}>
 								Newsletter
 							</Link>
@@ -136,7 +136,7 @@ export default async function Home() {
 								href={"#contact"}
 								className={cn(
 									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-base"
+									"text-xs sm:text-sm lg:text-lg times-new-roman"
 								)}>
 								Contact Us
 							</Link>
