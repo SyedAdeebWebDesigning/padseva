@@ -24,14 +24,22 @@ import {
 } from "@/components/ui/dropdown-menu";
 import LogOutButton from "@/components/shared/LogOutButton";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import NavLinks from "@/components/shared/NavLinks";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
 	const clerkUserId = clerkUser?.id || "";
 	const user = (await getUserById(clerkUserId)) as User;
 	const isAdmin = user?.role === "Admin";
+
+	const NavBarLinks = [
+		{ name: "Founder", href: "#founder" },
+		{ name: "Team", href: "#team" },
+		{ name: "Newsletter", href: "#newsletter" },
+		{ name: "Contact Us", href: "#contact" },
+	];
 	return (
-		<main className="">
+		<main className="scroll-smooth">
 			<SignedIn>
 				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full outline-none">
 					<DropdownMenu>
@@ -107,40 +115,7 @@ export default async function Home() {
 				</section>
 				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
 					<nav className="flex flex-wrap items-center justify-end w-full ">
-						<ul className="flex justify-around items-center xl:w-[60%] w-full">
-							<Link
-								href={"#founder"}
-								className={cn(
-									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-lg times-new-roman"
-								)}>
-								Founder
-							</Link>
-							<Link
-								href={"#team"}
-								className={cn(
-									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-lg times-new-roman"
-								)}>
-								Team
-							</Link>
-							<Link
-								href={"#newsletter"}
-								className={cn(
-									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-lg times-new-roman"
-								)}>
-								Newsletter
-							</Link>
-							<Link
-								href={"#contact"}
-								className={cn(
-									buttonVariants({ variant: "link" }),
-									"text-xs sm:text-sm lg:text-lg times-new-roman"
-								)}>
-								Contact Us
-							</Link>
-						</ul>
+						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>
 				<section className="w-full bg-[#ffe8e8] relative -mt-20">
