@@ -23,20 +23,24 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
 
 	// Use IntersectionObserver to detect which section is in view.
 	useEffect(() => {
+		const screenWidth = window.innerWidth;
+		const threshold = screenWidth < 1280 ? 0.2 : 0.6; // Adjust threshold based on screen width
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						setActiveSection(`#${entry.target.id}`); // Set the active section based on the element's ID.
+						setActiveSection(`#${entry.target.id}`); // Set active section based on the element's ID
 					}
 				});
 			},
-			{ threshold: 0.6 } // Trigger when 60% of the section is in view.
+			{ threshold } // Use the dynamic threshold value
 		);
 
 		// Observe each section element.
 		sectionRefs.current.forEach((section) => observer.observe(section));
 
+		console.log(window.innerWidth, "", threshold);
 		return () => {
 			observer.disconnect(); // Cleanup observer on unmount.
 		};
