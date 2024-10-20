@@ -85,7 +85,7 @@ const NewsletterForm = ({
 			const file = files[0];
 			const reader = new FileReader();
 
-			reader.onload = (event) => {
+			reader.onload = (event: ProgressEvent<FileReader>) => {
 				if (event.target && typeof event.target.result === "string") {
 					if (type === "image") {
 						setImagePreview(event.target.result);
