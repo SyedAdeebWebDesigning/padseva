@@ -39,8 +39,6 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
 
 		// Observe each section element.
 		sectionRefs.current.forEach((section) => observer.observe(section));
-
-		console.log(window.innerWidth, "", threshold);
 		return () => {
 			observer.disconnect(); // Cleanup observer on unmount.
 		};
