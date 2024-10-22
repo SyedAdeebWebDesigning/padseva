@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![](https://raw.githubusercontent.com/SyedAdeebWebDesigning/padseva/refs/heads/main/public/Padseva.png)
 
-## Getting Started
+PadSeva is a social initiative focused on eradicating period poverty and promoting menstrual hygiene in rural communities across southern India.
 
-First, run the development server:
+## Creators
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [@SyedAdeebWebDesigning](https://www.github.com/SyedAdeebWebDesigning)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- User Authentication System
+- Admin Dashboard
+- Advanced Animations
+- Responsive
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#
 
-## Learn More
+![](https://raw.githubusercontent.com/SyedAdeebWebDesigning/padseva/refs/heads/main/public/assets/AboutPadSeva.png)
 
-To learn more about Next.js, take a look at the following resources:
+At PadSeva, we are dedicated to eradicating period poverty and promoting menstrual hygiene in rural communities across southern India. Founded with a mission to provide access to affordable, biodegradable sanitary pads, we strive to empower individuals by addressing the critical yet often overlooked issue of menstrual health. Our innovative bamboo-made pads, created through our personal project initiative, have reached thousands of women and girls, ensuring they can manage their periods with dignity.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Since our inception, we have distributed over 7,500 pads, reaching more than 9,000 individuals while raising awareness and driving conversations around menstruation. With education and community engagement at the heart of our efforts, PadSeva not only provides essential resources but also promotes understanding and advocacy for gender equality. Join us in our journey to create a world where menstrual health is a right, not a privilege.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🔗 Follow Us On
 
-## Deploy on Vercel
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/padseva/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![instagram](https://img.shields.io/badge/instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/pad.seva/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#
+
+![](https://raw.githubusercontent.com/SyedAdeebWebDesigning/padseva/refs/heads/main/public/assets/mission.png)
+
+Empowering communities, one pad at a time. We believe in dignity, equality, and the basic right to menstrual hygiene. Join us in our mission to eradicate period poverty and uplift undeserved communities in southern India. Together, we can create a more equitable society.
+
+#
+
+![](https://raw.githubusercontent.com/SyedAdeebWebDesigning/padseva/refs/heads/main/public/assets/OurFounder.png)
+
+![](https://raw.githubusercontent.com/SyedAdeebWebDesigning/padseva/refs/heads/main/public/assets/founder.jpeg)
