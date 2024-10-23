@@ -140,4 +140,11 @@
 	.drop-shadow-pink {
 		filter: drop-shadow(3px 3px 0px #ff9e9e);
 	}
+
+	.abosolute-center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }

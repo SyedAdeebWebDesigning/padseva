@@ -41,13 +41,13 @@ export const markReviewAsRead = async (id: string) => {
 	}
 };
 
-// Get all reviews with optional `isRead` filter
 export const getAllReviews = async (isRead?: boolean) => {
 	await connectToDatabase();
 
 	try {
-		const filter = typeof isRead === "boolean" ? { isRead } : {};
-		const reviews = await Review.find(filter);
+		const reviews = await Review.find().sort({ createdAt: -1 });
+		if (!reviews) return [];
+
 		return reviews.map((review) => review.toObject());
 	} catch (error: any) {
 		throw new Error("Failed to fetch reviews: " + error.message);
@@ -88,5 +88,15 @@ export const MarkAllAsRead = async () => {
 		return updatedReviews;
 	} catch (error: any) {
 		throw new Error("Failed to mark all reviews as read: " + error.message);
+	}
+};
+
+export const deleteAllRead = async () => {
+	await connectToDatabase();
+	try {
+		const deletedReviews = await Review.deleteMany({ isRead: true });
+		return deletedReviews;
+	} catch (error: any) {
+		throw new Error("Failed to delete all read reviews: " + error.message);
 	}
 };
