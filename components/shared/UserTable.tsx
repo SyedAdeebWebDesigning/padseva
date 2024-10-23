@@ -1,4 +1,5 @@
 "use client";
+
 import {
 	Table,
 	TableBody,
@@ -12,6 +13,7 @@ import { reverseRole } from "@/lib/actions/User.action";
 import User from "@/lib/database/model/User.model";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface UserTableProps {
 	users: User[];
@@ -19,44 +21,67 @@ interface UserTableProps {
 
 const UserTable = ({ users }: UserTableProps) => {
 	const router = useRouter();
+	const [searchTerm, setSearchTerm] = useState("");
+
+	// Filter users based on the search term
+	const filteredUsers = users.filter((user) => {
+		const fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
+		return (
+			fullName.includes(searchTerm.toLowerCase()) ||
+			user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			user.phone.toLowerCase().includes(searchTerm.toLowerCase())
+		);
+	});
+
 	return (
-		<Table>
-			<TableCaption>A list of your users.</TableCaption>
-			<TableHeader>
-				<TableRow>
-					<TableHead className="w-[100px]">S.No</TableHead>
-					<TableHead>First Name</TableHead>
-					<TableHead>Last Name</TableHead>
-					<TableHead className="">Email</TableHead>
-					<TableHead className="">Phone</TableHead>
-					<TableHead className="">Role</TableHead>
-					<TableHead className="">Action</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>
-				{users.map((user, index) => (
-					<TableRow key={user.id}>
-						<TableCell>{index + 1}</TableCell>
-						<TableCell>{user.firstName}</TableCell>
-						<TableCell>{user.lastName}</TableCell>
-						<TableCell>{user.email}</TableCell>
-						<TableCell>{user.phone}</TableCell>
-						<TableCell>{user.role}</TableCell>
-						<TableCell className="">
-							<Button
-								variant={"link"}
-								className="text-blue-500"
-								onClick={() => {
-									reverseRole(user.clerkId);
-									router.refresh();
-								}}>
-								{user.role === "Admin" ? "Make Volunteer" : "Make Admin"}
-							</Button>
-						</TableCell>
+		<div>
+			<div className="mb-4">
+				<input
+					type="text"
+					placeholder="Search by name, email, or phone..."
+					className="border p-2 rounded w-full"
+					value={searchTerm}
+					onChange={(e) => setSearchTerm(e.target.value)}
+				/>
+			</div>
+			<Table>
+				<TableCaption>A list of your users.</TableCaption>
+				<TableHeader>
+					<TableRow>
+						<TableHead className="w-[100px]">S.No</TableHead>
+						<TableHead>First Name</TableHead>
+						<TableHead>Last Name</TableHead>
+						<TableHead>Email</TableHead>
+						<TableHead>Phone</TableHead>
+						<TableHead>Role</TableHead>
+						<TableHead>Action</TableHead>
 					</TableRow>
-				))}
-			</TableBody>
-		</Table>
+				</TableHeader>
+				<TableBody>
+					{filteredUsers.map((user, index) => (
+						<TableRow key={user.id}>
+							<TableCell>{index + 1}</TableCell>
+							<TableCell>{user.firstName}</TableCell>
+							<TableCell>{user.lastName}</TableCell>
+							<TableCell>{user.email}</TableCell>
+							<TableCell>{user.phone}</TableCell>
+							<TableCell>{user.role}</TableCell>
+							<TableCell>
+								<Button
+									variant={"link"}
+									className="text-blue-500"
+									onClick={() => {
+										reverseRole(user.clerkId);
+										router.refresh();
+									}}>
+									{user.role === "Admin" ? "Make Volunteer" : "Make Admin"}
+								</Button>
+							</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+		</div>
 	);
 };
 
