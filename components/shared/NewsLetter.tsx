@@ -28,7 +28,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 					<path
 						fill="#ffbaba"
-						fill-opacity="1"
+						fillOpacity="1"
 						d="M0,64L80,90.7C160,117,320,171,480,176C640,181,800,139,960,128C1120,117,1280,139,1360,149.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
 				</svg>
 			</div>
@@ -37,7 +37,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 					<path
 						fill="#ffbaba"
-						fill-opacity="1"
+						fillOpacity="1"
 						d="M0,64L120,80C240,96,480,128,720,128C960,128,1200,96,1320,80L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
 				</svg>
 			</div>

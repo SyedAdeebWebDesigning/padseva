@@ -133,7 +133,7 @@ const Contact: React.FC = () => {
 								render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Textarea placeholder="Enter your review" {...field} />
+											<Textarea placeholder="Enter your message" {...field} />
 										</FormControl>
 										<FormMessage />
 									</FormItem>
@@ -150,7 +150,7 @@ const Contact: React.FC = () => {
 										<span>Submitting...</span>
 									</div>
 								) : (
-									<span>Submit Review</span>
+									<span>Submit Message</span>
 								)}
 							</Button>
 						</form>
