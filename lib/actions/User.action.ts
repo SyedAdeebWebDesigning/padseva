@@ -51,3 +51,37 @@ export const updateUser = async (
 		throw error;
 	}
 };
+
+export const getUsers = async () => {
+	await connectToDatabase();
+	try {
+		const users = await User.find().lean().sort({ createdAt: -1 });
+		return users;
+	} catch (error: any) {
+		console.error(`Error getting user: ${error.message}`);
+		throw error;
+	}
+};
+
+export const reverseRole = async (userClerkId: string) => {
+	await connectToDatabase();
+	try {
+		const user = await User.findOne({ clerkId: userClerkId });
+		if (!user) {
+			throw new Error("User not found");
+		}
+		const role = user.role === "Admin" ? "Volunteer" : "Admin";
+		const updatedUser = await User.findOneAndUpdate(
+			{ clerkId: userClerkId },
+			{ role },
+			{ new: true }
+		).lean();
+		if (!updatedUser) {
+			throw new Error("User not found");
+		}
+		return updatedUser;
+	} catch (error: any) {
+		console.error(`Error reversing role: ${error.message}`);
+		throw error;
+	}
+};

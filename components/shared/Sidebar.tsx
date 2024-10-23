@@ -4,7 +4,13 @@ import User from "@/lib/database/model/User.model";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
-import { Home, LayoutDashboard, MessageSquare, Newspaper } from "lucide-react";
+import {
+	Home,
+	LayoutDashboard,
+	MessageSquare,
+	Newspaper,
+	Users2,
+} from "lucide-react";
 import { usePathname } from "next/navigation"; // Import usePathname
 
 interface SidebarProps {
@@ -61,18 +67,7 @@ const Sidebar = ({ user }: SidebarProps) => {
 					<Home className="mr-2" />
 					<p className="text-lg">Home</p>
 				</Link>
-				<Link
-					href="/dashboard"
-					className={`${buttonVariants({
-						variant: "link",
-					})} ${
-						pathname === "/dashboard"
-							? "font-semibold underline underline-offset-4"
-							: ""
-					}`}>
-					<LayoutDashboard className="mr-2" />
-					<p className="text-lg">Dashboard</p>
-				</Link>
+
 				<Link
 					href="/issues"
 					className={`${buttonVariants({
@@ -96,6 +91,18 @@ const Sidebar = ({ user }: SidebarProps) => {
 					}`}>
 					<MessageSquare className="mr-2" />
 					<p className="text-lg">Your Messages</p>
+				</Link>
+				<Link
+					href="/users"
+					className={`${buttonVariants({
+						variant: "link",
+					})} ${
+						pathname === "/users"
+							? "font-semibold underline underline-offset-4"
+							: ""
+					}`}>
+					<Users2 className="mr-2" />
+					<p className="text-lg">Users</p>
 				</Link>
 			</div>
 		</section>
