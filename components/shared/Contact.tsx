@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 
+import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -13,72 +13,81 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "../ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { createReview } from "@/lib/actions/Review.action";
+import { Loader2 } from "lucide-react";
+import "react-toastify/dist/ReactToastify.css";
 
 const formSchema = z.object({
-	email: z.string().email({
-		message: "Please enter a valid email address.",
-	}),
-	firstName: z.string().min(2, {
-		message: "First Name must be at least 2 characters.",
-	}),
-	lastName: z
+	email: z.string().email({ message: "Please enter a valid email address." }),
+	firstName: z
 		.string()
-
-		.optional(),
-	message: z
+		.min(2, { message: "First Name must be at least 2 characters." }),
+	lastName: z.string().optional(),
+	review: z
 		.string()
-		.min(2, {
-			message: "Message must be at least 2 characters.",
-		})
-		.max(200, {
-			message: "Message must be at most 200 characters.",
-		}),
+		.min(2, { message: "Review must be at least 2 characters." })
+		.max(200, { message: "Review must be at most 200 characters." }),
 });
 
-interface ContactProps {}
+const Contact: React.FC = () => {
+	const [isLoading, setIsLoading] = useState(false);
 
-const Contact = ({}: ContactProps) => {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
-		defaultValues: {
-			email: "",
-			firstName: "",
-			lastName: "",
-			message: "",
-		},
+		defaultValues: { email: "", firstName: "", lastName: "", review: "" },
 	});
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
-		console.log(values);
-		form.reset();
-	}
+	const onSubmit = async (values: z.infer<typeof formSchema>) => {
+		if (isLoading) return; // Prevent multiple submissions
+		setIsLoading(true);
+
+		try {
+			await createReview({ ...values, isRead: false } as any);
+			toast.success("Review submitted successfully.");
+			form.reset();
+		} catch (error) {
+			toast.error("An error occurred. Please try again.");
+			console.error("Submission Error:", error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
 	return (
 		<div id="contact" className="relative">
-			<div className="absolute inset-x-0 bottom-0 z-0"></div>
-			<div className="absolute top-10 right-0 2xl:right-52 ">
-				<div className="relative size-[400px] opacity-85">
-					<Image src={"/Flower-1.png"} alt="" fill />
-				</div>
+			{/* Decorative Image */}
+			<div className="absolute top-10 right-0 2xl:right-52">
+				<Image
+					src="/Flower-1.png"
+					alt="flower"
+					fill
+					className="opacity-85"
+					priority
+				/>
 			</div>
+
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10">
-				<picture className="relative z-20 w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold  mt-32">
+				{/* Header Image */}
+				<picture className="relative z-20 w-[250px] md:w-[300px] lg:w-[450px] h-[50px] lg:h-20 font-semibold mt-32">
 					<Image
-						src={"/assets/contact.png"}
+						src="/assets/contact.png"
 						fill
 						className="lg:mx-[300px] object-left drop-shadow-white"
-						alt="founder"
-						objectFit="contain"
+						alt="Contact"
+						sizes="(max-width: 768px) 100vw, 50vw"
 					/>
 				</picture>
+
+				{/* Form Section */}
 				<div className="flex items-center justify-center w-full mx-auto my-10 relative z-20">
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
 							className="space-y-2 md:w-1/3 w-full">
-							<div className=" flex flex-col md:flex-row md:gap-x-2 gap-y-2 gap-x-0 md:gap-y-0">
+							<div className="flex flex-col md:flex-row gap-2">
 								<FormField
 									control={form.control}
 									name="firstName"
@@ -97,17 +106,14 @@ const Contact = ({}: ContactProps) => {
 									render={({ field }) => (
 										<FormItem className="md:w-1/2 w-full">
 											<FormControl>
-												<Input
-													placeholder="Last name"
-													{...field}
-													className=""
-												/>
+												<Input placeholder="Last name" {...field} />
 											</FormControl>
 											<FormMessage />
 										</FormItem>
 									)}
 								/>
 							</div>
+
 							<FormField
 								control={form.control}
 								name="email"
@@ -120,20 +126,32 @@ const Contact = ({}: ContactProps) => {
 									</FormItem>
 								)}
 							/>
+
 							<FormField
 								control={form.control}
-								name="message"
+								name="review"
 								render={({ field }) => (
 									<FormItem>
 										<FormControl>
-											<Textarea placeholder="Enter your message" {...field} />
+											<Textarea placeholder="Enter your review" {...field} />
 										</FormControl>
 										<FormMessage />
 									</FormItem>
 								)}
 							/>
-							<Button type="submit" className="w-full bg-[#91373E]">
-								Submit
+
+							<Button
+								type="submit"
+								className="w-full bg-[#91373E] disabled:opacity-45"
+								disabled={isLoading}>
+								{isLoading ? (
+									<div className="flex items-center space-x-2">
+										<Loader2 className="animate-spin" />
+										<span>Submitting...</span>
+									</div>
+								) : (
+									<span>Submit Review</span>
+								)}
 							</Button>
 						</form>
 					</Form>
