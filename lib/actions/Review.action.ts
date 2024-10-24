@@ -91,6 +91,16 @@ export const MarkAllAsRead = async () => {
 	}
 };
 
+export const countUnreadReviews = async () => {
+	await connectToDatabase();
+	try {
+		const unreadReviews = await Review.find({ isRead: false });
+		return unreadReviews.length;
+	} catch (error: any) {
+		throw new Error("Failed to count unread reviews: " + error.message);
+	}
+};
+
 export const deleteAllRead = async () => {
 	await connectToDatabase();
 	try {

@@ -4,23 +4,41 @@ import User from "@/lib/database/model/User.model";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
-import {
-	Home,
-	LayoutDashboard,
-	MessageSquare,
-	Newspaper,
-	Users2,
-} from "lucide-react";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { Home, MessageSquare, Newspaper, Users2 } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { toast } from "react-toastify";
+import useSWR from "swr"; // Import SWR
+import { countUnreadReviews } from "@/lib/actions/Review.action"; // Your action to fetch unread reviews
 
 interface SidebarProps {
 	user: User;
 }
 
+const fetchUnreadReviews = async () => {
+	try {
+		const unreadCount = await countUnreadReviews();
+		return unreadCount;
+	} catch (error) {
+		toast.error("Failed to get unread messages");
+		return 0;
+	}
+};
+
 const Sidebar = ({ user }: SidebarProps) => {
 	const pathname = usePathname(); // Get the current route
 
 	if (!user) return null;
+
+	// Use SWR to fetch and automatically revalidate unread reviews
+	const { data: unread = 0, error } = useSWR(
+		"unreadReviews",
+		fetchUnreadReviews,
+		{
+			refreshInterval: 10000, // Poll every 10 seconds
+		}
+	);
+
+	if (error) toast.error("Failed to get unread messages");
 
 	return (
 		<section>
@@ -36,7 +54,7 @@ const Sidebar = ({ user }: SidebarProps) => {
 			</div>
 			<div className="flex flex-col bg-gray-300 mt-10 p-2 rounded">
 				{/* Admin Details */}
-				<div className="flex items-center ">
+				<div className="flex items-center">
 					<div>
 						<div className="relative size-12">
 							<Image
@@ -80,18 +98,24 @@ const Sidebar = ({ user }: SidebarProps) => {
 					<Newspaper className="mr-2" />
 					<p className="text-lg">Your Issues</p>
 				</Link>
+
 				<Link
 					href="/messages"
-					className={`${buttonVariants({
+					className={`relative ${buttonVariants({
 						variant: "link",
-					})} ${
-						pathname === "/messages"
-							? "font-semibold underline underline-offset-4"
-							: ""
-					}`}>
+					})} ${pathname === "/messages" ? "font-semibold " : ""}`}>
 					<MessageSquare className="mr-2" />
-					<p className="text-lg">Your Messages</p>
+					<div className="text-lg text-left flex flex-col">
+						<p className="hover:underline underline-offset-4">Your Messages</p>
+
+						{unread > 0 && (
+							<span className="text-muted-foreground rounded-full text-xs">
+								{unread} New Messages
+							</span>
+						)}
+					</div>
 				</Link>
+
 				<Link
 					href="/users"
 					className={`${buttonVariants({
