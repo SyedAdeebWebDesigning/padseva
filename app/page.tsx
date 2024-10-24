@@ -9,22 +9,15 @@ import OurFounder from "@/components/shared/OurFounder";
 import PlaceHolderImage from "@/components/shared/PlaceHolderImage";
 import Section from "@/components/shared/Section";
 import Volunteers from "@/components/shared/Volunteers";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { getUserById } from "@/lib/actions/User.action";
 import User from "@/lib/database/model/User.model";
 import { cn } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
-import { LayoutDashboard, LogInIcon, MoreVertical, User2 } from "lucide-react";
 import Link from "next/link";
 
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import LogOutButton from "@/components/shared/LogOutButton";
-import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import NavLinks from "@/components/shared/NavLinks";
+import DropdownLinks from "@/components/shared/DropdownLinks";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
@@ -40,61 +33,7 @@ export default async function Home() {
 	];
 	return (
 		<main className="scroll-smooth">
-			<SignedIn>
-				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full outline-none">
-					<DropdownMenu>
-						<DropdownMenuTrigger className="outline-none">
-							<div className="flex items-center size-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
-								<MoreVertical className="" />
-							</div>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent className="sm:w-auto z-[9999] relative">
-							<div className="flex">
-								{isAdmin && (
-									<Link
-										href={"/dashboard"}
-										className={buttonVariants({ variant: "link" })}>
-										<p className="flex items-center">
-											<LayoutDashboard className="mr-2" />
-											<span className="hidden sm:flex">Dashboard</span>
-										</p>
-									</Link>
-								)}
-								<Link
-									href={"/user-profile"}
-									className={buttonVariants({ variant: "link" })}>
-									<p className="flex items-center">
-										<User2 className="mr-2" />
-										<span className="hidden sm:flex">Your Profile</span>
-									</p>
-								</Link>
-								<LogOutButton />
-							</div>
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</section>
-			</SignedIn>
-			<SignedOut>
-				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999] rounded-full outline-none">
-					<DropdownMenu>
-						<DropdownMenuTrigger className="outline-none">
-							<div className="flex items-center size-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
-								<MoreVertical className="" />
-							</div>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent className="sm:w-auto z-[9999] relative">
-							<div className="flex">
-								<Button
-									variant={"link"}
-									className="flex items-center justify-center">
-									<LogInIcon className="mr-2" />
-									<SignInButton />
-								</Button>
-							</div>
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</section>
-			</SignedOut>
+			<DropdownLinks isAdmin={isAdmin} />
 			<Animation />
 
 			<div className="relative z-20">
