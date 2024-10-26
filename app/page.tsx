@@ -60,7 +60,7 @@ export default async function Home() {
 					<nav className="flex flex-wrap items-center justify-end w-full">
 						<picture>
 							<img
-								src={"/padseva.png"}
+								src={"/Padseva.png"}
 								width={150}
 								height={70}
 								alt="logo"
