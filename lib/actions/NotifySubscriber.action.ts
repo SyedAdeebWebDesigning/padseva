@@ -39,7 +39,7 @@ async function sendEmailsInBatches(
 	}
 }
 
-function generateEmailContent(issue: INewsLetter): string {
+function generateEmailContent(issue: any): string {
 	return `
     <h1>New Issue Created</h1>
     <p>A new issue has been reported.</p>
@@ -50,7 +50,7 @@ function generateEmailContent(issue: INewsLetter): string {
   `;
 }
 
-export async function notifySubscribers(issue: INewsLetter): Promise<void> {
+export async function notifySubscribers(issue: any): Promise<void> {
 	try {
 		const subscribers = await Subscriber.find({});
 		const emailList = subscribers.map((sub) => sub.email);
