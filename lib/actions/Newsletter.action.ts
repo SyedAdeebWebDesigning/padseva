@@ -15,7 +15,7 @@ export const createNewsLetter = async (newsletter: CreateNewsLetterProps) => {
 	try {
 		const newNewsletter = await SchemaNewsLetter.create(newsletter);
 		// Notify subscribers about the new newsletter
-		// await notifySubscribers(newNewsletter);
+		await notifySubscribers(newNewsletter);
 		return newNewsletter.toObject();
 	} catch (error: any) {
 		console.error(`Error creating newsletter: ${error.message}`);

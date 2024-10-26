@@ -61,11 +61,6 @@ const NewsletterForm = ({
 					...newsletter,
 				});
 				toast.success("Newsletter created successfully");
-				const issue = {
-					issueCoverPhoto: newsletter.issueCoverPhoto,
-					issuePDF: newsletter.issuePDF,
-				}
-				await notifySubscribers(issue);
 			} else if (type === "Update" && data?._id) {
 				await updateNewsLetter(data._id, newsletter);
 				toast.success("Newsletter updated successfully");
