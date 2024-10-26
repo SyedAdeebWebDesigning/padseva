@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
+import Image from "next/image";
 
 interface NavLinksProps {
 	NavBarLinks: { name: string; href: string }[];
@@ -45,7 +46,14 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
 	}, []);
 
 	return (
-		<ul className="flex justify-around items-center xl:w-[60%] w-full">
+		<ul className="flex justify-around items-center xl:w-[70%] w-full">
+			<Image
+				src={"/padseva.png"}
+				width={150}
+				height={70}
+				alt="logo"
+				className="mr-auto ml-10 xl:hidden hidden min-[500px]:block"
+			/>
 			{NavBarLinks.map((link) => {
 				const isActive = activeSection === link.href; // Check if the section is active.
 

@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 
 interface OurFounderProps {}
 
 const OurFounder = ({}: OurFounderProps) => {
 	return (
 		<div
-			className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px] relative"
+			className="mx-auto flex w-full flex-col justify-center items-start p-10 pb-0 lg:pl-[300px] relative"
 			id="founder">
 			<div className="absolute inset-x-0 top-0 z-0">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -58,14 +57,6 @@ const OurFounder = ({}: OurFounderProps) => {
 								ad nostrum soluta dolores asperiores at officia fugiat suscipit?
 								Quisquam deserunt ipsam, quas distinctio excepturi sapiente.
 							</p>
-						</div>
-
-						<div className="mt-8">
-							<Link
-								href=""
-								className="inline-block bg-[#91373E] text-white px-6 py-3 rounded font-semibold hover:bg-[#6c292f] transition">
-								Get Involved
-							</Link>
 						</div>
 					</div>
 				</div>

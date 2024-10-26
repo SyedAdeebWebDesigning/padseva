@@ -18,6 +18,7 @@ import Link from "next/link";
 
 import NavLinks from "@/components/shared/NavLinks";
 import DropdownLinks from "@/components/shared/DropdownLinks";
+import Image from "next/image";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
@@ -49,20 +50,26 @@ export default async function Home() {
 					<PlaceHolderImage />
 				</section>
 
-				<section className="w-full bg-[#ffbaba] relative ">
+				<section className="w-full bg-[#ffbaba] relative">
 					<Missions />
 				</section>
-				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
-					<nav className="flex flex-wrap items-center justify-end w-full ">
+				<section className="bg-black/50 relative z-[900]  backdrop-blur-xl mb-[1%]">
+					<Journey />
+				</section>
+				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f] -mb-[5%]">
+					<nav className="flex flex-wrap items-center justify-end w-full">
+						<Image
+							src={"/padseva.png"}
+							width={150}
+							height={70}
+							alt="logo"
+							className="mr-auto ml-10 hidden xl:block"
+						/>
 						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>
 				<section className="w-full bg-[#ffe8e8] relative -mt-20">
 					<OurFounder />
-				</section>
-
-				<section className="bg-black/50 relative z-[900]  backdrop-blur-xl">
-					<Journey />
 				</section>
 				<section className="bg-[#ffe8e8] relative">
 					<Volunteers />

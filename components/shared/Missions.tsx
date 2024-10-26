@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface MissionsProps {}
 
 const Missions = ({}: MissionsProps) => {
 	return (
 		<div>
-			<section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px] relative">
+			<section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]  relative">
 				<div className="absolute inset-x-0 bottom-0 z-0">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 						<path
@@ -24,7 +25,7 @@ const Missions = ({}: MissionsProps) => {
 					/>
 				</picture>
 
-				<p className="mb-8 leading-relaxed text-[#2e2e2e] times-new-roman sm:w-[30%] z-10 text-justify">
+				<p className="leading-relaxed text-[#2e2e2e] text-lg times-new-roman md:w-[40%] min-[1536px]:w-[30%] z-10 text-justify">
 					Empowering communities, one pad at a time. We believe in dignity,
 					equality, and the basic right to menstrual hygiene. Join us in our
 					mission to eradicate period poverty and uplift undeserved communities
@@ -42,6 +43,18 @@ const Missions = ({}: MissionsProps) => {
 					/>
 				</picture>
 			</section>
+
+			<div className="flex items-center md:items-start flex-col mx-auto z-10 justify-start lg:pl-[300px] pb-16 -pt-10">
+				<h3 className="text-xl times-new-roman">Ready to make an impact?</h3>
+				<Link
+					href={
+						"https://docs.google.com/forms/d/e/1FAIpQLSdOFCZOhr9jdbcNsG_RKtxTvf1HIAVWYZmyHxCSWI16rDTTqg/viewform"
+					}
+					target="_blank"
+					className="px-4 py-2 border-2 bg-transparent border-[#91373e] rounded transition-all duration-150 ease-in-out my-2 hover:bg-[#91373e] hover:text-white">
+					Fill out the form
+				</Link>
+			</div>
 		</div>
 	);
 };

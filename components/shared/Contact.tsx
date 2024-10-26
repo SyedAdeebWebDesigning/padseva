@@ -58,24 +58,13 @@ const Contact: React.FC = () => {
 
 	return (
 		<div id="contact" className="relative">
-			{/* Decorative Image */}
-			<div className="absolute top-10 right-0 2xl:right-52">
-				<Image
-					src="/Flower-1.png"
-					alt="flower"
-					fill
-					className="opacity-85"
-					priority
-				/>
-			</div>
-
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10">
 				{/* Header Image */}
 				<picture className="relative z-20 w-[250px] md:w-[300px] lg:w-[450px] h-[50px] lg:h-20 font-semibold mt-32">
 					<Image
 						src="/assets/contact.png"
 						fill
-						className="lg:mx-[300px] object-left drop-shadow-white"
+						className="lg:ml-[255px] object-left drop-shadow-white"
 						alt="Contact"
 						sizes="(max-width: 768px) 100vw, 50vw"
 					/>

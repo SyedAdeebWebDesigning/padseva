@@ -20,7 +20,7 @@ interface VolunteersProps {}
 const Volunteers = async ({}: VolunteersProps) => {
 	return (
 		<div
-			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 z-10"
+			className="relative mx-auto flex w-full flex-col justify-center items-start p-14 pt-0 z-10"
 			id="team"
 			style={{ overflow: "hidden" }}>
 			{/* Wave background */}
@@ -38,7 +38,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 				<Image
 					src={"/assets/our-core-team.png"}
 					fill
-					className="lg:ml-[300px] object-left drop-shadow-pink"
+					className="lg:ml-[255px] object-left drop-shadow-pink"
 					alt="founder"
 					objectFit="contain"
 				/>
@@ -58,18 +58,6 @@ const Volunteers = async ({}: VolunteersProps) => {
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>
-
-			{/* Call to action */}
-			<div className="flex items-center flex-col mx-auto z-10">
-				<h3 className="text-3xl">Ready to make an impact?</h3>
-				<Link
-					href={
-						"https://docs.google.com/forms/d/1zIZVMRkoxEilSwDCoBdWnwsWeehlv__DI3UpPSEDRpg/edit"
-					}
-					className="px-4 py-2 border-2 bg-transparent border-[#91373e] rounded transition-all duration-150 ease-in-out my-2 hover:bg-[#91373e] hover:text-white">
-					Fill out the form
-				</Link>
-			</div>
 		</div>
 	);
 };

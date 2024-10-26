@@ -38,7 +38,7 @@ const InstagramFeeds = ({}: InstagramFeedsProps) => {
 					<Image
 						src={"/assets/foundation.png"}
 						fill
-						className="object-left drop-shadow-white"
+						className="object-left drop-shadow-white "
 						alt="founder"
 						style={{ objectFit: "contain" }}
 					/>

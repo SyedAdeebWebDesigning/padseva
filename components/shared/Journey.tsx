@@ -97,14 +97,14 @@ const Journey = ({}: JourneyProps) => {
 	return (
 		<div
 			ref={journeyRef}
-			className="mx-auto flex w-full flex-col justify-center items-center sm:items-start p-10">
+			className="mx-auto flex w-full flex-col justify-center items-center sm:items-start p-10 -pb-10">
 			<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-[100] ">
 				<Image
 					src={"/assets/journey.png"}
 					fill
 					alt="founder"
 					objectFit="contain"
-					className="lg:ml-[300px] object-left"
+					className="lg:ml-[255px] object-left"
 				/>
 			</picture>
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  text-white w-full py-10 container mx-auto">
