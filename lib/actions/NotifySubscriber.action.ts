@@ -42,10 +42,10 @@ async function sendEmailsInBatches(
 function generateEmailContent(issue: any): string {
 	return `
     <h1>New Issue Created</h1>
-    <p>A new issue has been reported.</p>
+    <p>A new issue has been reported. ${issue.issuePDF} ${issue.issueCoverPhoto}</p>
     <img src="${issue.issueCoverPhoto}" alt="Issue Cover" style="max-width: 100%; height: auto;" />
     <p>
-        <a href="${issue.issuePDF}" style="display: inline-block; padding: 10px 15px; background-color: #91373e; color: white; text-decoration: none; border-radius: 5px;">
+        <a href={${issue.issuePDF}} style="display: inline-block; padding: 10px 15px; background-color: #91373e; color: white; text-decoration: none; border-radius: 5px;">
 		{issue.issuePDF}
 		</a>
         <a href="${issue.issuePDF}" style="display: inline-block; padding: 10px 15px; background-color: #91373e; color: white; text-decoration: none; border-radius: 5px;">
