@@ -58,13 +58,15 @@ export default async function Home() {
 				</section>
 				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f] -mb-[5%]">
 					<nav className="flex flex-wrap items-center justify-end w-full">
-						<Image
-							src={"/padseva.png"}
-							width={150}
-							height={70}
-							alt="logo"
-							className="mr-auto ml-10 hidden xl:block"
-						/>
+						<picture>
+							<img
+								src={"/padseva.png"}
+								width={150}
+								height={70}
+								alt="logo"
+								className="mr-auto ml-10 hidden xl:flex"
+							/>
+						</picture>
 						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>
