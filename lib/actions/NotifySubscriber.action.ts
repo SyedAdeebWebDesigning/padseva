@@ -39,20 +39,50 @@ async function sendEmailsInBatches(
 	}
 }
 
-function generateEmailContent(issue: any): string {
+function generateEmailContent(issue: INewsLetter): string {
+	// Ensure issueCoverPhoto and issuePDF are valid URLs
+	const issueCoverPhoto = issue.issueCoverPhoto || ""; // Default to an empty string if undefined
+	const issuePDF = `https://padseva.vercel.app/issue/${issue._id}`; // Dynamic URL based on issue ID
+
 	return `
-    <h1>New Issue Created</h1>
-    <p>A new issue has been reported. </p>
-    <img src={${issue.issueCoverPhoto}} alt="Issue Cover" style="max-width: 100%; height: auto;" />
-    <p>
-        <a href={${issue.issuePDF}} style="display: inline-block; padding: 10px 15px; background-color: #91373e; color: white; text-decoration: none; border-radius: 5px;">
-		View PDF
-		</a>
-    </p>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+        }
+        .button {
+          display: inline-block;
+          padding: 10px 15px;
+          background-color: #7747FF;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>New Newsletter Dropped</h1>
+      <p>A new issue has been reported:</p>
+      <img src="${issueCoverPhoto}" alt="Issue Cover" />
+      <p>
+        <a href="${issuePDF}" class="button">View PDF</a>
+      </p>
+    </body>
+    </html>
   `;
 }
 
-export async function notifySubscribers(issue: any): Promise<void> {
+export async function notifySubscribers(issue: INewsLetter): Promise<void> {
 	try {
 		const subscribers = await Subscriber.find({});
 		const emailList = subscribers.map((sub) => sub.email);
