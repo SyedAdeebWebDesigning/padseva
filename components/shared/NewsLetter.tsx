@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import NewsletterSubscriberForm from "./NewsletterSubscriberForm";
 
 interface NewsLetterProps {}
 
@@ -65,9 +66,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 					))}
 				</div>
 				<div className="flex items-center flex-col mx-auto z-10">
-					<Button className="px-4 py-2 border-2 bg-transparent border-[#91373e] rounded transition-all duration-150 ease-in-out my-2 hover:bg-[#91373e] text-black hover:text-white">
-						Subscribe to out Newsletter
-					</Button>
+					<NewsletterSubscriberForm />
 				</div>
 			</section>
 		</div>

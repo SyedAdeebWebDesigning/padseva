@@ -2,6 +2,7 @@
 
 import { connectToDatabase } from "../database";
 import SchemaNewsLetter from "../database/model/Newsletter.model";
+import { notifySubscribers } from "./NotifySubscriber.action";
 
 export interface CreateNewsLetterProps {
 	issueCoverPhoto: string;
@@ -13,6 +14,8 @@ export const createNewsLetter = async (newsletter: CreateNewsLetterProps) => {
 	await connectToDatabase();
 	try {
 		const newNewsletter = await SchemaNewsLetter.create(newsletter);
+		// Notify subscribers about the new newsletter
+		await notifySubscribers(newNewsletter.toObject());
 		return newNewsletter.toObject();
 	} catch (error: any) {
 		console.error(`Error creating newsletter: ${error.message}`);
