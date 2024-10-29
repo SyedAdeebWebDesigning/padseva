@@ -169,8 +169,7 @@ function generateEmailContent(issue: INewsLetter): string {
     </head>
     <body>
       <h1>New Newsletter Dropped</h1>
-      <p>A new issue has been reported:</p>
-      <img src="${issueCoverPhoto}" alt="Issue Cover" />
+      <p>A new newsletter has been reported:</p>
       <p>
         <a href="${issuePDF}" class="button">View PDF</a>
       </p>

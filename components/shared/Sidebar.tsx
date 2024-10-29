@@ -56,14 +56,14 @@ const Sidebar = ({ user }: SidebarProps) => {
 				{/* Admin Details */}
 				<div className="flex items-center">
 					<div>
-						<div className="relative size-12">
+						<picture className="relative size-12">
 							<Image
 								src={user.photo}
 								fill
 								alt="admin"
 								className="rounded-full"
 							/>
-						</div>
+						</picture>
 					</div>
 					<div className="ml-2">
 						<h2 className="text-xl font-semibold line-clamp-1">
