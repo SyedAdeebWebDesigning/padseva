@@ -26,7 +26,7 @@ const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		try {
 			await createSubscriber({ email: values.email }); // Call createSubscriber with email
-			toast.success("Subscribed successfully!");
+			toast.success(`A verification email has been sent to ${values.email}`);
 			form.reset(); // Reset form after successful subscription
 		} catch (error: any) {
 			if (error.message === "Subscriber already exists.") {

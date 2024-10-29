@@ -2,6 +2,7 @@ import { Schema, model, models } from "mongoose";
 
 export interface ISubscriberSchema {
 	email: string;
+	hasVerified: boolean;
 	createdAt?: Date;
 	updatedAt?: Date;
 }
@@ -9,6 +10,7 @@ export interface ISubscriberSchema {
 const SubscriberSchema = new Schema<ISubscriberSchema>(
 	{
 		email: { type: "string", required: true },
+		hasVerified: { type: "boolean", default: false },
 	},
 	{
 		timestamps: true,
