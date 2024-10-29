@@ -1,5 +1,6 @@
 "use server"; // Server action
 
+import { connectToDatabase } from "../database";
 import { INewsLetter } from "../database/model/Newsletter.model";
 import Subscriber from "../database/model/Subscriber.model";
 import { sendEmail } from "@/lib/mailer";
@@ -7,6 +8,7 @@ import { sendEmail } from "@/lib/mailer";
 const MAX_CONCURRENT_EMAILS = 5; // Maximum concurrent emails
 
 export const createSubscriber = async ({ email }: { email: string }) => {
+	await connectToDatabase();
 	try {
 		const existingSubscriber = await Subscriber.findOne({ email });
 		if (existingSubscriber) {
@@ -22,6 +24,42 @@ export const createSubscriber = async ({ email }: { email: string }) => {
 		await sendVerificationEmail(email, verificationLink);
 	} catch (error: any) {
 		console.error(`Error creating subscriber: ${error.message}`);
+		throw error;
+	}
+};
+
+export const GetSubscriberById = async (id: string) => {
+	await connectToDatabase();
+
+	try {
+		const subscriber = await Subscriber.findById(id).lean().exec();
+		if (!subscriber) {
+			throw new Error("Subscriber not found.");
+		}
+		return subscriber;
+	} catch (error: any) {
+		console.error(`Error fetching subscriber: ${error.message}`);
+		throw error;
+	}
+};
+
+export const verifySubscriber = async (id: string) => {
+	await connectToDatabase();
+
+	try {
+		const subscriber = await Subscriber.findByIdAndUpdate(
+			id,
+			{ hasVerified: true },
+			{ new: true }
+		)
+			.lean()
+			.exec();
+		if (!subscriber) {
+			throw new Error("Subscriber not found.");
+		}
+		return subscriber;
+	} catch (error: any) {
+		console.error(`Error verifying subscriber: ${error.message}`);
 		throw error;
 	}
 };
@@ -52,7 +90,7 @@ function generateVerificationEmailContent(verificationLink: string): string {
         .button {
           display: inline-block;
           padding: 10px 15px;
-          background-color: #28a745;
+          background-color: white;
           color: white;
           text-decoration: none;
           border-radius: 5px;
@@ -61,9 +99,16 @@ function generateVerificationEmailContent(verificationLink: string): string {
           font-size: 16px;
           color: #333;
         }
+
+		img {
+		  max-width: 100%;
+		  height: auto;
+		  object-fit: contain;
+		}
       </style>
     </head>
     <body>
+	<img src="/padseva.png" alt="" />
       <h1>Verify Your Subscription</h1>
       <p>Thank you for subscribing! Please verify your email by clicking the button below:</p>
       <p>
