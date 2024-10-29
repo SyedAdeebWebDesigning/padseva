@@ -89,7 +89,6 @@ function generateVerificationEmailContent(verificationLink: string): string {
         }
         .button {
           display: inline-block;
-          padding: 10px 15px;
           background-color: white;
           color: white;
           text-decoration: none;
