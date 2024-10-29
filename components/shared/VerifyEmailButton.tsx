@@ -23,9 +23,9 @@ const VerifyEmailButton = ({
 		try {
 			setIsLoading(true);
 			await verifySubscriber(subscriberId);
-			toast.success("Subscriber verified successfully");
+			toast.success("Verified successfully");
 		} catch (error) {
-			toast.error("Failed to verify subscriber");
+			toast.error("Failed to verified");
 		} finally {
 			setIsLoading(false);
 			setTimeout(() => {

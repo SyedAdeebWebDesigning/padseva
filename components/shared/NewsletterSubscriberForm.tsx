@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-toastify";
 import { createSubscriber } from "@/lib/actions/NotifySubscriber.action";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 interface NewsletterSubscriberFormProps {}
 
@@ -16,6 +18,8 @@ const formSchema = z.object({
 });
 
 const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
+	const [isLoading, setIsLoading] = useState(false);
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -25,6 +29,7 @@ const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		try {
+			setIsLoading(true);
 			await createSubscriber({ email: values.email }); // Call createSubscriber with email
 			toast.success(`A verification email has been sent to ${values.email}`);
 			form.reset(); // Reset form after successful subscription
@@ -36,6 +41,8 @@ const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
 			} else {
 				toast.error("Failed to subscribe. Please try again.");
 			}
+		} finally {
+			setIsLoading(false);
 		}
 	};
 	return (
@@ -57,8 +64,16 @@ const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
 								{/* Button Inside Input */}
 								<Button
 									type="submit"
+									disabled={isLoading}
 									className="absolute right-1 top-1 bottom-0 px-4 bg-[#91373e] text-white rounded hover:bg-[#7a2d33] transition-all">
-									Subscribe
+									{isLoading ? (
+										<div className="flex items-center">
+											<Loader2 className="animate-spin" />
+											<span className="ml-2">Subscribing...</span>
+										</div>
+									) : (
+										<div>Subscribe</div>
+									)}
 								</Button>
 							</div>
 						</FormControl>

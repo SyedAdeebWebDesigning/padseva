@@ -139,7 +139,7 @@ async function sendEmailsInBatches(
 
 function generateEmailContent(issue: INewsLetter): string {
 	const issueCoverPhoto = issue.issueCoverPhoto || "";
-	const issuePDF = `${process.env.APP_URL}/issue/${issue._id}`;
+	const issuePDF = `${process.env.APP_URL}/view-issues/${issue._id}`;
 
 	return `
     <!DOCTYPE html>
