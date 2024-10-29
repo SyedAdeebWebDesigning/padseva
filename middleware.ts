@@ -7,6 +7,7 @@ const isPublicRoute = createRouteMatcher([
 	"/api/webhook",
 	"/view-issues",
 	"/view-issues/(.*)", // Allow all routes under /issues
+	"/verification/(.*)",
 ]);
 
 export default clerkMiddleware((auth, request) => {
