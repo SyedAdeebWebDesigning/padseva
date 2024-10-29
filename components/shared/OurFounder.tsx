@@ -5,7 +5,7 @@ interface OurFounderProps {}
 const OurFounder = ({}: OurFounderProps) => {
 	return (
 		<div
-			className="mx-auto flex w-full flex-col justify-center items-start p-10 pb-0 lg:pl-[300px] relative"
+			className="relative mx-auto flex w-full flex-col justify-center p-14 pt-0 z-10"
 			id="founder">
 			<div className="absolute inset-x-0 top-0 z-0">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -15,32 +15,35 @@ const OurFounder = ({}: OurFounderProps) => {
 						d="M0,320L80,277.3C160,235,320,149,480,138.7C640,128,800,192,960,197.3C1120,203,1280,149,1360,122.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
 				</svg>
 			</div>
-			<div className="absolute top-44 right-52 ">
-				<div className="relative size-[350px] z-10 opacity-70">
-					<Image src={"/Flower-2.png"} alt="" fill />
-				</div>
-			</div>
-			<picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 mt-32">
-				<Image
-					src={"/assets/OurFounder.png"}
-					fill
-					className="object-left drop-shadow-white"
-					alt="founder"
-					objectFit="contain"
-				/>
-			</picture>
 
 			<section className="founder-section py-12">
-				<div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
-					<div className="relative size-[250px] md:size-[300px] mb-6 md:mb-0 z-20">
+				<div className="my-20">
+					<div className="">
+						<div className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 mt-32 flex justify-start">
+							<Image
+								src={"/assets/ourFounder.png"}
+								fill
+								className="lg:ml-[255px] object-left drop-shadow-white"
+								alt="founder"
+								objectFit="contain"
+							/>
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-col md:flex-row items-center justify-center w-full relative my-10 z-10">
+					{/* Founder Image */}
+					<div className="relative w-[250px] h-[250px] md:w-[300px] md:h-[300px] mb-6 md:mb-0 z-20">
 						<Image
 							src={"/assets/founder.jpeg"}
 							alt="Founder"
 							fill
 							className="object-cover rounded-full md:rounded-none"
+							objectFit="cover"
 						/>
 					</div>
-					<div className="md:ml-8">
+
+					{/* Founder Information */}
+					<div className="md:ml-8 text-center md:text-left">
 						<h3 className="text-3xl font-medium relative z-20">
 							Anwitha Srivatsa
 						</h3>

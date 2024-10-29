@@ -69,7 +69,9 @@ const Sidebar = ({ user }: SidebarProps) => {
 						<h2 className="text-xl font-semibold line-clamp-1">
 							{user.firstName} {user.lastName}
 						</h2>
-						<p className="line-clamp-1 text-gray-500">{user.email}</p>
+						<p className="line-clamp-1 text-muted-foreground text-xs">
+							{user.email}
+						</p>
 					</div>
 				</div>
 			</div>

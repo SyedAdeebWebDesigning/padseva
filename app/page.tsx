@@ -53,10 +53,10 @@ export default async function Home() {
 				<section className="w-full bg-[#ffbaba] relative">
 					<Missions />
 				</section>
-				<section className="bg-black/50 relative z-[900]  backdrop-blur-xl mb-[1%]">
+				<section className="bg-black/50 relative z-[900]  backdrop-blur-xl">
 					<Journey />
 				</section>
-				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f] -mb-[5%]">
+				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
 					<nav className="flex flex-wrap items-center justify-end w-full">
 						<picture>
 							<img

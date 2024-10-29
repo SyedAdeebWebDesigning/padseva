@@ -46,15 +46,17 @@ const DropdownLinks = ({ isAdmin }: DropdownLinksProps) => {
 			<SignedIn>
 				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999]">
 					<DropdownMenu>
-						<DropdownMenuTrigger className="outline-none relative">
-							<div className="flex items-center w-14 h-14 justify-center my-2 bg-gray-50 cursor-pointer rounded-full shadow-xl">
-								<MoreVertical className="relative" />
-								{/* Red dot indicator for admins with unread reviews */}
-								{isAdmin && unread > 0 && (
-									<span className="absolute top-1 right-1 size-4 bg-red-500 rounded-full" />
-								)}
-							</div>
-						</DropdownMenuTrigger>
+						{isAdmin && (
+							<DropdownMenuTrigger className="outline-none relative">
+								<div className="flex items-center w-14 h-14 justify-center my-2 bg-gray-50 cursor-pointer rounded-full shadow-xl">
+									<MoreVertical className="relative" />
+									{/* Red dot indicator for admins with unread reviews */}
+									{isAdmin && unread > 0 && (
+										<span className="absolute top-1 right-1 size-4 bg-red-500 rounded-full" />
+									)}
+								</div>
+							</DropdownMenuTrigger>
+						)}
 
 						<DropdownMenuContent
 							className="bg-white border border-gray-200 shadow-md rounded-full p-2 mt-2 sm:w-auto z-[10000]"
@@ -90,28 +92,30 @@ const DropdownLinks = ({ isAdmin }: DropdownLinksProps) => {
 			</SignedIn>
 
 			<SignedOut>
-				<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999]">
-					<DropdownMenu>
-						<DropdownMenuTrigger className="outline-none">
-							<div className="flex items-center w-14 h-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
-								<MoreVertical />
-							</div>
-						</DropdownMenuTrigger>
+				{isAdmin && (
+					<section className="fixed bottom-4 left-[50%] -translate-x-[50%] z-[9999]">
+						<DropdownMenu>
+							<DropdownMenuTrigger className="outline-none">
+								<div className="flex items-center w-14 h-14 justify-center my-auto bg-gray-50 cursor-pointer rounded-full shadow-xl">
+									<MoreVertical />
+								</div>
+							</DropdownMenuTrigger>
 
-						<DropdownMenuContent
-							className="bg-white border border-gray-200 shadow-md rounded-md p-2 mt-2 sm:w-auto z-[10000]"
-							align="center">
-							<div className="flex">
-								<Button
-									variant="link"
-									className="flex items-center justify-center">
-									<LogInIcon className="mr-2" />
-									<SignInButton />
-								</Button>
-							</div>
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</section>
+							<DropdownMenuContent
+								className="bg-white border border-gray-200 shadow-md rounded-md p-2 mt-2 sm:w-auto z-[10000]"
+								align="center">
+								<div className="flex">
+									<Button
+										variant="link"
+										className="flex items-center justify-center">
+										<LogInIcon className="mr-2" />
+										<SignInButton />
+									</Button>
+								</div>
+							</DropdownMenuContent>
+						</DropdownMenu>
+					</section>
+				)}
 			</SignedOut>
 		</div>
 	);
