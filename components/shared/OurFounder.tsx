@@ -21,7 +21,7 @@ const OurFounder = ({}: OurFounderProps) => {
 					<div className="">
 						<div className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 mt-32 flex justify-start">
 							<Image
-								src={"/assets/ourFounder.png"}
+								src={"/assets/OurFounder.png"}
 								fill
 								className="lg:ml-[255px] object-left drop-shadow-white"
 								alt="founder"
