@@ -89,7 +89,8 @@ function generateVerificationEmailContent(verificationLink: string): string {
         }
         .button {
           display: inline-block;
-          background-color: white;
+          padding: 10px 15px;
+		  background-color: #91373e;
           color: white;
           text-decoration: none;
           border-radius: 5px;
@@ -98,16 +99,9 @@ function generateVerificationEmailContent(verificationLink: string): string {
           font-size: 16px;
           color: #333;
         }
-
-		img {
-		  max-width: 100%;
-		  height: auto;
-		  object-fit: contain;
-		}
       </style>
     </head>
     <body>
-	<img src="/padseva.png" alt="" />
       <h1>Verify Your Subscription</h1>
       <p>Thank you for subscribing! Please verify your email by clicking the button below:</p>
       <p>
