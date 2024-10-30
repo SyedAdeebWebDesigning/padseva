@@ -89,24 +89,23 @@ function generateVerificationEmailContent(verificationLink: string): string {
         }
         .button {
           display: inline-block;
-          padding: 10px 15px;
-		  background-color: #91373e;
+
           color: white;
           text-decoration: none;
           border-radius: 5px;
         }
+
         p {
           font-size: 16px;
-          color: #333;
         }
       </style>
     </head>
     <body>
       <h1>Verify Your Subscription</h1>
       <p>Thank you for subscribing! Please verify your email by clicking the button below:</p>
-      <p>
-        <a href="${verificationLink}" class="button">Verify Email</a>
-      </p>
+      
+        <p><a href="${verificationLink}" style="color: blue;" class="button">Verify Email</a></p>
+      
       <p>If you didn't subscribe, please ignore this email.</p>
     </body>
     </html>
