@@ -5,10 +5,10 @@ const DashboardPage = async ({}: DashboardPageProps) => {
 		<div>
 			<iframe
 				style={{
-					background: "#F1F5F4",
+					background: "#FFFFFF",
 					border: "none",
 					borderRadius: "2px",
-					boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
+					// boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
 					width: "75vw",
 					height: "100vh",
 				}}
