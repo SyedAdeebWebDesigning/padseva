@@ -4,7 +4,14 @@ import User from "@/lib/database/model/User.model";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
-import { Home, MessageSquare, Newspaper, Users2 } from "lucide-react";
+import {
+	Home,
+	LayoutDashboard,
+	Mail,
+	MessageSquare,
+	Newspaper,
+	Users2,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 import useSWR from "swr"; // Import SWR
@@ -87,18 +94,30 @@ const Sidebar = ({ user }: SidebarProps) => {
 					<Home className="mr-2" />
 					<p className="text-lg">Home</p>
 				</Link>
-
 				<Link
-					href="/issues"
+					href="/dashboard"
 					className={`${buttonVariants({
 						variant: "link",
 					})} ${
-						pathname === "/issues"
+						pathname === "/dashboard"
+							? "font-semibold underline underline-offset-4"
+							: ""
+					}`}>
+					<LayoutDashboard className="mr-2" />
+					<p className="text-lg">Dashboard</p>
+				</Link>
+
+				<Link
+					href="/newsletter"
+					className={`${buttonVariants({
+						variant: "link",
+					})} ${
+						pathname === "/newsletter"
 							? "font-semibold underline underline-offset-4"
 							: ""
 					}`}>
 					<Newspaper className="mr-2" />
-					<p className="text-lg">Your Issues</p>
+					<p className="text-lg">Your Newsletter</p>
 				</Link>
 
 				<Link
@@ -129,6 +148,18 @@ const Sidebar = ({ user }: SidebarProps) => {
 					}`}>
 					<Users2 className="mr-2" />
 					<p className="text-lg">Users</p>
+				</Link>
+				<Link
+					href="/subscriptions"
+					className={`${buttonVariants({
+						variant: "link",
+					})} ${
+						pathname === "/subscriptions"
+							? "font-semibold underline underline-offset-4"
+							: ""
+					}`}>
+					<Mail className="mr-2" />
+					<p className="text-lg">Subscriptions</p>
 				</Link>
 			</div>
 		</section>

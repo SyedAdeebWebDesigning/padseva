@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 export interface ISubscriberSchema {
+	_id?: string;
 	email: string;
 	hasVerified: boolean;
 	createdAt?: Date;

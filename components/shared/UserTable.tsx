@@ -14,6 +14,7 @@ import User from "@/lib/database/model/User.model";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Input } from "../ui/input";
 
 interface UserTableProps {
 	users: User[];
@@ -22,6 +23,16 @@ interface UserTableProps {
 const UserTable = ({ users }: UserTableProps) => {
 	const router = useRouter();
 	const [searchTerm, setSearchTerm] = useState("");
+
+	if (!users) {
+		return (
+			<div className="flex items-center justify-center min-h-screen">
+				<p className="text-xl text-muted-foreground font-semibold">
+					No users found.
+				</p>
+			</div>
+		);
+	}
 
 	// Filter users based on the search term
 	const filteredUsers = users.filter((user) => {
@@ -35,11 +46,11 @@ const UserTable = ({ users }: UserTableProps) => {
 
 	return (
 		<div>
-			<div className="mb-4">
-				<input
+			<div className="mb-4 p-2 border rounded-full">
+				<Input
 					type="text"
 					placeholder="Search by name, email, or phone..."
-					className="border p-2 rounded w-full"
+					className="border p-2 w-full rounded-full border-none"
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
 				/>
@@ -54,7 +65,7 @@ const UserTable = ({ users }: UserTableProps) => {
 						<TableHead>Email</TableHead>
 						<TableHead>Phone</TableHead>
 						<TableHead>Role</TableHead>
-						<TableHead>Action</TableHead>
+						<TableHead className="text-right">Action</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>
@@ -66,7 +77,7 @@ const UserTable = ({ users }: UserTableProps) => {
 							<TableCell>{user.email}</TableCell>
 							<TableCell>{user.phone}</TableCell>
 							<TableCell>{user.role}</TableCell>
-							<TableCell>
+							<TableCell className="text-right">
 								<Button
 									variant={"link"}
 									className="text-blue-500"

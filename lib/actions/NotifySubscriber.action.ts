@@ -43,6 +43,25 @@ export const GetSubscriberById = async (id: string) => {
 	}
 };
 
+export const GetAllSubscriber = async (searchTerm: string = "") => {
+	await connectToDatabase();
+	try {
+		const query = searchTerm
+			? { email: { $regex: new RegExp(searchTerm, "i") } }
+			: {};
+		const subscribers = await Subscriber.find(query)
+			.sort({
+				createdAt: -1,
+			})
+			.lean()
+			.exec();
+		return subscribers;
+	} catch (error: any) {
+		console.error(`Error fetching subscribers: ${error.message}`);
+		throw error;
+	}
+};
+
 export const verifySubscriber = async (id: string) => {
 	await connectToDatabase();
 

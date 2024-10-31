@@ -17,7 +17,7 @@ const page = async ({}: pageProps) => {
 				<div className="min-h-screen flex flex-col items-center justify-center">
 					<h3 className="text-3xl">No Newsletter found</h3>
 					<Link
-						href={"/issues/new"}
+						href={"/newsletter/new"}
 						className={cn(
 							buttonVariants({ variant: "default" }),
 							"bg-[#91373E] hover:bg-[#af4c54] mt-4"
@@ -29,7 +29,7 @@ const page = async ({}: pageProps) => {
 				<div className="relative">
 					<div className="absolute -top-10 left-[0%]">
 						<Link
-							href={"/issues/new"}
+							href={"/newsletter/new"}
 							className={cn(
 								buttonVariants({ variant: "default" }),
 								"bg-[#91373E] hover:bg-[#af4c54] mt-4"
