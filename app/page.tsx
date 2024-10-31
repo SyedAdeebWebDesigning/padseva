@@ -33,7 +33,10 @@ export default async function Home() {
 		{ name: "Contact Us", href: "#contact" },
 	];
 	return (
-		<main className="scroll-smooth">
+		<main
+			className={`scroll-smooth ${
+				process.env.IS_PAID == "false" && "invisible"
+			}`}>
 			<DropdownLinks isAdmin={isAdmin} />
 			<Animation />
 
@@ -79,7 +82,7 @@ export default async function Home() {
 				<section className="bg-[#ffbaba] relative">
 					<NewsLetter />
 				</section>
-				<section className="bg-[#ffe8e8] relative">
+				<section className="bg-[#fff2f2] relative">
 					<InstagramFeeds />
 				</section>
 				<section className="bg-[#ffbaba] relative">

@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
 					<Image
 						src="/assets/contact.png"
 						fill
-						className="lg:ml-[255px] object-left drop-shadow-white"
+						className="lg:ml-[255px] object-center drop-shadow-white object-contain"
 						alt="Contact"
 						sizes="(max-width: 768px) 100vw, 50vw"
 					/>
@@ -131,7 +131,7 @@ const Contact: React.FC = () => {
 
 							<Button
 								type="submit"
-								className="w-full bg-[#91373E] disabled:opacity-45"
+								className="w-full bg-[#91373E] hover:bg-[#63262b] disabled:opacity-45"
 								disabled={isLoading}>
 								{isLoading ? (
 									<div className="flex items-center space-x-2">

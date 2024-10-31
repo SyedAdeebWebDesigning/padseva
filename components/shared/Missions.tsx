@@ -47,11 +47,9 @@ const Missions = ({}: MissionsProps) => {
 			<div className="flex items-center md:items-start flex-col mx-auto z-10 justify-start lg:pl-[300px] pb-16 -pt-10">
 				<h3 className="text-xl times-new-roman">Ready to make an impact?</h3>
 				<Link
-					href={
-						"https://docs.google.com/forms/d/e/1FAIpQLSdOFCZOhr9jdbcNsG_RKtxTvf1HIAVWYZmyHxCSWI16rDTTqg/viewform"
-					}
+					href="https://docs.google.com/forms/d/e/1FAIpQLSdOFCZOhr9jdbcNsG_RKtxTvf1HIAVWYZmyHxCSWI16rDTTqg/viewform"
 					target="_blank"
-					className="px-4 py-2 border-2 bg-transparent border-[#91373e] rounded transition-all duration-150 ease-in-out my-2 hover:bg-[#91373e] hover:text-white">
+					className="px-4 py-2 border-2 bg-transparent shadow-[#91373e] shadow-[4px_4px_0] border-[#91373e] rounded transition-all duration-150 ease-in-out my-2 hover:bg-[#91373e] hover:text-white hover:shadow-none">
 					Fill out the form
 				</Link>
 			</div>
