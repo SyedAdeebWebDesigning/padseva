@@ -131,7 +131,7 @@ const Contact: React.FC = () => {
 
 							<Button
 								type="submit"
-								className="w-full bg-[#91373E] hover:bg-[#63262b] disabled:opacity-45"
+								className="w-full bg-[#91373E] hover:bg-[#63262b] disabled:opacity-45 "
 								disabled={isLoading}>
 								{isLoading ? (
 									<div className="flex items-center space-x-2">
@@ -141,6 +141,7 @@ const Contact: React.FC = () => {
 								) : (
 									<span>Submit Message</span>
 								)}
+								<div className="absolute ease-[cubic-bezier(0.19,1,0.22,1)] -left-[75px] -top-[50px] -z-10 h-[155px] w-8 rotate-[35deg] bg-white/20 transition-all duration-500 group-hover:left-[120%]" />
 							</Button>
 						</form>
 					</Form>

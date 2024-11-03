@@ -74,6 +74,7 @@ const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
 									) : (
 										<div>Subscribe</div>
 									)}
+									<div className="absolute ease-[cubic-bezier(0.19,1,0.22,1)] -left-[75px] -top-[50px] -z-10 h-[155px] w-8 rotate-[35deg] bg-white/20 transition-all duration-500 group-hover:left-[120%]" />
 								</Button>
 							</div>
 						</FormControl>
