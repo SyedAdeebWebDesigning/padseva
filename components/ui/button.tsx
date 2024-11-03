@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-	"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:ring-offset-2 hover:ring-2 ring-[#63262b] relative group flex transform items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-md px-8 text-base/7 font-medium text-white transition-all duration-300 ease-in-out hover:ring-brand-700 focus:outline-none  focus:ring-2 focus:ring-offset-2",
+	"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ",
 	{
 		variants: {
 			variant: {
@@ -18,6 +18,8 @@ const buttonVariants = cva(
 					"bg-secondary text-secondary-foreground hover:bg-secondary/80",
 				ghost: "hover:bg-accent hover:text-accent-foreground",
 				link: "text-primary underline-offset-4 hover:underline",
+				padseva:
+					"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:ring-offset-2 hover:ring-2 ring-[#63262b] relative group flex transform items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-md px-8 text-base/7 font-medium text-white transition-all duration-300 ease-in-out hover:ring-brand-700 focus:outline-none  focus:ring-2 focus:ring-offset-2",
 			},
 			size: {
 				default: "h-10 px-4 py-2",

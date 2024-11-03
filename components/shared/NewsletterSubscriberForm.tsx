@@ -64,6 +64,7 @@ const NewsletterSubscriberForm = ({}: NewsletterSubscriberFormProps) => {
 								{/* Button Inside Input */}
 								<Button
 									type="submit"
+									variant={"padseva"}
 									disabled={isLoading}
 									className="absolute right-1 top-1 bottom-0 px-4 bg-[#91373e] text-white rounded hover:bg-[#7a2d33] transition-all">
 									{isLoading ? (

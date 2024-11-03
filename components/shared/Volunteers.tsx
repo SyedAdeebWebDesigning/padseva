@@ -55,7 +55,7 @@ const Volunteers = async ({}: VolunteersProps) => {
 						<Volunteer key={index} index={index} />
 					))}
 				</CarouselContent>
-				<CarouselPrevious />
+				<CarouselPrevious variant={"secondary"} />
 				<CarouselNext />
 			</Carousel>
 		</div>

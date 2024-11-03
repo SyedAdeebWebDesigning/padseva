@@ -73,13 +73,13 @@ export default async function Home() {
 						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>
-				<section className="w-full bg-[#ffe8e8] relative -mt-20">
+				<section className="w-full bg-[#ffe8e8] relative -mt-20 ">
 					<OurFounder />
 				</section>
 				<section className="bg-[#ffe8e8] relative">
 					<Volunteers />
 				</section>
-				<section className="bg-[#ffbaba] relative">
+				<section className="bg-[#ffbaba] relative ">
 					<NewsLetter />
 				</section>
 				<section className="bg-[#fff2f2] relative">

@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
 	};
 
 	return (
-		<div id="contact" className="relative">
+		<div id="contact" className="relative flower-bg-3">
 			<section className="mx-auto flex w-full flex-col justify-center items-start p-10">
 				{/* Header Image */}
 				<picture className="relative z-20 w-[250px] md:w-[300px] lg:w-[450px] h-[50px] lg:h-20 font-semibold mt-32">
@@ -130,6 +130,7 @@ const Contact: React.FC = () => {
 							/>
 
 							<Button
+								variant={"padseva"}
 								type="submit"
 								className="w-full bg-[#91373E] hover:bg-[#63262b] disabled:opacity-45 "
 								disabled={isLoading}>

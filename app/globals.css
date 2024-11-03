@@ -130,6 +130,10 @@
 		pointer-events: none;
 	}
 
+	::-webkit-scrollbar {
+		display: none; /* Hides the scrollbar for WebKit browsers */
+	}
+
 	.times-new-roman {
 		font-family: "Times New Roman", serif;
 	}
@@ -146,5 +150,26 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+	.flower-bg {
+		background: url(/svg/flower-1.png) repeat;
+		backdrop-filter: blur(10px);
+		background-size: contain;
+	}
+	.flower-bg-2 {
+		background: url(/svg/flower-2.png) no-repeat;
+		background-position: center;
+		backdrop-filter: blur(10px);
+		z-index: 10;
+		background-size: contain;
+		object-fit: cover;
+	}
+	.flower-bg-3 {
+		background: url(/svg/flower-2.png) no-repeat;
+		background-position: center;
+		backdrop-filter: blur(10px);
+		z-index: 10;
+		background-size: contain;
+		object-fit: cover;
 	}
 }
