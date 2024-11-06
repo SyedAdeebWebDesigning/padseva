@@ -44,7 +44,7 @@ const OurFounder = ({}: OurFounderProps) => {
 
 					{/* Founder Information */}
 					<div className="md:ml-8 text-center md:text-left">
-						<h3 className="text-3xl font-medium relative z-20">
+						<h3 className="text-3xl font-semibold relative z-20 times-new-roman">
 							Anwitha Srivatsa
 						</h3>
 						<p className="text-gray-600 mb-8">Founder of PadSeva</p>
