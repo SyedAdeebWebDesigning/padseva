@@ -43,7 +43,6 @@ export default async function Home() {
 			<div className="relative z-20">
 				<HeroSection />
 			</div>
-
 			<div>
 				<section className="relative z-10">
 					<Section />
