@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { createReview } from "@/lib/actions/Review.action";
 import { Loader2 } from "lucide-react";

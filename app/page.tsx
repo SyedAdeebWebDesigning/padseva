@@ -2,7 +2,6 @@ import Animation from "@/components/shared/Animation";
 import Contact from "@/components/shared/Contact";
 import HeroSection from "@/components/shared/HeroSection";
 import InstagramFeeds from "@/components/shared/InstagramFeeds";
-import Journey from "@/components/shared/Journey";
 import Missions from "@/components/shared/Missions";
 import NewsLetter from "@/components/shared/NewsLetter";
 import OurFounder from "@/components/shared/OurFounder";
@@ -18,6 +17,7 @@ import Link from "next/link";
 
 import NavLinks from "@/components/shared/NavLinks";
 import DropdownLinks from "@/components/shared/DropdownLinks";
+import Journey from "@/components/shared/Journey";
 import Image from "next/image";
 
 export default async function Home() {
@@ -55,20 +55,20 @@ export default async function Home() {
 				<section className="w-full bg-[#ffbaba] relative">
 					<Missions />
 				</section>
-				<section className="bg-black/50 relative z-[900]  backdrop-blur-xl">
+				<section className="bg-black/50 relative z-[900] backdrop-blur-xl">
 					<Journey />
 				</section>
 				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
 					<nav className="flex flex-wrap items-center justify-end w-full">
-						<picture>
-							<img
+						<div>
+							<Image
 								src={"/Padseva.png"}
 								width={150}
 								height={70}
 								alt="logo"
 								className="mr-auto ml-10 hidden xl:flex"
 							/>
-						</picture>
+						</div>
 						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>
@@ -77,6 +77,7 @@ export default async function Home() {
 				</section>
 				<section className="bg-[#ffe8e8] relative">
 					<Volunteers />
+
 				</section>
 				<section className="bg-[#ffbaba] relative ">
 					<NewsLetter />
