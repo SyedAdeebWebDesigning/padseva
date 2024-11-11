@@ -11,7 +11,7 @@ const page = async () => {
       <div className={"p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}>
         {newsletters.map((newsletter: INewsLetter) => (
           <Link
-            href={`/view-issues/${newsletter._id}`}
+            href={newsletter.issuePDF}
             key={newsletter._id}
             className={"bg-white shadow-lg rounded-md group p-4"}
           >
