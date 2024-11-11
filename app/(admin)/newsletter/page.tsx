@@ -5,6 +5,7 @@ import { INewsLetter } from "@/lib/database/model/Newsletter.model";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 interface pageProps {}
 
@@ -19,10 +20,12 @@ const page = async ({}: pageProps) => {
 					<Link
 						href={"/newsletter/new"}
 						className={cn(
-							buttonVariants({ variant: "default" }),
+							buttonVariants({variant: "padseva"}),
 							"bg-[#91373E] hover:bg-[#af4c54] mt-4"
 						)}>
 						Create Newsletter
+					<div
+						className="absolute ease-[cubic-bezier(0.19,1,0.22,1)] -left-[75px] -top-[50px] -z-10 h-[155px] w-8 rotate-[35deg] bg-white/20 transition-all duration-500 group-hover:left-[120%]"/>
 					</Link>
 				</div>
 			) : (
@@ -31,7 +34,7 @@ const page = async ({}: pageProps) => {
 						<Link
 							href={"/newsletter/new"}
 							className={cn(
-								buttonVariants({ variant: "default" }),
+								buttonVariants({variant: "default" }),
 								"bg-[#91373E] hover:bg-[#af4c54] mt-4"
 							)}>
 							Create New Newsletter
