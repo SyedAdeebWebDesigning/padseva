@@ -2,44 +2,45 @@ import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Padseva",
-	description:
-		"PadSeva is a social initiative focused on eradicating period poverty and promoting menstrual hygiene in rural communities across southern India.",
-	icons: {
-		icon: ["/padseva.jpeg"],
-	},
+  title: "Padseva",
+  description:
+    "PadSeva is a social initiative focused on eradicating period poverty and promoting menstrual hygiene in rural communities across India.",
+  icons: {
+    icon: ["/padseva.jpeg"],
+  },
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<ClerkProvider>
-			<html lang="en">
-				<body className={inter.className}>
-					<ToastContainer
-						position="top-right"
-						autoClose={1500}
-						hideProgressBar={false}
-						newestOnTop={false}
-						closeOnClick
-						rtl={false}
-						pauseOnFocusLoss
-						draggable
-						pauseOnHover
-						theme="light"
-					/>
-					<div>{children}</div>
-				</body>
-			</html>
-		</ClerkProvider>
-	);
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <ToastContainer
+            position="top-right"
+            autoClose={1500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+          <div>{children}</div>
+        </body>
+      </html>
+    </ClerkProvider>
+  );
 }

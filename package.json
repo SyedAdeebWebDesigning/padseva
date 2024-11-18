@@ -21,6 +21,7 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "complexity-report": "^2.0.0-alpha",
     "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.11.11",
     "lucide-react": "^0.439.0",
