@@ -23,7 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        elements: {
+          formButtonPrimary: "py-2.5 px-3 bg-[#63262b] !shadow-none",
+          formFieldInput: "py-4 px-3 text-black",
+          logoBox: "w-full h-[42px]",
+        },
+      }}
+    >
       <html lang="en">
         <body className={inter.className}>
           <ToastContainer
