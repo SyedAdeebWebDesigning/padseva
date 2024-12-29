@@ -152,7 +152,7 @@
 		transform: translate(-50%, -50%);
 	}
 	.flower-bg {
-		background: url(/svg/flower-1.png) repeat;
+		background: url(/svg/bg-1.svg) no-repeat;
 		backdrop-filter: blur(10px);
 		background-size: contain;
 	}

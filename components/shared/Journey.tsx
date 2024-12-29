@@ -26,7 +26,7 @@ const Journey = ({}: JourneyProps) => {
     },
     {
       title: "Dollars Raised",
-      value: 6000,
+      value: 400,
       isMore: true,
     },
   ];
