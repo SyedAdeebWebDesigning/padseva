@@ -62,7 +62,7 @@ const Volunteers = async ({}: VolunteersProps) => {
       {/* Main content */}
       <picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 mt-32">
         <Image
-          src={"/assets/our-core-team.png"}
+          src={"/assets/our-core-team.webp"}
           fill
           className="lg:ml-[255px] object-left drop-shadow-pink"
           alt="founder"

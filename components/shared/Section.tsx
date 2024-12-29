@@ -26,7 +26,7 @@ const Section = ({}: SectionProps) => {
         <div className="flex flex-col justify-center items-start p-10 order-2 lg:order-1 lg:pl-40">
           <picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
             <Image
-              src={"/assets/AboutPadSeva.png"}
+              src={"/assets/AboutPadSeva.webp"}
               className="drop-shadow-pink"
               fill
               alt=""

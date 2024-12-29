@@ -89,13 +89,13 @@
 		top: 0;
 		left: 0;
 		height: 55%;
-		background: url(/flowers-topleft.png) no-repeat right bottom;
+		background: url(/flowers-topleft.webp) no-repeat right bottom;
 	}
 
 	.flowers-topright {
 		top: 0;
 		right: 0;
-		background: url(/flowers-topright.png) no-repeat left bottom;
+		background: url(/flowers-topright.webp) no-repeat left bottom;
 	}
 
 	.flowers-bottomright {
@@ -103,13 +103,13 @@
 		height: 58%;
 		right: 0;
 		width: 50%;
-		background: url(/flowers-bottomright.png) no-repeat left top;
+		background: url(/flowers-bottomright.webp) no-repeat left top;
 	}
 
 	.flowers-bottomleft {
 		bottom: 0;
 		left: 0;
-		background: url(/flowers-bottomleft.png) no-repeat right top;
+		background: url(/flowers-bottomleft.webp) no-repeat right top;
 	}
 
 	.flowers-bottomleft,

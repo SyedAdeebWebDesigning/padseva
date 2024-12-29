@@ -34,7 +34,7 @@ const Journey = ({}: JourneyProps) => {
     <div className="mx-auto flex w-full flex-col justify-center items-center sm:items-start p-10">
       <picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-[100] ">
         <Image
-          src={"/assets/journey.png"}
+          src={"/assets/journey.webp"}
           fill
           alt="founder"
           objectFit="contain"

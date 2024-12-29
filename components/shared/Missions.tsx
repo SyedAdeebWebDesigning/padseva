@@ -13,7 +13,7 @@ const Missions = ({}: MissionsProps) => {
       <section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]  relative">
         <picture className="relative w-[250px] md:w-[300px] lg:w-[350px] lg:h-20 h-[50px] mb-4 font-semibold z-10">
           <Image
-            src={"/assets/mission.png"}
+            src={"/assets/mission.webp"}
             fill
             alt="Mission"
             className="object-left drop-shadow-pink"
