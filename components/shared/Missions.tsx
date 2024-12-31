@@ -33,7 +33,7 @@ const Missions = ({}: MissionsProps) => {
       <section className="absolute hidden xl:flex right-0 -top-[200px] z-[1]">
         <picture className="relative mb-4">
           <img
-            src={"/assets/img-2.jpg"}
+            src={"/assets/img-2.webp"}
             alt="Background"
             className="2xl:w-[800px] 2xl:h-[500px] aspect-[19/6] object-contain xl:w-[600px] xl:h-[500px] w-[600px] h-[300px]" // Custom size for 1725px
           />

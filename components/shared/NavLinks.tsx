@@ -47,7 +47,7 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
   }, []);
 
   return (
-    <ul className="flex justify-around items-center xl:w-[70%] w-full">
+    <nav className="flex justify-around items-center xl:w-[70%] w-full">
       <BlurFade inView delay={0.25 * 2}>
         <Image
           src={"/padseva.png"}
@@ -78,7 +78,7 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
           );
         },
       )}
-    </ul>
+    </nav>
   );
 };
 
