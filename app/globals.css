@@ -165,7 +165,7 @@
 		object-fit: cover;
 	}
 	.flower-bg-3 {
-		background: url(/svg/flower-2.png) no-repeat;
+		background: url(/svg/bg-3.svg) no-repeat;
 		background-position: center;
 		backdrop-filter: blur(10px);
 		z-index: 10;
