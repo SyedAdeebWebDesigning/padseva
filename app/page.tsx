@@ -27,7 +27,7 @@ export default async function Home() {
 
   const NavBarLinks = [
     { name: "Founder", href: "#founder" },
-    { name: "Team", href: "#team" },
+    // { name: "Team", href: "#team" },
     { name: "Newsletter", href: "#newsletter" },
     { name: "Contact Us", href: "#contact" },
   ];
