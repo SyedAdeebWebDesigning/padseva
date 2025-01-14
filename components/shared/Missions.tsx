@@ -16,7 +16,7 @@ const Missions = ({}: MissionsProps) => {
             src={"/assets/mission.webp"}
             fill
             alt="Mission"
-            className="object-left drop-shadow-pink"
+            className="object-left drop-shadow-white"
             objectFit="contain"
           />
         </picture>
