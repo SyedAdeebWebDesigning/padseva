@@ -9,12 +9,12 @@ const Journey = ({}: JourneyProps) => {
   const JourneyItems = [
     {
       title: "Bamboo Pads Synthesized",
-      value: 7500,
+      value: 8000,
       isMore: false,
     },
     {
       title: "Women Met",
-      value: 9000,
+      value: 9300,
       isMore: true,
     },
     {
@@ -24,7 +24,7 @@ const Journey = ({}: JourneyProps) => {
     },
     {
       title: "Dollars Raised",
-      value: 400,
+      value: 6400,
       isMore: true,
     },
   ];
