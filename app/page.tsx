@@ -7,7 +7,6 @@ import NewsLetter from "@/components/shared/NewsLetter";
 import OurFounder from "@/components/shared/OurFounder";
 import PlaceHolderImage from "@/components/shared/PlaceHolderImage";
 import Section from "@/components/shared/Section";
-import Volunteers from "@/components/shared/Volunteers";
 import { buttonVariants } from "@/components/ui/button";
 import { getUserById } from "@/lib/actions/User.action";
 import User from "@/lib/database/model/User.model";
@@ -76,9 +75,9 @@ export default async function Home() {
         <section className="w-full bg-[#ffe8e8] relative -mt-20 ">
           <OurFounder />
         </section>
-        <section className="bg-[#ffe8e8] relative">
-          <Volunteers />
-        </section>
+        {/*<section className="bg-[#ffe8e8] relative">*/}
+        {/*  <Volunteers />*/}
+        {/*</section>*/}
         <section className="bg-[#ffbaba] relative ">
           <NewsLetter />
         </section>

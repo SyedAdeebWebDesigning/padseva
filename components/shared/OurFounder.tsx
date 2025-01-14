@@ -5,15 +5,33 @@ interface OurFounderProps {}
 const OurFounder = ({}: OurFounderProps) => {
   return (
     <div
-      className="relative mx-auto flex w-full flex-col justify-center p-14 pt-0 z-10"
+      className="relative mx-auto flex w-full flex-col justify-center px-14  pt-0 z-10"
       id="founder"
     >
-      <div className="absolute inset-x-0 top-0 z-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <div className="absolute inset-x-0 bottom-0 z-0">
+        <svg
+          width="100%"
+          height="100%"
+          id="svg"
+          viewBox="0 0 1440 490"
+          xmlns="http://www.w3.org/2000/svg"
+          className="transition duration-300 ease-in-out delay-150"
+        >
           <path
+            d="M 0,500 L 0,125 C 97.35885167464116,155.16267942583733 194.71770334928232,185.32535885167462 279,182 C 363.2822966507177,178.67464114832538 434.4880382775119,141.86124401913875 525,138 C 615.5119617224881,134.13875598086125 725.3301435406698,163.22966507177034 825,152 C 924.6698564593302,140.77033492822966 1014.1913875598086,89.22009569377991 1115,78 C 1215.8086124401914,66.77990430622009 1327.9043062200958,95.88995215311004 1440,125 L 1440,500 L 0,500 Z"
+            stroke="none"
+            stroke-width="0"
             fill="#ffbaba"
-            fillOpacity="1"
-            d="M0,320L80,277.3C160,235,320,149,480,138.7C640,128,800,192,960,197.3C1120,203,1280,149,1360,122.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+            fill-opacity="0.53"
+            className="transition-all duration-300 ease-in-out delay-150 path-0"
+          ></path>
+          <path
+            d="M 0,500 L 0,291 C 115.56937799043064,270.57894736842104 231.13875598086128,250.1578947368421 328,251 C 424.8612440191387,251.8421052631579 503.01435406698556,273.9473684210526 583,283 C 662.9856459330144,292.0526315789474 744.8038277511962,288.0526315789474 849,289 C 953.1961722488038,289.9473684210526 1079.7703349282297,295.84210526315786 1182,297 C 1284.2296650717703,298.15789473684214 1362.1148325358852,294.57894736842104 1440,291 L 1440,500 L 0,500 Z"
+            stroke="none"
+            stroke-width="0"
+            fill="#ffbaba"
+            fill-opacity="1"
+            className="transition-all duration-300 ease-in-out delay-150 path-1"
           ></path>
         </svg>
       </div>
@@ -25,7 +43,7 @@ const OurFounder = ({}: OurFounderProps) => {
               <Image
                 src={"/assets/OurFounder.webp"}
                 fill
-                className="lg:ml-[255px] object-left drop-shadow-white"
+                className="lg:ml-[255px] object-left drop-shadow-pink"
                 alt="founder"
                 objectFit="contain"
               />

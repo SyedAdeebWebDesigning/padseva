@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.6.0",
+    "@google-pay/button-react": "^3.1.0",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -30,6 +31,7 @@
     "mongoose": "^8.6.3",
     "next": "14.2.4",
     "nodemailer": "^6.9.15",
+    "qrious": "^4.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-dropzone": "^14.3.5",

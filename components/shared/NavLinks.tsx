@@ -68,7 +68,7 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
                 key={link.name}
                 className={cn(
                   buttonVariants({ variant: "link" }),
-                  "text-xs pt-5 sm:text-sm lg:text-lg times-new-roman font-semibold",
+                  "text-xs pt-5 sm:text-sm lg:text-lg times-new-roman  font-semibold",
                   isActive ? "text-[#91373E] underline" : "", // Apply active styles.
                 )}
               >
