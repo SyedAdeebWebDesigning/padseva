@@ -24,14 +24,20 @@ const Section = ({}: SectionProps) => {
 
         {/* Left Text Section */}
         <div className="flex flex-col justify-center items-start p-10 order-2 lg:order-1 lg:pl-40">
-          <picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
-            <Image src={"/assets/AboutPadSeva.webp"} className="" fill alt="" />
+          <picture className="">
+            <Image
+              src={"/svg/AboutPadseva.svg"}
+              className=""
+              width={450}
+              height={50}
+              alt=""
+            />
           </picture>
           <BlurFade
             delay={0.25}
             inView
             className={
-              'className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman text-justify'
+              "mb-1 text-2xl leading-relaxed text-[#2e2e2e] times-new-roman text-justify"
             }
           >
             At PadSeva, we are dedicated to eradicating period poverty and
@@ -48,7 +54,7 @@ const Section = ({}: SectionProps) => {
           <BlurFade
             delay={0.25 * 2}
             inView
-            className="mb-8 text-lg leading-relaxed text-[#2e2e2e] times-new-roman text-justify"
+            className="mb-8 text-2xl leading-relaxed text-[#2e2e2e] times-new-roman text-justify"
           >
             Since our inception, we have distributed over 7,500 pads, reaching
             more than 9,000 individuals while raising awareness and driving

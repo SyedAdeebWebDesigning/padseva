@@ -17,11 +17,11 @@ const Journey = ({}: JourneyProps) => {
       value: 9300,
       isMore: true,
     },
-    {
-      title: "Volunteers",
-      value: 30,
-      isMore: false,
-    },
+    // {
+    //   title: "Volunteers",
+    //   value: 30,
+    //   isMore: false,
+    // },
     {
       title: "Dollars Raised",
       value: 6400,
@@ -40,7 +40,7 @@ const Journey = ({}: JourneyProps) => {
           className="lg:ml-[255px] object-left"
         />
       </picture>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-white w-full py-10 container mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white w-full py-10 container mx-auto">
         {JourneyItems.map((item, index) => (
           <div
             key={index}

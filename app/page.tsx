@@ -18,6 +18,7 @@ import NavLinks from "@/components/shared/NavLinks";
 import DropdownLinks from "@/components/shared/DropdownLinks";
 import Journey from "@/components/shared/Journey";
 import Image from "next/image";
+import Impact from "@/components/shared/Impact";
 
 export default async function Home() {
   const clerkUser = await currentUser();
@@ -27,7 +28,6 @@ export default async function Home() {
 
   const NavBarLinks = [
     { name: "Founder", href: "#founder" },
-    // { name: "Team", href: "#team" },
     { name: "Newsletter", href: "#newsletter" },
     { name: "Contact Us", href: "#contact" },
   ];
@@ -52,12 +52,10 @@ export default async function Home() {
           <PlaceHolderImage />
         </section>
 
-        <section className="w-full bg-[#ffbaba] relative">
+        <section className="w-full bg-[#ffb6d5] z-10 relative">
           <Missions />
         </section>
-        <section className="bg-black/50 relative z-[900] backdrop-blur-xl">
-          <Journey />
-        </section>
+
         <section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
           <nav className="flex flex-wrap items-center justify-end w-full">
             <div>
@@ -75,11 +73,15 @@ export default async function Home() {
         <section className="w-full bg-[#ffe8e8] relative -mt-20 ">
           <OurFounder />
         </section>
-        {/*<section className="bg-[#ffe8e8] relative">*/}
-        {/*  <Volunteers />*/}
-        {/*</section>*/}
+
+        <section className="bg-[#ffe8e8] relative bg-bag">
+          <Impact />
+        </section>
         <section className="bg-[#ffbaba] relative ">
           <NewsLetter />
+        </section>
+        <section className="bg-black/20 relative z-[900] backdrop-blur mt-10 mb-10">
+          <Journey />
         </section>
         <section className="bg-[#fff2f2] relative">
           <InstagramFeeds />

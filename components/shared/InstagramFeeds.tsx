@@ -14,8 +14,8 @@ const InstagramFeeds = ({}: InstagramFeedsProps) => {
   }, []);
 
   return (
-    <div className="relative -mb-20">
-      <div className="absolute inset-x-0 top-0 z-0 mt-10">
+    <div className="relative -mt-10">
+      <div className="absolute inset-x-0 top-0 z-0 ">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffbaba"

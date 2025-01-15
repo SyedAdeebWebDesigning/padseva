@@ -163,27 +163,27 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
-	.flower-bg {
-		background: url(/svg/bg-1.svg) no-repeat;
-		backdrop-filter: blur(10px);
-		background-size: contain;
-	}
-	.flower-bg-2 {
-		background: url(/svg/flower-2.png) no-repeat;
-		background-position: center;
-		backdrop-filter: blur(10px);
-		z-index: 10;
-		background-size: contain;
-		object-fit: cover;
-	}
-	.flower-bg-3 {
-		background: url(/svg/bg-3.svg) no-repeat;
-		background-position: center;
-		backdrop-filter: blur(10px);
-		z-index: 10;
-		background-size: contain;
-		object-fit: cover;
-	}
+	/*.flower-bg {*/
+	/*	background: url(/svg/bg-1.svg) no-repeat;*/
+	/*	backdrop-filter: blur(10px);*/
+	/*	background-size: contain;*/
+	/*}*/
+	/*.flower-bg-2 {*/
+	/*	background: url(/svg/flower-2.png) no-repeat;*/
+	/*	background-position: center;*/
+	/*	backdrop-filter: blur(10px);*/
+	/*	z-index: 10;*/
+	/*	background-size: contain;*/
+	/*	object-fit: cover;*/
+	/*}*/
+	/*.flower-bg-3 {*/
+	/*	background: url(/svg/bg-3.svg) no-repeat;*/
+	/*	background-position: center;*/
+	/*	backdrop-filter: blur(10px);*/
+	/*	z-index: 10;*/
+	/*	background-size: contain;*/
+	/*	object-fit: cover;*/
+	/*}*/
 }
 
 .cl-internal-1dauvpw {
@@ -191,4 +191,10 @@
 }
 .cl-internal-13u79ez {
 	display: none
+}
+
+.bg-bag {
+	background: url('/svg/bags.webp') no-repeat;
+	background-size: cover;
+
 }

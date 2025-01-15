@@ -1,7 +1,4 @@
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
-import { buttonVariants } from "../ui/button"; // import FlowerBackground from "./flowerBackground";
 
 // import FlowerBackground from "./flowerBackground";
 
@@ -9,23 +6,24 @@ interface MissionsProps {}
 
 const Missions = ({}: MissionsProps) => {
   return (
-    <div className=" flower-bg">
-      <section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[300px]  relative">
+    <div className="bg-[#ffe8e8]">
+      <section className="mx-auto flex w-full flex-col justify-center items-start p-10 lg:pl-[200px]  relative">
         <picture className="relative w-[250px] md:w-[300px] lg:w-[350px] lg:h-20 h-[50px] mb-4 font-semibold z-10">
           <Image
-            src={"/assets/mission.webp"}
-            fill
-            alt="Mission"
-            className="object-left drop-shadow-white"
-            objectFit="contain"
+            src={"/svg/OurMission.svg"}
+            className=""
+            width={450}
+            height={50}
+            alt=""
           />
         </picture>
 
-        <p className="leading-relaxed text-[#2e2e2e] text-2xl times-new-roman md:w-[40%] min-[1536px]:w-[30%] z-10 text-justify font-medium">
-          Empowering communities, one pad at a time. We believe in dignity,
-          equality, and the basic right to menstrual hygiene. Join us in our
-          mission to eradicate period poverty and uplift undeserved communities
-          in southern India. Together, we can create a more equitable society.
+        <p className="leading-tight text-[#2e2e2e] text-3xl times-new-roman md:w-[40%] min-[1536px]:w-[50%] z-10 text-justify font-medium mt-10">
+          Our mission is grounded in the belief that menstrual hygiene is not
+          merely a health issue but a matter of dignity and equality. We are
+          committed to promoting education, accessibility and starting a
+          conversation in this critical area, thereby uplifting underserved
+          populations and fostering a more equitable society.
           <br />
         </p>
       </section>
@@ -39,25 +37,6 @@ const Missions = ({}: MissionsProps) => {
           />
         </picture>
       </section>
-
-      <div className="flex items-center md:items-start flex-col mx-auto z-10 justify-start pb-16 -pt-10">
-        <h3 className="text-3xl md:text-5xl times-new-roman mx-auto">
-          Ready to make an impact?
-        </h3>
-        <div className="flex items-center md:items-center flex-col md:flex-row mx-auto mt-2">
-          <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdOFCZOhr9jdbcNsG_RKtxTvf1HIAVWYZmyHxCSWI16rDTTqg/viewform"
-            target="_blank"
-            className={cn(
-              buttonVariants({ variant: "padseva" }),
-              "bg-[#91373e] hover:bg-[#63262b] text-white",
-            )}
-          >
-            Fill out the form
-            <div className="absolute ease-[cubic-bezier(0.19,1,0.22,1)] -left-[75px] -top-[50px] -z-10 h-[155px] w-8 rotate-[35deg] bg-white/20 transition-all duration-500 group-hover:left-[120%]" />
-          </Link>
-        </div>
-      </div>
     </div>
   );
 };
