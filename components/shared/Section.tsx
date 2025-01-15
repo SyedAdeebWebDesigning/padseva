@@ -13,7 +13,7 @@ const Section = ({}: SectionProps) => {
         <div className="h-full flex items-center justify-center p-4 py-20 order-1 lg:order-2 bg-gradient-to-br from-[#ffb9bf] to-[#e7717b]">
           <div className="relative size-[600px] flex items-center justify-center">
             <Image
-              src="/assets/padseva-gallery/gif.gif"
+              src="/assets/img-1.webp"
               alt="PadSeva Image"
               unoptimized
               fill
@@ -25,12 +25,7 @@ const Section = ({}: SectionProps) => {
         {/* Left Text Section */}
         <div className="flex flex-col justify-center items-start p-10 order-2 lg:order-1 lg:pl-40">
           <picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] mb-4 font-semibold">
-            <Image
-              src={"/assets/AboutPadSeva.webp"}
-              className="drop-shadow-pink"
-              fill
-              alt=""
-            />
+            <Image src={"/assets/AboutPadSeva.webp"} className="" fill alt="" />
           </picture>
           <BlurFade
             delay={0.25}
