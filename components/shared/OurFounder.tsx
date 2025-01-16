@@ -39,7 +39,7 @@ const OurFounder = ({}: OurFounderProps) => {
       <section className="founder-section py-12">
         <div className="my-20">
           <div className="">
-            <div className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10 mt-32 flex justify-start">
+            <div className="relative w-[600px] h-[100px] font-semibold z-10 mt-32 flex justify-start">
               <Image
                 src={"/assets/OurFounder.webp"}
                 fill

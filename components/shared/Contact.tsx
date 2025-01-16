@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
     <div id="contact" className="relative flower-bg-3">
       <section className="mx-auto flex w-full flex-col justify-center items-start p-10">
         {/* Header Image */}
-        <picture className="relative z-20 w-[250px] md:w-[300px] lg:w-[450px] h-[50px] lg:h-20 font-semibold mt-32">
+        <picture className="relative w-[600px] h-[100px] z-10 font-semibold mt-32">
           <Image
             src="/assets/contact.webp"
             fill

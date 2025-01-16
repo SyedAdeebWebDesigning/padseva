@@ -38,7 +38,7 @@ const NewsLetter = ({}: NewsLetterProps) => {
 
       <section className="mx-auto flex w-full flex-col justify-center p-6 md:p-10 flower-bg-2">
         {/* Header image */}
-        <picture className="relative w-[250px] md:w-[300px] lg:w-[450px] lg:h-20 h-[50px] font-semibold z-10  mt-32">
+        <picture className="relative w-[600px] h-[100px] font-semibold z-10  mt-32">
           <Image
             src={"/assets/newsletter.webp"}
             fill

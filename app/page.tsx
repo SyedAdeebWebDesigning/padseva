@@ -74,14 +74,15 @@ export default async function Home() {
           <OurFounder />
         </section>
 
-        <section className="bg-[#ffe8e8] relative bg-bag">
-          <Impact />
+        <section className="bg-black/20 relative z-[900] backdrop-blur">
+          <Journey />
         </section>
         <section className="bg-[#ffbaba] relative ">
           <NewsLetter />
         </section>
-        <section className="bg-black/20 relative z-[900] backdrop-blur mt-10 mb-10">
-          <Journey />
+
+        <section className="bg-[#ffe8e8] relative bg-bag mt-10 mb-10">
+          <Impact />
         </section>
         <section className="bg-[#fff2f2] relative">
           <InstagramFeeds />

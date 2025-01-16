@@ -28,9 +28,10 @@ const Section = ({}: SectionProps) => {
             <Image
               src={"/svg/AboutPadseva.svg"}
               className=""
-              width={450}
-              height={50}
+              width={600}
+              height={100}
               alt=""
+              objectFit={"cover"}
             />
           </picture>
           <BlurFade
@@ -51,19 +52,7 @@ const Section = ({}: SectionProps) => {
           </BlurFade>
           <br />
           <br />
-          <BlurFade
-            delay={0.25 * 2}
-            inView
-            className="mb-8 text-2xl leading-relaxed text-[#2e2e2e] times-new-roman text-justify"
-          >
-            Since our inception, we have distributed over 7,500 pads, reaching
-            more than 9,000 individuals while raising awareness and driving
-            conversations around menstruation. With education and community
-            engagement at the heart of our efforts, PadSeva not only provides
-            essential resources but also promotes understanding and advocacy for
-            gender equality. Join us in our journey to create a world where
-            menstrual health is a right, not a privilege.
-          </BlurFade>
+
           <BlurFade delay={0.25 * 3} inView>
             <Link
               href="https://www.instagram.com/pad.seva?igsh=MXQxbWVkbXFvMzYwdQ=="
