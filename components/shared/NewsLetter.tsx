@@ -38,11 +38,11 @@ const NewsLetter = ({}: NewsLetterProps) => {
 
       <section className="mx-auto flex w-full flex-col justify-center p-6 md:p-10 flower-bg-2">
         {/* Header image */}
-        <picture className="relative w-[600px] h-[100px] font-semibold z-10  mt-32">
+        <picture className="relative w-full md:w-[600px] h-[100px] font-semibold z-10  mt-32">
           <Image
             src={"/assets/newsletter.webp"}
             fill
-            className="lg:ml-[255px] object-left drop-shadow-white"
+            className="lg:ml-[200px] drop-shadow-white"
             alt="founder"
             style={{ objectFit: "contain" }}
           />

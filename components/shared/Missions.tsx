@@ -12,7 +12,7 @@ const Missions = ({}: MissionsProps) => {
           <Image
             src={"/svg/OurMission.svg"}
             className=""
-            width={600}
+            width={480}
             height={100}
             alt=""
           />

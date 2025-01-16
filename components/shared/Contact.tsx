@@ -60,11 +60,11 @@ const Contact: React.FC = () => {
     <div id="contact" className="relative flower-bg-3">
       <section className="mx-auto flex w-full flex-col justify-center items-start p-10">
         {/* Header Image */}
-        <picture className="relative w-[600px] h-[100px] z-10 font-semibold mt-32">
+        <picture className="relative w-full md:w-[600px] h-[100px] z-10 font-semibold mt-32">
           <Image
             src="/assets/contact.webp"
             fill
-            className="lg:ml-[255px] object-center drop-shadow-white object-contain"
+            className="lg:ml-[200px] object-center drop-shadow-white object-contain"
             alt="Contact"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
