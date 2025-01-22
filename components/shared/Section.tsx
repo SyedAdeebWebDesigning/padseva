@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import BlurFade from "@/components/ui/blur-fade";
+import { FaSpotify } from "react-icons/fa6";
 
 interface SectionProps {}
 
@@ -49,20 +50,44 @@ const Section = ({}: SectionProps) => {
             health. Our innovative bamboo-made pads, created through our
             personal project initiative, have reached thousands of women and
             girls, ensuring they can manage their periods with dignity.
+            <br />
+            <br />
+            Since our inception, we have distributed over 7,500 pads, reaching
+            more than 9,000 individuals while raising awareness and driving
+            conversations around menstruation. With education and community
+            engagement at the heart of our efforts, PadSeva not only provides
+            essential resources but also promotes understanding and advocacy for
+            gender equality. Join us in our journey to create a world where
+            menstrual health is a right, not a privilege.
           </BlurFade>
           <br />
           <br />
-
-          <BlurFade delay={0.25 * 3} inView>
-            <Link
-              href="https://www.instagram.com/pad.seva?igsh=MXQxbWVkbXFvMzYwdQ=="
-              target="_blank"
-              className="inline-flex hover:text-white hover:bg-[#ff8b9d] rounded transition-all duration-150 py-3 px-6  focus:outline-none bg-transparent border-[#ff8b9d] border-2 text-black text-lg items-center space-x-2 justify-center"
-            >
-              <FaInstagram />
-              <span>pad.seva</span>
-            </Link>
-          </BlurFade>
+          <div
+            className={
+              "flex items-center flex-col mx-auto sm:mx-0  sm:flex-row"
+            }
+          >
+            <BlurFade delay={0.25 * 3} inView className={"w-full"}>
+              <Link
+                href="https://www.instagram.com/pad.seva?igsh=MXQxbWVkbXFvMzYwdQ=="
+                target="_blank"
+                className="inline-flex hover:text-white hover:bg-[#ff8b9d]  rounded transition-all duration-150 py-3 px-6  focus:outline-none bg-transparent border-[#ff8b9d] border-2 text-black text-lg items-center space-x-2 justify-center"
+              >
+                <FaInstagram />
+                <span>pad.seva</span>
+              </Link>
+            </BlurFade>{" "}
+            <BlurFade delay={0.25 * 4} inView className={"w-full"}>
+              <Link
+                href="https://open.spotify.com/episode/782SIhJeRDL4rYi3mawupa"
+                target="_blank"
+                className="inline-flex hover:text-white hover:bg-[#1DB954] rounded transition-all duration-150 py-3 px-6  focus:outline-none bg-transparent border-[#1DB954] border-2 text-black text-lg items-center space-x-2 justify-center sm:ml-2 mt-2 sm:mt-0"
+              >
+                <FaSpotify />
+                <span>Padseva</span>
+              </Link>
+            </BlurFade>
+          </div>
         </div>
       </div>
     </div>

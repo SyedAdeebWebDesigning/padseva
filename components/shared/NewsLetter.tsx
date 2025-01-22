@@ -38,15 +38,15 @@ const NewsLetter = ({}: NewsLetterProps) => {
 
       <section className="mx-auto flex w-full flex-col justify-center p-6 md:p-10 flower-bg-2">
         {/* Header image */}
-        <picture className="relative w-full md:w-[600px] h-[100px] font-semibold z-10  mt-32">
-          <Image
-            src={"/assets/newsletter.webp"}
-            fill
-            className="lg:ml-[200px] drop-shadow-white"
-            alt="founder"
-            style={{ objectFit: "contain" }}
-          />
-        </picture>
+
+        <Image
+          src={"/assets/newsletter.svg"}
+          width={600}
+          height={100}
+          className="drop-shadow-white -mb-40 sm:-mb-52 lg:ml-[150px] -z-10"
+          alt="founder"
+          style={{ objectFit: "contain" }}
+        />
 
         {/* Dynamically rendering newsletter issues */}
         <div className="w-full max-w-7xl mx-auto my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">

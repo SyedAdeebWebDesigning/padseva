@@ -10,7 +10,7 @@ const Impact = () => {
         className="text-3xl md:text-5xl text-white times-new-roman mx-auto mt-20"
         style={{ color: "#ffffff", textShadow: "1px 1px 5px #000000" }}
       >
-        Ready to make an impact?
+        Ready To Make An Impact?
       </h3>
       <div className="flex flex-col md:flex-row mx-auto mt-2 ">
         <Link
