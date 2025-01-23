@@ -196,5 +196,6 @@
 .bg-bag {
 	background: url('/svg/bags.webp') no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 
 }
