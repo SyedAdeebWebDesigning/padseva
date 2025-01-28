@@ -52,7 +52,7 @@ const OurFounder = ({}: OurFounderProps) => {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center w-full relative my-10 z-10">
           {/* Founder Image */}
-          <div className="relative w-[250px] h-[250px] md:w-[300px] md:h-[300px] mb-6 md:mb-0 z-20">
+          <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] mb-6 md:mb-0 z-20">
             <Image
               src={"/assets/founder.webp"}
               alt="Founder"
@@ -69,16 +69,23 @@ const OurFounder = ({}: OurFounderProps) => {
             </h3>
             <p className="text-gray-600 mb-8">Founder of PadSeva</p>
 
-            <div className="max-w-3xl z-20 relative">
+            <div className="max-w-3xl z-20 relative leading-tight text-[#2e2e2e] text-justify font-semibold text-2xl 2xl:text-3xl times-new-roman">
               <p className="text-lg text-gray-700 mb-4 text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                voluptate deleniti exercitationem accusantium fuga natus tempore
-                iure, veniam nulla quasi?
+                Anwitha is currently a DP1 student studying at Chirec
+                International School. With her Higher Levels in Global Politics,
+                English, and Economics, she aspires to pursue a career in law.
+                She founded PadSeva in 2023 to address inequality and ensure
+                equitable access to essential resources for all. Passionate
+                about breaking down societal stigma surrounding menstruation,
+                she’s using social media to initiate conversations and bring
+                about change.
               </p>
               <p className="text-lg text-gray-700 text-justify">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                ad nostrum soluta dolores asperiores at officia fugiat suscipit?
-                Quisquam deserunt ipsam, quas distinctio excepturi sapiente.
+                When she’s not working on PadSeva, you’ll find her practicing
+                Bharatanatyam, yelling in Indian committees at MUNs, or watching
+                Tangled for the 100th time with her younger sister. She hopes
+                Padseva will serve as a meaningful step toward fostering
+                conversation and alleviating menstrual health disparities.
               </p>
             </div>
           </div>
