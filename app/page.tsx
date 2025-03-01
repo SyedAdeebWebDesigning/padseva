@@ -21,104 +21,102 @@ import Image from "next/image";
 import Impact from "@/components/shared/Impact";
 
 export default async function Home() {
-  const clerkUser = await currentUser();
-  const clerkUserId = clerkUser?.id || "";
-  const user = (await getUserById(clerkUserId)) as User;
-  const isAdmin = user?.role === "Admin";
+	const clerkUser = await currentUser();
+	const clerkUserId = clerkUser?.id || "";
+	const user = (await getUserById(clerkUserId)) as any;
+	const isAdmin = user?.role === "Admin";
 
-  const NavBarLinks = [
-    { name: "Founder", href: "#founder" },
-    { name: "Newsletter", href: "#newsletter" },
-    { name: "Contact Us", href: "#contact" },
-  ];
-  return (
-    <main
-      className={`scroll-smooth ${
-        process.env.IS_PAID == "false" && "invisible"
-      }`}
-    >
-      <DropdownLinks isAdmin={isAdmin} />
-      <Animation />
+	const NavBarLinks = [
+		{ name: "Founder", href: "#founder" },
+		{ name: "Newsletter", href: "#newsletter" },
+		{ name: "Contact Us", href: "#contact" },
+	];
+	return (
+		<main
+			className={`scroll-smooth ${
+				process.env.IS_PAID == "false" && "invisible"
+			}`}>
+			<DropdownLinks isAdmin={isAdmin} />
+			<Animation />
 
-      <div className="relative z-20">
-        <HeroSection />
-      </div>
-      <div>
-        <section className="relative z-10">
-          <Section />
-        </section>
+			<div className="relative z-20">
+				<HeroSection />
+			</div>
+			<div>
+				<section className="relative z-10">
+					<Section />
+				</section>
 
-        <section className="relative z-0">
-          <PlaceHolderImage />
-        </section>
+				<section className="relative z-0">
+					<PlaceHolderImage />
+				</section>
 
-        <section className="w-full bg-[#ffb6d5] z-10 relative">
-          <Missions />
-        </section>
+				<section className="w-full bg-[#ffb6d5] z-10 relative">
+					<Missions />
+				</section>
 
-        <section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
-          <nav className="flex flex-wrap items-center justify-end w-full">
-            <div>
-              <Image
-                src={"/Padseva.webp"}
-                width={150}
-                height={70}
-                alt="logo"
-                className="mr-auto ml-10 hidden xl:flex"
-              />
-            </div>
-            <NavLinks NavBarLinks={NavBarLinks} />
-          </nav>
-        </section>
-        <section className="w-full bg-[#ffe8e8] relative -mt-20 ">
-          <OurFounder />
-        </section>
+				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
+					<nav className="flex flex-wrap items-center justify-end w-full">
+						<div>
+							<Image
+								src={"/Padseva.webp"}
+								width={150}
+								height={70}
+								alt="logo"
+								className="mr-auto ml-10 hidden xl:flex"
+							/>
+						</div>
+						<NavLinks NavBarLinks={NavBarLinks} />
+					</nav>
+				</section>
+				<section className="w-full bg-[#ffe8e8] relative -mt-20 ">
+					<OurFounder />
+				</section>
 
-        <section className="bg-black/20 relative z-[900] backdrop-blur">
-          <Journey />
-        </section>
-        <section className="bg-[#ffbaba] relative ">
-          <NewsLetter />
-        </section>
+				<section className="bg-black/20 relative z-[900] backdrop-blur">
+					<Journey />
+				</section>
+				<section className="bg-[#ffbaba] relative ">
+					<NewsLetter />
+				</section>
 
-        <section className="bg-[#ffe8e8] relative bg-bag mt-10 mb-10">
-          <Impact />
-        </section>
-        <section className="bg-[#fff2f2] relative">
-          <InstagramFeeds />
-        </section>
-        <section className="bg-[#ffbaba] relative">
-          <Contact />
-        </section>
-        <footer className="relative">
-          <div className="bg-[#43191d] text-white">
-            <div className="container mx-auto flex flex-col md:flex-row items-center justify-around p-4">
-              <div className="flex items-center justify-center">
-                <p className="text-sm">
-                  &copy; 2024 PadSeva - All rights reserved.
-                </p>
-              </div>
+				<section className="bg-[#ffe8e8] relative bg-bag mt-10 mb-10">
+					<Impact />
+				</section>
+				<section className="bg-[#fff2f2] relative">
+					<InstagramFeeds />
+				</section>
+				<section className="bg-[#ffbaba] relative">
+					<Contact />
+				</section>
+				<footer className="relative">
+					<div className="bg-[#43191d] text-white">
+						<div className="container mx-auto flex flex-col md:flex-row items-center justify-around p-4">
+							<div className="flex items-center justify-center">
+								<p className="text-sm">
+									&copy; 2024 PadSeva - All rights reserved.
+								</p>
+							</div>
 
-              <div className="flex items-center justify-center text-gray-300">
-                <p className="text-xs">
-                  Designed by
-                  <Link
-                    href="https://syedadeeb.vercel.app/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={cn(
-                      buttonVariants({ variant: "link" }),
-                      "text-gray-300 text-sm -ml-3",
-                    )}
-                  >
-                    Syed Adeeb
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </main>
-  );
+							<div className="flex items-center justify-center text-gray-300">
+								<p className="text-xs">
+									Designed by
+									<Link
+										href="https://syedadeeb.vercel.app/"
+										target="_blank"
+										rel="noreferrer"
+										className={cn(
+											buttonVariants({ variant: "link" }),
+											"text-gray-300 text-sm -ml-3"
+										)}>
+										Syed Adeeb
+									</Link>
+								</p>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</main>
+	);
 }
