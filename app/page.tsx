@@ -19,6 +19,7 @@ import DropdownLinks from "@/components/shared/DropdownLinks";
 import Journey from "@/components/shared/Journey";
 import Image from "next/image";
 import Impact from "@/components/shared/Impact";
+import Script from "next/script";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
