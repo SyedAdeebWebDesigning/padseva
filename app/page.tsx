@@ -20,6 +20,7 @@ import Journey from "@/components/shared/Journey";
 import Image from "next/image";
 import Impact from "@/components/shared/Impact";
 import Script from "next/script";
+import Podcast from "@/components/shared/Podcast";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
@@ -30,6 +31,7 @@ export default async function Home() {
 	const NavBarLinks = [
 		{ name: "Founder", href: "#founder" },
 		{ name: "Newsletter", href: "#newsletter" },
+		{ name: "Podcast", href: "#podcast" },
 		{ name: "Contact Us", href: "#contact" },
 	];
 	return (
@@ -80,8 +82,10 @@ export default async function Home() {
 				<section className="bg-[#ffbaba] relative ">
 					<NewsLetter />
 				</section>
-
-				<section className="bg-[#ffe8e8] relative bg-bag mt-10 mb-10">
+				<section className="bg-[#ffbaba] relative ">
+					<Podcast />
+				</section>
+				<section className="bg-[#ffe8e8] relative bg-bag mb-10">
 					<Impact />
 				</section>
 				<section className="bg-[#fff2f2] relative">
