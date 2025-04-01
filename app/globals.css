@@ -269,3 +269,13 @@
 .youtube-slider:hover::-webkit-slider-thumb {
 	transform: scale(1);
 }
+
+.ytp-title-channel {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.ytp-chrome-top {
+	display: none !important;
+	visibility: hidden !important;
+}

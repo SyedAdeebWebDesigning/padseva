@@ -106,85 +106,12 @@ const Video = ({}: VideoProps) => {
 
 	return (
 		<div className="relative" id="donate">
-			<div className="relative overflow-hidden z-[99999]">
+			<div className="relative overflow-hidden z-[99999] cursor-none w-full max-w-full aspect-video">
 				{/* Video */}
-				<video
-					ref={videoRef}
-					autoPlay
-					loop
-					muted={muted}
-					onTimeUpdate={handleVideoTimeUpdate}
-					onLoadedMetadata={handleLoadedMetadata}
-					onClick={togglePlayPause} // Click video to pause/play
-					className="top-0 relative left-0 w-full min-h-[20vh] object-contain sm:object-cover bg-[#fff2f2]">
-					<source
-						src="/assets/videos/PeriodPoverty-compressed.mp4"
-						type="video/mp4"
-					/>
-				</video>
-
-				{/* Video Controls */}
-				<div className="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-black/0 py-4">
-					<div className="flex justify-between items-center px-10">
-						{/* Play/Pause Button */}
-						{isPlaying ? (
-							<div className="flex items-center space-x-2">
-								<PauseCircle
-									size={24}
-									className="size-[44px] text-white cursor-pointer hover:bg-white hover:text-black rounded-full p-2"
-									onClick={togglePlayPause}
-								/>
-							</div>
-						) : (
-							<div className="flex items-center space-x-2">
-								<PlayCircle
-									size={24}
-									onClick={togglePlayPause}
-									className="size-[44px] text-white cursor-pointer hover:bg-white hover:text-black rounded-full p-2"
-								/>
-							</div>
-						)}
-
-						{/* Volume Control */}
-						<div className="flex items-center space-x-2">
-							<Button
-								onClick={toggleMute}
-								size={"icon"}
-								className="size-[44px] text-white cursor-pointer hover:bg-white hover:text-black rounded-full p-2"
-								variant="ghost">
-								{muted ? <VolumeX size={24} /> : <Volume2 size={24} />}
-							</Button>
-							<Input
-								type="range"
-								min="0"
-								max="1"
-								step="0.01"
-								value={volume}
-								onChange={handleVolumeChange}
-								className="w-32 accent-red-500 cursor-pointer ring-black"
-							/>
-						</div>
-
-						{/* Video Progress Bar */}
-						<Input
-							type="range"
-							min="0"
-							max="100"
-							step="0.1"
-							value={progress}
-							onChange={handleProgressChange}
-							className="w-full mx-4 accent-red-500 cursor-pointer"
-						/>
-					</div>
-
-					{/* Video Timer */}
-					<div className="flex justify-center items-center text-white mt-2">
-						<span>
-							{formatTime(currentTime)} /{" "}
-							{formatTime(videoRef?.current?.duration || duration)}
-						</span>
-					</div>
-				</div>
+				<iframe
+					src="https://drive.google.com/file/d/1Ktw12ahm0ancw6UADQVVyT01b0w9K-8h/preview"
+					className="w-full h-[100vh] object-contain"
+					allow="autoplay"></iframe>
 			</div>
 
 			<div>
