@@ -5,6 +5,7 @@ import { TextReveal } from "@/components/magicui/text-reveal";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { PlayCircle, PauseCircle, VolumeX, Volume2 } from "lucide-react"; // Import icons
+import Image from "next/image";
 
 interface VideoProps {}
 
@@ -105,13 +106,24 @@ const Video = ({}: VideoProps) => {
 	};
 
 	return (
-		<div className="relative" id="donate">
+		<div className="relative bg-white" id="donate ">
+			<Image
+				src={"/assets/OurPitch.png"}
+				width={500}
+				height={100}
+				className="lg:ml-[150px] bg-white"
+				alt="Podcast"
+				style={{ objectFit: "contain" }}
+			/>
 			<div className="relative overflow-hidden z-[99999] cursor-none w-full max-w-full aspect-video">
 				{/* Video */}
 				<iframe
 					src="https://drive.google.com/file/d/1Ktw12ahm0ancw6UADQVVyT01b0w9K-8h/preview"
 					className="w-full h-[100vh] object-contain"
-					allow="autoplay"></iframe>
+					allow="autoplay"
+					allowFullScreen
+					allowTransparency
+					loading="lazy"></iframe>
 			</div>
 
 			<div>

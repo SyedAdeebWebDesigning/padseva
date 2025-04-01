@@ -50,7 +50,7 @@ export default async function Home() {
 					<Section />
 				</section>
 
-				<section className="relative z-[10]">
+				<section className="relative z-[0]">
 					<PlaceHolderImage />
 				</section>
 
@@ -89,7 +89,7 @@ export default async function Home() {
 					<Podcast />
 				</section>
 
-				<section className="relative">
+				<section className="relative bg-white">
 					<Video />
 				</section>
 				<section className="bg-[#fff2f2] relative z-30">

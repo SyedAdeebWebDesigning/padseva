@@ -13,16 +13,33 @@ const PodcastList = async () => {
 	return (
 		<div className="bg-white py-14" id="podcast">
 			<Image
-				src={"/assets/Podcast.webp"}
-				width={300}
+				src={"/assets/OurPodcast.png"}
+				width={500}
 				height={100}
-				className="drop-shadow-pink lg:ml-[150px]"
+				className="lg:ml-[150px]"
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>
 			<div className="max-w-7xl mx-auto text-left mt-10">
 				<h2 className="text-3xl font-bold mb-8">{podcast.name}</h2>
-				<p className="text-gray-600 mb-6 text-justify">{podcast.description}</p>
+				<p className="text-gray-600 mb-6 text-justify times-new-roman text-2xl">
+					At PadSeva, we believe that knowledge is the cornerstone of change.
+					Our PadSeva Podcast serves as a dynamic platform where doctors,
+					students, and advocates come together to engage in insightful
+					conversations about period poverty, menstrual health, and sustainable
+					solutions. Through these discussions, we aim to disseminate critical
+					knowledge and foster a deeper understanding of the challenges faced by
+					marginalized communities, while exploring ways to break the stigma
+					surrounding menstruation.
+					<br />
+					<br />
+					Each episode is carefully curated to highlight diverse
+					perspectives—from medical expertise on menstrual hygiene and health
+					concerns to student-driven initiatives and policy advocacy efforts
+					aimed at eradicating period poverty. By amplifying these voices, the
+					PadSeva Podcast inspires listeners to become catalysts for change,
+					ensuring that menstrual equity becomes a reality for all.
+				</p>
 
 				{/* Podcast Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
