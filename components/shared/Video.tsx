@@ -117,7 +117,10 @@ const Video = ({}: VideoProps) => {
 					onLoadedMetadata={handleLoadedMetadata}
 					onClick={togglePlayPause} // Click video to pause/play
 					className="top-0 relative left-0 w-full min-h-[20vh] object-contain sm:object-cover bg-[#fff2f2]">
-					<source src="/assets/videos/PeriodPoverty.mp4" type="video/mp4" />
+					<source
+						src="/assets/videos/PeriodPoverty-compressed.mp4"
+						type="video/mp4"
+					/>
 				</video>
 
 				{/* Video Controls */}
