@@ -16,7 +16,7 @@ const PodcastList = async () => {
 				src={"/assets/Podcast.webp"}
 				width={300}
 				height={100}
-				className="drop-shadow-white lg:ml-[150px]"
+				className="drop-shadow-pink lg:ml-[150px]"
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>

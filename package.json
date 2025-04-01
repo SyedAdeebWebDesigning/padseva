@@ -29,6 +29,7 @@
     "lucide-react": "^0.439.0",
     "mongodb": "^6.9.0",
     "mongoose": "^8.6.3",
+    "motion": "^12.6.2",
     "next": "14.2.4",
     "nodemailer": "^6.9.15",
     "qrious": "^4.0.2",

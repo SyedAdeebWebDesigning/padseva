@@ -19,8 +19,8 @@ import DropdownLinks from "@/components/shared/DropdownLinks";
 import Journey from "@/components/shared/Journey";
 import Image from "next/image";
 import Impact from "@/components/shared/Impact";
-import Script from "next/script";
 import Podcast from "@/components/shared/Podcast";
+import Video from "@/components/shared/Video";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
@@ -36,29 +36,29 @@ export default async function Home() {
 	];
 	return (
 		<main
-			className={`scroll-smooth ${
+			className={`scroll-smooth relative ${
 				process.env.IS_PAID == "false" && "invisible"
 			}`}>
 			<DropdownLinks isAdmin={isAdmin} />
 			<Animation />
 
-			<div className="relative z-20">
+			<div className="relative z-30">
 				<HeroSection />
 			</div>
 			<div>
-				<section className="relative z-10">
+				<section className="relative z-30">
 					<Section />
 				</section>
 
-				<section className="relative z-0">
+				<section className="relative z-[10]">
 					<PlaceHolderImage />
 				</section>
 
-				<section className="w-full bg-[#ffb6d5] z-10 relative">
+				<section className="w-full bg-[#ffb6d5] z-30 relative">
 					<Missions />
 				</section>
 
-				<section className="sticky bg-white xl:w-[50%] w-full z-[999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
+				<section className="sticky bg-white xl:w-[50%] w-full z-[9999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
 					<nav className="flex flex-wrap items-center justify-end w-full">
 						<div>
 							<Image
@@ -72,29 +72,33 @@ export default async function Home() {
 						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>
-				<section className="w-full bg-[#ffe8e8] relative -mt-20 ">
+				<section className="w-full bg-[#ffe8e8] relative z-30 -mt-20 ">
 					<OurFounder />
 				</section>
 
-				<section className="bg-black/20 relative z-[900] backdrop-blur">
+				<section className="bg-black/20 relative z-30 backdrop-blur">
 					<Journey />
 				</section>
-				<section className="bg-[#ffbaba] relative ">
+				<section className="bg-[#ffbaba] relative z-[30]">
 					<NewsLetter />
 				</section>
-				<section className="bg-[#ffbaba] relative ">
-					<Podcast />
-				</section>
-				<section className="bg-[#ffe8e8] relative bg-bag mb-10">
+				<section className="bg-[#ffe8e8] relative bg-bag z-[30]">
 					<Impact />
 				</section>
-				<section className="bg-[#fff2f2] relative">
+				<section className="bg-[#ffbaba] relative z-[30]">
+					<Podcast />
+				</section>
+
+				<section className="relative">
+					<Video />
+				</section>
+				<section className="bg-[#fff2f2] relative z-30">
 					<InstagramFeeds />
 				</section>
-				<section className="bg-[#ffbaba] relative">
+				<section className="bg-[#ffbaba] relative z-30">
 					<Contact />
 				</section>
-				<footer className="relative">
+				<footer className="relative z-30">
 					<div className="bg-[#43191d] text-white">
 						<div className="container mx-auto flex flex-col md:flex-row items-center justify-around p-4">
 							<div className="flex items-center justify-center">
