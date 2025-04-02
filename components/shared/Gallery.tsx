@@ -90,17 +90,10 @@ const Gallery = () => {
 				</div>
 
 				{/* ✅ Right Section - Large Video */}
-				<video
-					className="h-full w-full bg-black rounded-lg overflow-hidden shadow-lg object-cover"
-					loop
-					autoPlay
-					muted>
-					<source
-						src="/assets/videos/PadProduction-compressed.mp4"
-						type="video/mp4"
-					/>
-					Your browser does not support the video tag.
-				</video>
+				<iframe
+					src="https://drive.google.com/file/d/1KttXyNED3BVpahlHw8KcqHpZ42nd-Y_l/preview"
+					className="h-full w-[496px] rounded-lg bg-white"
+					allow="autoplay"></iframe>
 			</div>
 
 			{/* ✅ Bottom Section - Remaining Images */}
