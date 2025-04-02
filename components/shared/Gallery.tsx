@@ -32,16 +32,16 @@ const Gallery = () => {
 			</div>
 
 			{/* ✅ Bento Grid Layout */}
-			<div className="grid grid-cols-3 gap-2">
+			<div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
 				{/* ✅ Left Side - Large Collage Area */}
 				<div className="flex flex-col gap-2">
 					{/* Top Large Collage */}
-					<div className="h-72 md:h-96 lg:h-[450px] w-full relative rounded-lg overflow-hidden shadow-lg">
+					<div className="h-72 md:h-96 lg:h-[450px] w-full relative rounded-lg overflow-hidden shadow-lg bg-black">
 						<Image
 							src={galleryImages[0]} // Use a collage-style image here
 							alt="Gallery Collage"
 							fill
-							className="object-cover rounded-lg"
+							className="object-cover rounded-lg p-1 md:p-2 xl:p-3"
 						/>
 					</div>
 
@@ -50,12 +50,12 @@ const Gallery = () => {
 						{galleryImages.slice(1, 3).map((src, index) => (
 							<div
 								key={index}
-								className="h-40 md:h-52 lg:h-64 relative rounded-lg overflow-hidden shadow-lg">
+								className="h-40 md:h-52 lg:h-64 relative rounded-lg overflow-hidden shadow-lg bg-black">
 								<Image
 									src={src}
 									alt={`Gallery Image ${index + 2}`}
 									fill
-									className="object-cover rounded-lg"
+									className="object-cover rounded-lg p-1 md:p-2 xl:p-3"
 								/>
 							</div>
 						))}
@@ -68,23 +68,23 @@ const Gallery = () => {
 						{galleryImages.slice(4, 6).map((src, index) => (
 							<div
 								key={index}
-								className="h-40 md:h-52 lg:h-64 relative rounded-lg overflow-hidden shadow-lg">
+								className="h-40 md:h-52 lg:h-64 relative rounded-lg overflow-hidden shadow-lg bg-black">
 								<Image
 									src={src}
 									alt={`Gallery Image ${index + 5}`}
 									fill
-									className="object-cover rounded-lg"
+									className="object-cover rounded-lg p-1 md:p-2 xl:p-3"
 								/>
 							</div>
 						))}
 					</div>
 					{/* One Large Image */}
-					<div className="h-72 md:h-96 lg:h-[450px] w-full relative rounded-lg overflow-hidden shadow-lg">
+					<div className="h-72 md:h-96 lg:h-[450px] w-full relative rounded-lg overflow-hidden shadow-lg bg-black">
 						<Image
 							src={galleryImages[3]}
 							alt="Gallery Image Large"
 							fill
-							className="object-cover rounded-lg"
+							className="object-cover rounded-lg p-1 md:p-2 xl:p-3"
 						/>
 					</div>
 				</div>
@@ -92,21 +92,21 @@ const Gallery = () => {
 				{/* ✅ Right Section - Large Video */}
 				<iframe
 					src="https://drive.google.com/file/d/1KttXyNED3BVpahlHw8KcqHpZ42nd-Y_l/preview"
-					className="h-full w-[496px] rounded-lg bg-white"
+					className="h-[704px] xl:h-full w-full rounded-lg bg-white"
 					allow="autoplay"></iframe>
 			</div>
 
 			{/* ✅ Bottom Section - Remaining Images */}
-			<div className="grid grid-cols-4 gap-2 mt-2">
+			<div className="grid grid-cols-4 gap-2 mt-2 ">
 				{galleryImages.slice(6).map((src, index) => (
 					<div
 						key={index}
-						className="h-40 md:h-52 lg:h-64 relative rounded-lg overflow-hidden shadow-lg">
+						className="h-40 md:h-52 lg:h-64 relative rounded-lg overflow-hidden shadow-lg bg-black">
 						<Image
 							src={src}
 							alt={`Gallery Image ${index + 7}`}
 							fill
-							className="object-cover rounded-lg"
+							className="object-cover rounded-lg p-1 md:p-2 xl:p-3"
 						/>
 					</div>
 				))}
