@@ -20,7 +20,7 @@ const PodcastList = async () => {
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>
-			<div className="max-w-7xl mx-auto text-left mt-10">
+			<div className="max-w-7xl mx-auto text-left mt-10 px-4">
 				<h2 className="text-3xl font-bold mb-8">{podcast.name}</h2>
 				<p className="text-gray-600 mb-6 text-justify times-new-roman text-2xl">
 					At PadSeva, we believe that knowledge is the cornerstone of change.
