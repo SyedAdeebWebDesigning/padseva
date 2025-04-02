@@ -115,14 +115,13 @@ const Video = ({}: VideoProps) => {
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>
-			<div className="relative overflow-hidden z-[99999] cursor-none w-full max-w-full aspect-video">
+			<div className="relative overflow-hidden z-[99999] cursor-none w-full max-w-full aspect">
 				{/* Video */}
 				<iframe
 					src="https://drive.google.com/file/d/1Ktw12ahm0ancw6UADQVVyT01b0w9K-8h/preview"
-					className="w-full h-[100vh] object-contain"
+					className="w-full h-[101vh] object-contain"
 					allow="autoplay"
 					allowFullScreen
-					allowTransparency
 					loading="lazy"></iframe>
 			</div>
 

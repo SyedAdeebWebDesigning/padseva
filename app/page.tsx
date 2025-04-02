@@ -21,6 +21,7 @@ import Image from "next/image";
 import Impact from "@/components/shared/Impact";
 import Podcast from "@/components/shared/Podcast";
 import Video from "@/components/shared/Video";
+import Gallery from "@/components/shared/Gallery";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
@@ -94,6 +95,9 @@ export default async function Home() {
 				</section>
 				<section className="bg-[#fff2f2] relative z-30">
 					<InstagramFeeds />
+				</section>
+				<section className="bg-[#ffbaba] relative z-30">
+					<Gallery />
 				</section>
 				<section className="bg-[#ffbaba] relative z-30">
 					<Contact />
