@@ -32,81 +32,83 @@ const Gallery = () => {
 			</div>
 
 			{/* ✅ Bento Grid Layout */}
-			<div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
+			<div className="grid grid-cols-1 xl:grid-cols-3 gap-1">
 				{/* ✅ Left Side - Large Collage Area */}
-				<div className="flex flex-col gap-2">
+				<div className="flex flex-col gap-1">
 					{/* Top Large Collage */}
-					<div className="h-72 md:h-96 lg:h-[450px] w-full relative overflow-hidden shadow-lg bg-black">
+					<div className="h-72 md:h-96 lg:h-[362px] w-full relative overflow-hidden shadow-lg bg-white ">
 						<Image
 							src={galleryImages[0]} // Use a collage-style image here
 							alt="Gallery Collage"
 							fill
-							className="object-cover  p-1 md:p-2"
+							className="object-cover p-1 "
 						/>
 					</div>
 
 					{/* Below - Two Medium Images */}
-					<div className="grid grid-cols-2 gap-2">
+					<div className="grid grid-cols-2 gap-1">
 						{galleryImages.slice(1, 3).map((src, index) => (
 							<div
 								key={index}
-								className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-black">
+								className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-white">
 								<Image
 									src={src}
 									alt={`Gallery Image ${index + 2}`}
 									fill
-									className="object-cover  p-1 md:p-2"
+									className="object-cover  p-1"
 								/>
 							</div>
 						))}
 					</div>
 				</div>
 				{/* ✅ Middle Side - More Images */}
-				<div className="flex flex-col gap-2">
+				<div className="flex flex-col gap-1">
 					{/* Two Small Images */}
-					<div className="grid grid-cols-2 gap-2">
+					<div className="grid grid-cols-2 gap-1">
 						{galleryImages.slice(4, 6).map((src, index) => (
 							<div
 								key={index}
-								className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-black">
+								className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-white">
 								<Image
 									src={src}
 									alt={`Gallery Image ${index + 5}`}
 									fill
-									className="object-cover  p-1 md:p-2"
+									className="object-cover  p-1"
 								/>
 							</div>
 						))}
 					</div>
 					{/* One Large Image */}
-					<div className="h-72 md:h-96 lg:h-[450px] w-full relative overflow-hidden shadow-lg bg-black">
+					<div className="h-72 md:h-96 lg:h-[362px] w-full relative overflow-hidden shadow-lg bg-white">
 						<Image
 							src={galleryImages[3]}
 							alt="Gallery Image Large"
 							fill
-							className="object-cover  p-1 md:p-2"
+							className="object-cover  p-1"
 						/>
 					</div>
 				</div>
 
 				{/* ✅ Right Section - Large Video */}
-				<iframe
-					src="https://drive.google.com/file/d/1KttXyNED3BVpahlHw8KcqHpZ42nd-Y_l/preview"
-					className="h-[704px] xl:h-full w-full bg-white"
-					allow="autoplay"></iframe>
+				<div className="bg-white p-1">
+					<iframe
+						src="https://drive.google.com/file/d/1qnazvLjIDKYL16y2SoVYWk-jV5-mfWKc/preview"
+						className="h-[362px] xl:h-full w-full bg-white"
+						allow="autoplay"></iframe>
+				</div>
 			</div>
 
 			{/* ✅ Bottom Section - Remaining Images */}
-			<div className="grid grid-cols-4 gap-2 mt-2 ">
+			<div className="grid grid-cols-4 gap-1 mt-1 ">
 				{galleryImages.slice(6).map((src, index) => (
 					<div
 						key={index}
-						className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-black">
+						className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-white">
 						<Image
 							src={src}
 							alt={`Gallery Image ${index + 7}`}
 							fill
-							className="object-cover  p-1 md:p-2"
+							className="object-cover  p-1"
 						/>
 					</div>
 				))}

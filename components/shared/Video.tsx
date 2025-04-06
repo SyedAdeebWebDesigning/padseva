@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { PlayCircle, PauseCircle, VolumeX, Volume2 } from "lucide-react"; // Import icons
 import Image from "next/image";
+import VideoPlayer from "../ui/video-player";
 
 interface VideoProps {}
 
@@ -115,7 +116,7 @@ const Video = ({}: VideoProps) => {
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>
-			<div className="relative overflow-hidden z-[99999] cursor-none w-full max-w-full aspect">
+			<div className="relative overflow-hidden z-[99999] cursor-none w-[100vw] max-w-full">
 				{/* Video */}
 				<iframe
 					src="https://drive.google.com/file/d/1Ktw12ahm0ancw6UADQVVyT01b0w9K-8h/preview"
