@@ -11,7 +11,7 @@ const Section = ({}: SectionProps) => {
 		<div className="w-full bg-[white]">
 			<div className="mx-auto  grid w-full lg:grid-cols-2 grid-cols-1 ">
 				{/* Right Image Section */}
-				<div className="h-full flex items-center justify-center p-4 py-20 order-1 lg:order-2 bg-gradient-to-br from-[#ffb9bf] to-[#ffb9bf]">
+				<div className="h-full flex items-center justify-center p-4 order-1 lg:order-2 heroBG ">
 					<div className="relative size-[600px] flex items-center justify-center">
 						<Image
 							src="/about-photo.jpeg"

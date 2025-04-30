@@ -286,3 +286,9 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+.heroBG {
+	background-color: #ffb9bf;
+	background-image: url("/svg/heroBG.svg");
+	background-repeat: repeat;
+	background-position: cover;
+}
