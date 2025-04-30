@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NewsletterSubscriberForm from "./NewsletterSubscriberForm";
+import { getAllNewsLetters } from "@/lib/actions/Newsletter.action";
 
 interface NewsLetterProps {}
 
@@ -23,7 +24,8 @@ const issues = [
 	// },
 ];
 
-const NewsLetter = ({}: NewsLetterProps) => {
+const NewsLetter = async ({}: NewsLetterProps) => {
+	const newsletter = await getAllNewsLetters();
 	return (
 		<div
 			id="newsletter"
@@ -51,20 +53,23 @@ const NewsLetter = ({}: NewsLetterProps) => {
 
 				{/* Dynamically rendering newsletter issues */}
 				<div className="w-full max-w-7xl mx-auto my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-					{issues.map((issue, index) => (
+					{newsletter.map((issue, index) => (
 						<Link
-							href={issue.url}
+							href={issue.issuePDF}
 							target="_blank"
-							key={index}
+							key={issue._id as string}
 							className="block">
-							<div className="w-full h-[500px] md:h-[600px] flex flex-col items-center justify-center text-2xl sm:text-3xl rounded-lg shadow-lg overflow-hidden">
+							<div className="w-full group h-[500px] md:h-[600px] flex flex-col relative items-center justify-center text-2xl sm:text-3xl rounded-lg shadow-lg overflow-hidden">
 								<Image
-									src={issue.imgUrl}
-									alt={issue.title}
+									src={issue.issueCoverPhoto}
+									alt={issue.issuePDF}
 									width={500} // Adjust as needed
 									height={600} // Adjust as needed
 									className="w-full h-full object-cover"
 								/>
+								<p className="absolute -bottom-20 -left-20 group-hover:bottom-2  backdrop-blur-sm w-full px-3 -mb-2 -ml-2 group-hover:left-2 transition-all duration-200 ease-in-out times-new-roman text-3xl text-white">
+									Newsletter #{index + 1}
+								</p>
 							</div>
 						</Link>
 					))}
