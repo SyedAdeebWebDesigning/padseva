@@ -9,7 +9,6 @@ import PlaceHolderImage from "@/components/shared/PlaceHolderImage";
 import Section from "@/components/shared/Section";
 import { buttonVariants } from "@/components/ui/button";
 import { getUserById } from "@/lib/actions/User.action";
-import User from "@/lib/database/model/User.model";
 import { cn } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
@@ -77,7 +76,7 @@ export default async function Home() {
 					<OurFounder />
 				</section>
 
-				<section className="bg-black/20 relative z-30 backdrop-blur">
+				<section className=" relative z-30 backdrop-blur journeyBG">
 					<Journey />
 				</section>
 				<section className="bg-[#ffbaba] relative z-[30]">
