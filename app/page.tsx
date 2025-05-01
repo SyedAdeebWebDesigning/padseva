@@ -76,10 +76,10 @@ export default async function Home() {
 					<OurFounder />
 				</section>
 
-				<section className=" relative z-30 backdrop-blur journeyBG">
+				<section className="w-full h-auto relative z-30 backdrop-blur ">
 					<Journey />
 				</section>
-				<section className="bg-[#ffbaba] relative z-[30]">
+				<section className="bg-[#ffe8e8] relative z-[30]">
 					<NewsLetter />
 				</section>
 				<section className="bg-[#ffe8e8] relative bg-bag z-[30]">

@@ -30,8 +30,8 @@ const Journey = ({}: JourneyProps) => {
 	];
 
 	return (
-		<div className="mx-auto flex w-full flex-col justify-center items-center sm:items-start p-10 ">
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white w-full py-10 container mx-auto">
+		<div className="mx-auto flex w-full flex-col justify-center items-center sm:items-start p-10  journeyBG">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white w-full py-10 container mx-auto ">
 				{JourneyItems.map((item, index) => (
 					<div
 						key={index}
