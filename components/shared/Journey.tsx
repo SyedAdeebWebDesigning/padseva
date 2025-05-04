@@ -1,11 +1,11 @@
-"use client";
-
 import NumberTicker from "@/components/ui/number-ticker";
-import Image from "next/image";
+import { getJourneys } from "@/lib/actions/Journey.action";
+import Journey from "@/lib/database/model/Journey.model";
 
 interface JourneyProps {}
 
-const Journey = ({}: JourneyProps) => {
+const JourneyComponent = async ({}: JourneyProps) => {
+	const journey = (await getJourneys()) as unknown as Journey[];
 	const JourneyItems = [
 		{
 			title: "Bamboo Pads Synthesized",
@@ -32,7 +32,7 @@ const Journey = ({}: JourneyProps) => {
 	return (
 		<div className="mx-auto flex w-full flex-col justify-center items-center sm:items-start p-10  journeyBG">
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-white w-full py-10 container mx-auto ">
-				{JourneyItems.map((item, index) => (
+				{journey.map((item, index) => (
 					<div
 						key={index}
 						className="flex flex-col items-center justify-center p-4 times-new-roman">
@@ -58,4 +58,4 @@ const Journey = ({}: JourneyProps) => {
 	);
 };
 
-export default Journey;
+export default JourneyComponent;
