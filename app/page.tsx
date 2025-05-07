@@ -79,7 +79,7 @@ export default async function Home() {
 				<section className="w-full h-auto relative z-30 backdrop-blur ">
 					<Journey />
 				</section>
-				<section className="bg-[#ffe8e8] relative z-[30]">
+				<section className="bg-white relative z-[30]">
 					<NewsLetter />
 				</section>
 				<section className="bg-[#ffe8e8] relative bg-bag z-[30]">

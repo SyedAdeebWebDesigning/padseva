@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import BlurFade from "@/components/ui/blur-fade";
 import { FaSpotify } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 interface SectionProps {}
 
@@ -12,7 +15,12 @@ const Section = ({}: SectionProps) => {
 			<div className="mx-auto  grid w-full lg:grid-cols-2 grid-cols-1 ">
 				{/* Right Image Section */}
 				<div className="h-full flex items-center justify-center p-4 order-1 lg:order-2 heroBG ">
-					<div className="relative size-[600px] flex items-center justify-center">
+					<motion.div
+						className="relative size-[600px] flex items-center justify-center"
+						initial={{ opacity: 0 }}
+						transition={{ duration: 0.5, delay: 0.25 * 3 }}
+						whileInView={{ opacity: 1 }}
+						viewport={{ once: true }}>
 						<Image
 							src="/about-photo.jpeg"
 							alt="PadSeva Image"
@@ -20,7 +28,7 @@ const Section = ({}: SectionProps) => {
 							fill
 							className="object-cover object-center rounded-lg"
 						/>
-					</div>
+					</motion.div>
 				</div>
 
 				{/* Left Text Section */}
@@ -35,9 +43,11 @@ const Section = ({}: SectionProps) => {
 							objectFit={"cover"}
 						/>
 					</picture>
-					<BlurFade
-						delay={0.25}
-						inView
+					<motion.div
+						initial={{ opacity: 0, y: 50 }}
+						transition={{ duration: 0.5, delay: 0.25 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
 						className={
 							"mb-1 text-2xl leading-relaxed text-[#2e2e2e] times-new-roman text-justify"
 						}>
@@ -50,6 +60,15 @@ const Section = ({}: SectionProps) => {
 						personal project initiative, have reached thousands of women and
 						girls, ensuring they can manage their periods with dignity.
 						<br />
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, y: 50 }}
+						transition={{ duration: 0.5, delay: 0.5 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						className={
+							"mb-1 text-2xl leading-relaxed text-[#2e2e2e] times-new-roman text-justify"
+						}>
 						<br />
 						Since our inception, we have distributed over 7,500 pads, reaching
 						more than 9,000 individuals while raising awareness and driving
@@ -58,7 +77,7 @@ const Section = ({}: SectionProps) => {
 						essential resources but also promotes understanding and advocacy for
 						gender equality. Join us in our journey to create a world where
 						menstrual health is a right, not a privilege.
-					</BlurFade>
+					</motion.div>
 					<br />
 					<br />
 					<div

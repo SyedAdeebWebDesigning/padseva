@@ -1,14 +1,11 @@
 import Image from "next/image";
-import { getPodcastData } from "@/lib/actions/Spotify.actions"; // Import the server action
+import { getPodcastData } from "@/lib/actions/Spotify.actions";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "../ui/button";
 import { PodcastIcon } from "lucide-react";
 
 const PodcastList = async () => {
-	const podcast = await getPodcastData(); // Fetch podcast details
-	const episodes = podcast.episodes.items; // Get the actual podcast episodes
-	console.log(episodes);
+	const podcast = await getPodcastData();
+	const episodes = podcast.episodes.items;
 
 	return (
 		<div className="bg-white py-14" id="podcast">
@@ -20,45 +17,38 @@ const PodcastList = async () => {
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>
-			<div className="max-w-7xl mx-auto text-left mt-10 px-4">
+			<div className="max-w-7xl mx-auto text-left mt-10 px-4 w-full">
 				<h2 className="text-3xl font-bold mb-8">{podcast.name}</h2>
-				{/* Podcast Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+				{/* Podcast Vertical List */}
+				<div className="space-y-4 w-full">
 					{episodes.map((episode: any, index: number) => (
-						<div
+						<Link
 							key={episode.id}
-							className="bg-gray-50 rounded-[30px] shadow-md flex flex-col items-center">
-							<div className="relative w-full h-[20rem]">
-								<Image
-									src={episode.images?.[0]?.url || podcast.images[0]?.url}
-									alt={episode.name}
-									fill
-									objectPosition="center"
-									className="rounded-t-[30px]"
-								/>
+							href={episode.external_urls.spotify}
+							target="_blank"
+							className="block group">
+							<div className="flex flex-col md:flex-row gap-4 p-4 md:p-6 bg-gray-50 rounded-lg shadow hover:shadow-md hover:bg-gray-100 transition-all duration-200 hover:scale-[1.01] active:scale-[0.98]">
+								<div className="hidden md:block relative w-20 h-20 flex-shrink-0">
+									<Image
+										src={episode.images?.[0]?.url || podcast.images[0]?.url}
+										alt={episode.name}
+										fill
+										className="rounded-md object-cover"
+									/>
+								</div>
+								<div className="flex-1">
+									<div className="flex items-center gap-2 mb-2">
+										<h3 className="text-lg md:text-xl font-semibold text-gray-800">
+											{index + 1}. {episode.name}
+										</h3>
+										<PodcastIcon className="size-4 text-[#91373e] ml-auto hidden md:inline-block" />
+									</div>
+									<p className="text-sm md:text-base text-gray-600 line-clamp-2">
+										{episode.description}
+									</p>
+								</div>
 							</div>
-							<div className="pb-4 px-4">
-								<h3 className="text-xl font-semibold mt-4 text-start line-clamp-1">
-									{index + 1}. {episode.name}
-								</h3>
-								<p className="text-gray-600 text-sm  mt-2 line-clamp-3 text-justify">
-									{episode.description}
-								</p>
-							</div>
-							<div className="w-full px-3 pb-3">
-								<Link
-									href={episode.external_urls.spotify}
-									target="_blank"
-									className={cn(
-										buttonVariants({ variant: "padseva", size: "lg" }),
-										"relative bg-[#91373e] text-white hover:bg-[#7a2d33] transition-all  w-full rounded-b-[18px] rounded-t-none"
-									)}>
-									<PodcastIcon className="size-6" />
-									<p className="">Listen</p>
-									<div className="absolute ease-[cubic-bezier(0.19,1,0.22,1)] -left-[75px] -top-[50px] -z-10 h-[155px] w-8 rotate-[35deg] bg-white/20 transition-all duration-500 group-hover:left-[120%]" />
-								</Link>
-							</div>
-						</div>
+						</Link>
 					))}
 				</div>
 			</div>
