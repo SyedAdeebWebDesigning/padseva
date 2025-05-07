@@ -33,9 +33,6 @@ export const GetSubscriberById = async (id: string) => {
 
 	try {
 		const subscriber = await Subscriber.findById(id).lean().exec();
-		if (!subscriber) {
-			throw new Error("Subscriber not found.");
-		}
 		return subscriber;
 	} catch (error: any) {
 		console.error(`Error fetching subscriber: ${error.message}`);
