@@ -62,6 +62,26 @@ export const GetAllSubscriber = async (searchTerm: string = "") => {
 	}
 };
 
+export const deleteUnVerifiedSubscribers = async () => {
+	await connectToDatabase();
+
+	try {
+		const currentDate = new Date();
+		const sevenDaysAgo = new Date(
+			currentDate.getTime() - 7 * 24 * 60 * 60 * 1000
+		); // 7 days in ms
+
+		const result = await Subscriber.deleteMany({
+			hasVerified: false,
+			createdAt: { $lt: sevenDaysAgo },
+		});
+
+		console.log(`${result.deletedCount} unverified subscribers deleted.`);
+	} catch (error: any) {
+		console.error(`Error deleting unverified subscribers: ${error.message}`);
+		throw error;
+	}
+};
 export const verifySubscriber = async (id: string) => {
 	await connectToDatabase();
 
