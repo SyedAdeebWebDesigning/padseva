@@ -50,11 +50,20 @@ export default async function Home() {
 					<Section />
 				</section>
 
-				<section className="relative z-[0]">
+				<section className="relative z-[0] bg-black/40">
 					<PlaceHolderImage />
+					<div className="absolute bottom-0 left-0 overflow-hidden">
+						<Image
+							src={"/svg/LongFlower.svg"}
+							width={2050}
+							height={470}
+							alt="logo"
+							className="opacity-70"
+						/>
+					</div>
 				</section>
-
 				<section className="w-full bg-[#ffb6d5] z-30 relative">
+					<div className="relative z-0"></div>
 					<Missions />
 				</section>
 
