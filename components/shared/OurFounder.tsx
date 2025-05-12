@@ -34,7 +34,7 @@ const OurFounder = ({}: OurFounderProps) => {
 
 			<section className="founder-section py-12">
 				<div className="my-20">
-					<div className="xl:pl-[110px]">
+					<div className="xl:pl-[110px] relative">
 						<Image
 							src={"/assets/OurFounder.svg"}
 							width={520}
@@ -52,8 +52,15 @@ const OurFounder = ({}: OurFounderProps) => {
 							src={"/assets/founder.webp"}
 							alt="Founder"
 							fill
-							className="object-cover rounded-full md:rounded-none"
+							className="object-cover rounded-full md:rounded-none z-10"
 							objectFit="cover"
+						/>
+						<Image
+							src={"/svg/Pettle.svg"}
+							className="absolute -bottom-16 -left-24 z-0"
+							width={250}
+							height={250}
+							alt="flower"
 						/>
 					</div>
 
