@@ -18,7 +18,6 @@ const PodcastList = async () => {
 				style={{ objectFit: "contain" }}
 			/>
 			<div className="max-w-7xl mx-auto text-left mt-10 px-4 w-full">
-				<h2 className="text-3xl font-bold mb-8">{podcast.name}</h2>
 				{/* Podcast Vertical List */}
 				<div className="space-y-4 w-full">
 					{episodes.map((episode: any, index: number) => (
