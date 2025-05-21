@@ -57,6 +57,7 @@ export default async function Home() {
 							src={"/svg/LongFlower.svg"}
 							width={2050}
 							height={470}
+							loading="lazy"
 							alt="logo"
 							className="opacity-70"
 						/>
@@ -75,6 +76,7 @@ export default async function Home() {
 								width={150}
 								height={70}
 								alt="logo"
+								loading="lazy"
 								className="mr-auto ml-10 hidden xl:flex"
 							/>
 						</div>

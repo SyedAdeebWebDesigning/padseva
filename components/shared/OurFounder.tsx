@@ -39,6 +39,7 @@ const OurFounder = ({}: OurFounderProps) => {
 							src={"/assets/OurFounder.svg"}
 							width={520}
 							height={100}
+							loading="lazy"
 							className="object-left drop-shadow-pink"
 							alt="founder"
 							objectFit="contain"
@@ -52,6 +53,7 @@ const OurFounder = ({}: OurFounderProps) => {
 							src={"/assets/founder.webp"}
 							alt="Founder"
 							fill
+							loading="lazy"
 							className="object-cover rounded-full md:rounded-none z-10"
 							objectFit="cover"
 						/>
@@ -59,6 +61,7 @@ const OurFounder = ({}: OurFounderProps) => {
 							src={"/svg/Pettle.svg"}
 							className="absolute -bottom-16 -left-24 z-0"
 							width={250}
+							loading="lazy"
 							height={250}
 							alt="flower"
 						/>

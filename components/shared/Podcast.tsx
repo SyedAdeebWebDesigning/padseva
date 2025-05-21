@@ -14,6 +14,7 @@ const PodcastList = async () => {
 				width={500}
 				height={100}
 				className="lg:ml-[150px]"
+				loading="lazy"
 				alt="Podcast"
 				style={{ objectFit: "contain" }}
 			/>
@@ -32,6 +33,7 @@ const PodcastList = async () => {
 										src={episode.images?.[0]?.url || podcast.images[0]?.url}
 										alt={episode.name}
 										fill
+										loading="lazy"
 										className="rounded-md object-cover"
 									/>
 								</div>

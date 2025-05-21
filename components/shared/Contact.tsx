@@ -64,6 +64,7 @@ const Contact: React.FC = () => {
 					<Image
 						src="/assets/contact.webp"
 						fill
+						loading="lazy"
 						className="drop-shadow-white object-left object-contain lg:ml-[150px]"
 						alt="Contact"
 					/>

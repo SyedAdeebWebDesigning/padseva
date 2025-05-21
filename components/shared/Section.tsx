@@ -13,7 +13,6 @@ const Section = ({}: SectionProps) => {
 	return (
 		<div className="w-full bg-white overflow-visible">
 			<div className="mx-auto grid w-full lg:grid-cols-2 grid-cols-1 min-w-0">
-			
 				{/* Right Image Section */}
 				<div className="h-full flex items-center justify-center p-4 order-1 lg:order-2 bg-[#ffb9bf] relative overflow-hidden">
 					<motion.div
@@ -25,7 +24,7 @@ const Section = ({}: SectionProps) => {
 						<Image
 							src="/about-photo.jpeg"
 							alt="PadSeva Image"
-							unoptimized
+							loading="lazy"
 							fill
 							className="object-cover object-center rounded-lg z-10 relative"
 						/>
@@ -36,6 +35,7 @@ const Section = ({}: SectionProps) => {
 						className="absolute top-20 left-0 z-0"
 						src="/svg/BlackFlower.svg"
 						width={400}
+						loading="lazy"
 						height={400}
 						alt="flower"
 					/>
@@ -44,6 +44,7 @@ const Section = ({}: SectionProps) => {
 						src="/svg/BlackFlower.svg"
 						width={400}
 						height={400}
+						loading="lazy"
 						alt="flower"
 					/>
 				</div>
@@ -56,6 +57,7 @@ const Section = ({}: SectionProps) => {
 							className="drop-shadow-pink"
 							width={600}
 							height={100}
+							loading="lazy"
 							alt=""
 							objectFit="cover"
 						/>

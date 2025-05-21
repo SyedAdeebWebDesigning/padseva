@@ -70,6 +70,7 @@ const NewsLetter = async ({}: NewsLetterProps) => {
 					src={"/assets/newsletter.svg"}
 					width={600}
 					height={100}
+					loading="lazy"
 					className="drop-shadow-pink lg:ml-[150px] -z-10"
 					alt="founder"
 					style={{ objectFit: "contain" }}

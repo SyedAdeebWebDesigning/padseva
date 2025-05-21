@@ -54,6 +54,7 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
 					width={150}
 					height={70}
 					alt="logo"
+					loading="lazy"
 					className="mr-auto ml-10 xl:hidden hidden min-[500px]:block"
 				/>
 			</BlurFade>

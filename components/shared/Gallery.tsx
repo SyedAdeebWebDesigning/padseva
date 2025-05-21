@@ -28,6 +28,7 @@ const Gallery = () => {
 					height={100}
 					alt="Gallery"
 					className=""
+					loading="lazy"
 				/>
 			</div>
 
@@ -40,6 +41,7 @@ const Gallery = () => {
 						<Image
 							src={galleryImages[0]} // Use a collage-style image here
 							alt="Gallery Collage"
+							loading="lazy"
 							fill
 							className="object-cover p-1 "
 						/>
@@ -53,6 +55,7 @@ const Gallery = () => {
 								className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-white">
 								<Image
 									src={src}
+									loading="lazy"
 									alt={`Gallery Image ${index + 2}`}
 									fill
 									className="object-cover  p-1"
@@ -70,6 +73,7 @@ const Gallery = () => {
 								key={index}
 								className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-white">
 								<Image
+									loading="lazy"
 									src={src}
 									alt={`Gallery Image ${index + 5}`}
 									fill
@@ -83,6 +87,7 @@ const Gallery = () => {
 						<Image
 							src={galleryImages[3]}
 							alt="Gallery Image Large"
+							loading="lazy"
 							fill
 							className="object-cover  p-1"
 						/>
@@ -108,6 +113,7 @@ const Gallery = () => {
 							src={src}
 							alt={`Gallery Image ${index + 7}`}
 							fill
+							loading="lazy"
 							className="object-cover  p-1"
 						/>
 					</div>
