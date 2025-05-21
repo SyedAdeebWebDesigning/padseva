@@ -67,7 +67,7 @@ export default async function Home() {
 					<Missions />
 				</section>
 
-				<section className="sticky bg-white xl:w-[50%] w-full z-[9999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
+				<section className="sticky bg-white/60 rounded-r-full backdrop-blur-xl xl:w-[50%] w-full z-[9999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
 					<nav className="flex flex-wrap items-center justify-end w-full">
 						<div>
 							<Image

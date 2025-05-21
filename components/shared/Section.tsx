@@ -13,6 +13,7 @@ const Section = ({}: SectionProps) => {
 	return (
 		<div className="w-full bg-white overflow-visible">
 			<div className="mx-auto grid w-full lg:grid-cols-2 grid-cols-1 min-w-0">
+			
 				{/* Right Image Section */}
 				<div className="h-full flex items-center justify-center p-4 order-1 lg:order-2 bg-[#ffb9bf] relative overflow-hidden">
 					<motion.div
