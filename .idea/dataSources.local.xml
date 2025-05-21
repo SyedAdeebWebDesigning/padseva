@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="WS-251.25410.117">
+    <data-source name="PadSeva" uuid="fe451a75-5033-4de3-9b45-a2ba74bf1ad9">
+      <database-info product="Mongo DB" version="8.0.9" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.20" dbms="MONGO" exact-version="8.0.9" exact-driver-version="1.20" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>syedadeeb</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="proks" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>
