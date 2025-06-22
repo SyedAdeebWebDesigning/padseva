@@ -39,7 +39,7 @@ export const getAllNewsLetters = async () => {
 	await connectToDatabase();
 	const newsletters = await SchemaNewsLetter.find()
 		.lean()
-		.sort({ createdAt: -1 });
+		.sort({ createdAt: 1 });
 	if (!newsletters) {
 		return [];
 	}

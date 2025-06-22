@@ -33,7 +33,7 @@ const OurFounder = ({}: OurFounderProps) => {
 			</div>
 
 			<section className="founder-section py-12">
-				<div className="my-20">
+				<div className="mt-20">
 					<div className="xl:pl-[110px] relative">
 						<Image
 							src={"/assets/OurFounder.svg"}
@@ -50,7 +50,7 @@ const OurFounder = ({}: OurFounderProps) => {
 					{/* Founder Image */}
 					<div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] mb-6 md:mb-0 z-20">
 						<Image
-							src={"/assets/founder.webp"}
+							src={"/founder.webp"}
 							alt="Founder"
 							fill
 							loading="lazy"
@@ -76,20 +76,21 @@ const OurFounder = ({}: OurFounderProps) => {
 
 						<div className="max-w-3xl z-20 relative leading-tight text-[#2e2e2e] text-justify font-semibold text-2xl 2xl:text-3xl times-new-roman">
 							<p className="text-lg text-gray-700 mb-4 text-justify">
-								Anwitha is currently a DP1 student studying at Chirec
+								Anwitha is currently a DP2 student studying at Chirec
 								International School. With her Higher Levels in Global Politics,
-								English, and Economics, she aspires to pursue a career in law.
-								She founded PadSeva in 2023 to address inequality and ensure
-								equitable access to essential resources for all. Passionate
-								about breaking down societal stigma surrounding menstruation,
-								she’s using social media to initiate conversations and bring
+								English, and Economics, she aspires to pursue a career in
+								journalism and law. She founded PadSeva in 2023 to address
+								inequality and ensure equitable access to essential resources
+								for all. Passionate about breaking down societal stigma
+								surrounding menstruation, she's using social media, fundraising,
+								podcasts, and newsletters to initiate conversations and bring
 								about change.
 							</p>
 							<p className="text-lg text-gray-700 text-justify">
-								When she’s not working on PadSeva, you’ll find her practicing
+								When she's not working on PadSeva, you'll find her practicing
 								Bharatanatyam, yelling in Indian committees at MUNs, or watching
 								Tangled for the 100th time with her younger sister. She hopes
-								Padseva will serve as a meaningful step toward fostering
+								PadSeva will serve as a meaningful step toward fostering
 								conversation and alleviating menstrual health disparities.
 							</p>
 						</div>

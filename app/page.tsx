@@ -68,18 +68,16 @@ export default async function Home() {
 					<Missions />
 				</section>
 
-				<section className="sticky bg-white/60 rounded-r-full backdrop-blur-xl xl:w-[50%] w-full z-[9999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
-					<nav className="flex flex-wrap items-center justify-end w-full">
-						<div>
-							<Image
-								src={"/Padseva.webp"}
-								width={150}
-								height={70}
-								alt="logo"
-								loading="lazy"
-								className="mr-auto ml-10 hidden xl:flex"
-							/>
-						</div>
+				<section className="sticky bg-white/60 xl:rounded-r-full backdrop-blur-xl xl:w-[50%] w-full z-[9999] top-10 py-4 shadow-md shadow-[#4f4f4f]">
+					<nav className="flex flex-wrap items-center justify-center w-full">
+						<Image
+							src={"/Padseva.webp"}
+							width={150}
+							height={70}
+							alt="logo"
+							loading="lazy"
+							className="mr-auto ml-10 hidden min-[1360px]:block"
+						/>
 						<NavLinks NavBarLinks={NavBarLinks} />
 					</nav>
 				</section>

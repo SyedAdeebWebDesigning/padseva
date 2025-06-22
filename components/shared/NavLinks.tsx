@@ -48,16 +48,6 @@ const NavLinks = ({ NavBarLinks }: NavLinksProps) => {
 
 	return (
 		<nav className="flex justify-around items-center flex-wrap xl:w-[70%] w-full">
-			<BlurFade inView delay={0.25 * 2}>
-				<Image
-					src={"/padseva.png"}
-					width={150}
-					height={70}
-					alt="logo"
-					loading="lazy"
-					className="mr-auto ml-10 xl:hidden hidden min-[500px]:block"
-				/>
-			</BlurFade>
 			{NavBarLinks.map(
 				(link: { name: string; href: string }, index: number) => {
 					const isActive = activeSection === link.href; // Check if the section is active.
