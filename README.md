@@ -97,7 +97,7 @@
 ## 🌍 **About PadSeva**
 
 <div align="center">
-  <img src="public/assets/AboutPadSeva.webp" alt="About PadSeva" width="600" style="border-radius: 10px; margin: 20px 0;" />
+  <img src="public/svg/AboutPadseva.svg" alt="About PadSeva" width="600" style="border-radius: 10px; margin: 20px 0;" />
 </div>
 
 At **PadSeva**, we are revolutionizing menstrual health in rural Southern India through technology and compassion. Our mission transcends traditional charity work – we're building a sustainable ecosystem that combines innovative **bamboo-based biodegradable sanitary pads** with comprehensive educational initiatives.
@@ -105,10 +105,10 @@ At **PadSeva**, we are revolutionizing menstrual health in rural Southern India 
 ### 🎯 **Our Mission**
 
 <div align="center">
-  <img src="public/assets/mission.webp" alt="Our Mission" width="500" style="border-radius: 10px; margin: 15px 0;" />
-  
-  *"Empowering communities, one pad at a time. We believe in dignity, equality, and the basic right to menstrual hygiene."*
-  
+  <img src="public/svg/OurMission.svg" alt="Our Mission" width="500" style="border-radius: 10px; margin: 15px 0;" />
+
+_"Empowering communities, one pad at a time. We believe in dignity, equality, and the basic right to menstrual hygiene."_
+
 </div>
 
 **Why This Matters:**
