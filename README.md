@@ -50,8 +50,8 @@
       <br />Node.js • API Routes • Server Actions
     </td>
     <td align="center">
-      <img src="https://skillicons.dev/icons?i=mongodb,mongoose" width="100" />
-      <br />MongoDB • Mongoose ODM
+      <img src="https://skillicons.dev/icons?i=mongodb" width="100" />
+      <br />MongoDB
     </td>
     <td align="center">
       <img src="https://images.clerk.com/static/logo-light-mode-400x400.png" width="50" />
