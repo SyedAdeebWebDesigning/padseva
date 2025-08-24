@@ -97,6 +97,7 @@ const Gallery = () => {
 				{/* ✅ Right Section - Large Video */}
 				<div className="bg-white p-1">
 					<iframe
+						title="Gallery Video"
 						src="https://drive.google.com/file/d/1cb1fzrTrbKepC_KaO9W3Hpo3lRQfL3cM/preview"
 						className="h-[362px] xl:h-full w-full bg-white"
 						allow="autoplay"></iframe>
