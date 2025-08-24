@@ -39,3 +39,4 @@ next-env.d.ts
 # TEST
 /test/
 .vscode
+.env*.local
