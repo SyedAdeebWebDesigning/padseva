@@ -147,14 +147,6 @@ At **PadSeva**, we are revolutionizing menstrual health in rural Southern India 
 
 ---
 
-## 🚀 **Quick Start**
-
-### Prerequisites
-
-- Node.js 18+ and npm
-- MongoDB database
-- Clerk account for authentication
-
 ## 🤝 **Contributing**
 
 We welcome contributions from developers, designers, and social impact enthusiasts!
