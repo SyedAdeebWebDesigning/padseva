@@ -128,20 +128,19 @@ At **PadSeva**, we are revolutionizing menstrual health in rural Southern India 
 
 ---
 
-## 👨‍💻 **Meet Our Founder**
+## 👩‍💼 **Meet Our Founder**
 
 <div align="center">
   <img src="public/assets/OurFounder.webp" alt="Our Founder Section" width="500" style="border-radius: 10px; margin: 15px 0;" />
   
-  <img src="public/assets/founder.webp" alt="Syed Adeeb" width="200" style="border-radius: 50%; margin: 20px 0; border: 5px solid #91373e;" />
+  <img src="public/assets/founder.webp" alt="Anwitha Srivatsa" width="200" style="border-radius: 50%; margin: 20px 0; border: 5px solid #91373e;" />
   
-  ### **Syed Adeeb** 
-  *Full-Stack Developer & Social Entrepreneur*
+  ### **Anwitha Srivatsa** 
+  *Founder of PadSeva*
   
-  Passionate about using technology to solve real-world problems and create lasting social impact.
+  DP2 student at Chirec International School studying Global Politics, English, and Economics. Founded PadSeva in 2023 to address menstrual health inequality and break societal stigma.
   
-  [![GitHub](https://img.shields.io/badge/GitHub-SyedAdeebWebDesigning-181717?style=for-the-badge&logo=github)](https://github.com/SyedAdeebWebDesigning)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/syedadeeb)
+  Aspiring journalist and lawyer passionate about social change through conversation and advocacy.
   
 </div>
 
