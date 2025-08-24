@@ -50,7 +50,7 @@
       <br />Node.js • API Routes • Server Actions
     </td>
     <td align="center">
-      <img src="https://skillicons.dev/icons?i=mongodb" width="100" />
+      <img src="https://skillicons.dev/icons?i=mongodb" width="50" />
       <br />MongoDB
     </td>
     <td align="center">
