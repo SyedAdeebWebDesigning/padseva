@@ -112,6 +112,7 @@ At **PadSeva**, we are revolutionizing menstrual health in rural Southern India 
 </div>
 
 **Why This Matters:**
+
 - 🏠 **Rural Focus**: Addressing the unique challenges faced by remote communities
 - 🌱 **Sustainable Impact**: Biodegradable products that protect both women and the environment
 - 📚 **Education First**: Breaking taboos through awareness and open conversations
@@ -133,7 +134,7 @@ At **PadSeva**, we are revolutionizing menstrual health in rural Southern India 
 <div align="center">
   <img src="public/assets/OurFounder.webp" alt="Our Founder Section" width="500" style="border-radius: 10px; margin: 15px 0;" />
   
-  <img src="public/assets/founder.webp" alt="Anwitha Srivatsa" width="200" style="border-radius: 50%; margin: 20px 0; border: 5px solid #91373e;" />
+  <img src="public/founder.webp" alt="Anwitha Srivatsa" width="200" style="border-radius: 50%; margin: 20px 0; border: 5px solid #91373e;" />
   
   ### **Anwitha Srivatsa** 
   *Founder of PadSeva*
@@ -149,46 +150,10 @@ At **PadSeva**, we are revolutionizing menstrual health in rural Southern India 
 ## 🚀 **Quick Start**
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 - MongoDB database
 - Clerk account for authentication
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/SyedAdeebWebDesigning/padseva.git
-cd padseva
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-# Add your MongoDB URI, Clerk keys, and other secrets
-
-# Run the development server
-npm run dev
-```
-
-### Environment Variables
-
-```env
-MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_public_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-# Add other required environment variables
-```
-
-### 🌐 **Production Deployment**
-
-This application is optimized for **Vercel** deployment:
-
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables in Vercel dashboard
-3. Deploy automatically on every push to main branch
-
----
 
 ## 🤝 **Contributing**
 
