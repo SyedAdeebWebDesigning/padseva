@@ -55,7 +55,7 @@
     </td>
     <td align="center">
       <img src="https://images.clerk.com/static/logo-light-mode-400x400.png" width="50" />
-      <br />Clerk Authentication
+      <br />Clerk
     </td>
   </tr>
 </table>
