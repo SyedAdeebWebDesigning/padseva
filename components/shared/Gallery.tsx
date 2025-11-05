@@ -16,6 +16,8 @@ const Gallery = () => {
 		"/gallery/12.webp",
 		"/gallery/13.webp",
 		"/gallery/14.webp",
+		"/gallery/15.webp",
+		"/gallery/16.webp",
 	];
 
 	return (
@@ -43,7 +45,7 @@ const Gallery = () => {
 							alt="Gallery Collage"
 							loading="lazy"
 							fill
-							className="object-cover p-1 "
+							className="object- object-center p-1 "
 						/>
 					</div>
 
@@ -104,9 +106,9 @@ const Gallery = () => {
 				</div>
 			</div>
 
-			{/* ✅ Bottom Section - Remaining Images */}
+			{/* ✅ Bottom - 1 Section - Remaining Images */}
 			<div className="grid grid-cols-4 gap-1 mt-1 ">
-				{galleryImages.slice(6).map((src, index) => (
+				{galleryImages.slice(6, 14).map((src, index) => (
 					<div
 						key={index}
 						className="h-40 md:h-52 lg:h-64 relative overflow-hidden shadow-lg bg-white">
@@ -116,6 +118,23 @@ const Gallery = () => {
 							fill
 							loading="lazy"
 							className="object-cover  p-1"
+						/>
+					</div>
+				))}
+			</div>
+
+			{/* remaining two */}
+			<div className="grid grid-cols-2 gap-1 mt-1 ">
+				{galleryImages.slice(14, 17).map((src, index) => (
+					<div
+						key={index}
+						className="h-40 md:h-52 lg:h-80 relative overflow-hidden shadow-lg bg-white">
+						<Image
+							src={src}
+							alt={`Gallery Image ${index + 15}`}
+							fill
+							loading="lazy"
+							className="object-cover object-bottom p-1"
 						/>
 					</div>
 				))}
