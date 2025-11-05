@@ -48,14 +48,13 @@ const OurFounder = ({}: OurFounderProps) => {
 				</div>
 				<div className="flex flex-col md:flex-row items-center justify-center w-full relative my-10 z-10">
 					{/* Founder Image */}
-					<div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] mb-6 md:mb-0 z-20">
+					<div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] mb-6 md:mb-0 z-20 overflow-hidden">
 						<Image
 							src={"/founder.webp"}
 							alt="Founder"
 							fill
 							loading="lazy"
-							className="object-cover rounded-full md:rounded-none z-10"
-							objectFit="cover"
+							className="object-cover scale-150 rounded-full md:rounded-xl z-10 object-bottom"
 						/>
 						<Image
 							src={"/svg/Pettle.svg"}
