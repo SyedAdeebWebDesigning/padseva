@@ -4,9 +4,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import React from "react";
+import React, { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { deleteUnVerifiedSubscribers } from "@/lib/actions/NotifySubscriber.action";
+import LoadingState from "@/components/shared/LoadingState";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,7 +53,12 @@ export default async function RootLayout({
 						pauseOnHover
 						theme="light"
 					/>
-					<div>{children}</div>
+					<Suspense
+						fallback={
+							<LoadingState />
+						}>
+						<div>{children}</div>
+					</Suspense>
 				</body>
 			</html>
 		</ClerkProvider>

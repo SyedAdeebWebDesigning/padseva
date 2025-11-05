@@ -30,9 +30,9 @@ const Animation = ({}: AnimationProps) => {
 	return (
 		<div className="z-30">
 			<motion.div
-				initial={{ x: isSmallScreen ? -100 : -150 }}
+				initial={{ x: isSmallScreen ? -100 : -950 }}
 				animate={{ x: 0 }}
-				transition={{ duration: 0.5, ease: "easeOut" }}
+				transition={{ duration: 1.5, ease: "easeInOut" }}
 				className="flowers-topleft"
 				style={{
 					x: leaf1X,
@@ -42,9 +42,9 @@ const Animation = ({}: AnimationProps) => {
 				}}
 			/>
 			<motion.div
-				initial={{ x: isSmallScreen ? 100 : 150 }}
+				initial={{ x: isSmallScreen ? 100 : 950 }}
 				animate={{ x: 0 }}
-				transition={{ duration: 0.5, ease: "easeOut" }}
+				transition={{ duration: 1.5, ease: "easeInOut" }}
 				className="flowers-topright"
 				style={{
 					x: leaf2X,
@@ -54,9 +54,9 @@ const Animation = ({}: AnimationProps) => {
 				}}
 			/>
 			<motion.div
-				initial={{ x: isSmallScreen ? -100 : -150 }}
+				initial={{ x: isSmallScreen ? -100 : -950 }}
 				animate={{ x: 0 }}
-				transition={{ duration: 0.5, ease: "easeOut" }}
+				transition={{ duration: 1.5, ease: "easeInOut" }}
 				className="flowers-bottomleft"
 				style={{
 					x: leaf3X,
@@ -66,9 +66,9 @@ const Animation = ({}: AnimationProps) => {
 				}}
 			/>
 			<motion.div
-				initial={{ x: isSmallScreen ? 100 : 150 }}
+				initial={{ x: isSmallScreen ? 100 : 950 }}
 				animate={{ x: 0 }}
-				transition={{ duration: 0.5, ease: "easeOut" }}
+				transition={{ duration: 1.5, ease: "easeInOut" }}
 				className="flowers-bottomright"
 				style={{
 					x: leaf4X,
