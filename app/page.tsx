@@ -13,14 +13,13 @@ import { cn } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 
-import NavLinks from "@/components/shared/NavLinks";
 import DropdownLinks from "@/components/shared/DropdownLinks";
-import Journey from "@/components/shared/Journey";
-import Image from "next/image";
-import Impact from "@/components/shared/Impact";
-import Podcast from "@/components/shared/Podcast";
-import Video from "@/components/shared/Video";
 import Gallery from "@/components/shared/Gallery";
+import Impact from "@/components/shared/Impact";
+import Journey from "@/components/shared/Journey";
+import NavLinks from "@/components/shared/NavLinks";
+import Video from "@/components/shared/Video";
+import Image from "next/image";
 
 export default async function Home() {
 	const clerkUser = await currentUser();
@@ -31,7 +30,7 @@ export default async function Home() {
 	const NavBarLinks = [
 		{ name: "Founder", href: "#founder" },
 		{ name: "Newsletter", href: "#newsletter" },
-		{ name: "Podcast", href: "#podcast" },
+		// { name: "Podcast", href: "#podcast" },
 		{ name: "Contact Us", href: "#contact" },
 	];
 	return (
@@ -94,9 +93,9 @@ export default async function Home() {
 				<section className="bg-[#ffe8e8] relative bg-bag z-[30]">
 					<Impact />
 				</section>
-				<section className="bg-[#ffbaba] relative z-[30]">
+				{/* <section className="bg-[#ffbaba] relative z-[30]">
 					<Podcast />
-				</section>
+				</section> */}
 
 				<section className="relative bg-white">
 					<Video />
@@ -128,7 +127,7 @@ export default async function Home() {
 										rel="noreferrer"
 										className={cn(
 											buttonVariants({ variant: "link" }),
-											"text-gray-300 text-sm -ml-3"
+											"text-gray-300 text-sm -ml-3",
 										)}>
 										Syed Adeeb
 									</Link>
